@@ -38,10 +38,10 @@
 										<h1>Rigid Body Transformation</h1>
 									</header>
 
-                                    <h3>What is rigid body transformation?</h3>
+                                    <h2>What is rigid body transformation?</h2>
                                     <p style="text-align: justify; font-size: 17px;">
                                         Rigid body transformation are transformations that can change the figures location and orientation without 
-                                        changing size or shape in other words, it's a geometeric transformation of a Euclidean space that preserves 
+                                        changing size or shape. In other words, it's a geometeric transformation of a Euclidean space that preserves 
                                         the Euclidean distance between every pair of points. 
                                     </p>
                                     								
@@ -55,9 +55,341 @@
                                     </p>	
                                     <p style="text-align: justify; font-size: 17px;">
                                         Object A is initally at location Q in space and after some time it's at location Z in space. This transformation
-                                        of the object-A from location Q to location Z is a rigid body transformation because the object's shape or size isn't 
+                                        of the object-A from location Q to location Z is a rigid body transformation as the object's shape or size isn't 
                                         changed after the transformation. Furthermore, this transformation can be represeted using rotation and then translation. 
+										So next, let's see what rotation and translation is. 
                                     </p>
+
+									<h2>Rotation</h2>
+
+									<p style="text-align: justify; font-size: 17px;">
+										Let's use the figure below to derive the rotational matrix. 										
+									</p>
+
+									<p style="text-align: center;">
+										<img src="images/rotational_matrix.png" alt="" width = "500" height = "500" class = "center"/></a>								
+									</p>									
+
+									<p style="text-align: justify; font-size: 17px;">
+										Let's say a vector <span lang="latex">\large \vec{p}</span> of length <span lang="latex"> \large r</span> is represented by a pair of points 
+										<span lang="latex">\large (x, y)</span> and <span lang="latex">\large (0, 0)</span> such that it's tail is fixed at <span lang="latex">\large (0, 0)</span>, 
+										the origin and it's head at <span lang="latex">\large (x, y)</span>. Furthermore, the vector is also making an <span lang="latex">\large \angle \theta</span> with 
+										the x-axis. Then the vector <span lang="latex">\large \vec{p}</span> can be represented in polar coordinates as,
+
+										<div lang="latex" style="text-align: center;">
+											
+											\large
+											\vec{p} = 
+											
+											\begin{bmatrix}
+											 x \\
+											 y
+											\end{bmatrix} = 
+											
+											\begin{bmatrix}
+											r \cos (\theta) \\
+											r \sin (\theta)
+										   \end{bmatrix}
+										   
+										   \hspace{4cm} (1)
+										   
+										</div>																												
+									</p>
+
+									<p style="text-align: justify; font-size: 17px;">
+										From here on things get intresting, now we want to rotate <span lang="latex">\large \vec{p}</span> with an angle <span lang="latex">\large \angle \Omega</span>
+										to get a new vector <span lang="latex">\large {\vec{p}\, '}</span> such that it's tail is fixed at origin i.e. <span lang="latex">\large (0, 0)</span>. After rotation, the 
+										new vector <span lang="latex">\large {\vec{p}\, '}</span> will have it's head at <span lang="latex">\large (x', y')</span> and has the tail is fixed the length 
+										of the vector <span lang="latex">\large {\vec{p}\, '}</span> will also be <span lang='latex'>\large r</span>. Furthermore, the vector<span lang="latex">\large {\vec{p}\, '}</span>
+										makes an angle of <span lang="latex">\large \angle \theta + \angle \Omega</span> with x-axis. Thus giving it's polar representation as, 
+										
+										<div lang="latex" style="text-align: center;">
+											\large
+											{\vec{p}\,}' = 
+											
+											\begin{bmatrix}
+											 x' \\
+											 y'
+											\end{bmatrix} = 
+											
+											\begin{bmatrix}
+											r \cos (\theta + \Omega) \\
+											r \sin (\theta + \Omega)
+										   \end{bmatrix}
+										   
+										   \hspace{3cm} (2)
+
+										</div>										
+										
+									</p>
+
+									<p style="text-align: justify; font-size: 17px;">
+										Now, let's say we don't know the value of <span lang="latex">\large \angle \theta</span> but we know the coordinates <span lang="latex">\large (x, y)</span> i.e. location of <span lang="latex">\large \vec{p}</span>
+										in space and <span lang="latex">\large \angle \Omega</span> the angle by which <span lang="latex">\large \vec{p}</span> should be rotated. So, the equation (2) can now be rewriten using simple trignometery identities 
+										in terms of <span lang="latex">\large (x, y)</span> and <span lang="latex">\large \vec{p}</span> to obtain <span lang="latex">\large {\vec{p}\, '}</span>.
+										<br><br>
+										Using the trignometery identities,
+										<br>
+										<p style='text-align: center;'>
+										 <span lang='latex'> \large \cos(A + B) = \cos(A)\cos(B) - \sin(A)\sin(B)</span> <br>
+										 <span lang='latex'> \large \sin(A + B) = \sin(A)\cos(B) + \cos(A)\sin(B)</span>
+										</p>									
+									</p>
+
+									<p style="text-align: justify; font-size: 17px;">
+										Equation (2) can be rewritten as, 
+
+										<div lang="latex" style="text-align: center;">
+											\large
+											{\vec{p}\,}' = 
+											
+											\begin{bmatrix}
+											 x' \\
+											 y'
+											\end{bmatrix} = 
+											
+											\begin{bmatrix}
+											r \cos (\theta) \cos(\Omega) - r \sin(\theta) \sin(\Omega)\\
+											r \sin (\theta) \cos(\Omega) + r \cos(\theta) \sin(\Omega)
+											 
+										   \end{bmatrix}											
+										</div>
+
+										<p style="text-align: justify; font-size: 17px;">
+										simple rearrangement,  
+										</p>
+
+										<div lang="latex" style="text-align: center;">
+											\large
+											{\vec{p}\,}' = 
+											
+											\begin{bmatrix}
+											 x' \\
+											 y'
+											\end{bmatrix} = 
+											
+											\begin{bmatrix}
+											r \cos (\theta) \cos(\Omega) - r \sin(\theta) \sin(\Omega)\\
+											r \cos(\theta) \sin(\Omega) + r \sin (\theta) \cos(\Omega) 
+											 
+										   \end{bmatrix}											
+										</div>										
+									</p>
+
+									<p style="text-align: justify; font-size: 17px;">
+										From equation (1) we know, 
+										<div lang='latex' style='text-align: center;'>
+											\large
+											\begin{matrix}
+											x = r \cos(\theta) \\
+											y = r \sin(\theta)											 
+										   \end{matrix}
+										</div>
+									</p>
+
+									<p style="text-align: justify; font-size: 17px;">
+										Thus giving us the following equation, 
+										<div lang='latex' style='text-align: center;'>
+											\large
+											{\vec{p}\,}' = 
+											
+											\begin{bmatrix}
+											 x' \\
+											 y'
+											\end{bmatrix} = 
+											
+											\begin{bmatrix}
+											x \cos(\Omega) - y \sin(\Omega)\\
+											x \sin(\Omega) + y \cos(\Omega)
+										   \end{bmatrix}									   
+										</div>	
+
+										<br>
+										<p style="text-align: justify; font-size: 17px;">
+											The above equation can be expressed using matrix multiplication as,
+										</p>
+										<div lang='latex' style='text-align: center;'>
+											\large
+											{\vec{p}\,}' = 
+											
+											\begin{bmatrix}
+											 x' \\
+											 y'
+											\end{bmatrix} = 
+											
+											\begin{bmatrix}
+											\cos(\Omega) & \hspace{0.1cm}-\sin(\Omega)\\
+											\sin(\Omega) & \hspace{0.6cm}\cos(\Omega)
+										   \end{bmatrix}
+										   \begin{bmatrix}
+											x \\
+											y
+										  \end{bmatrix}										   									   
+										</div>																			
+									</p>
+									<br>
+									<p style="text-align: justify; font-size: 17px;">
+										In the above equation the matrix &nbsp; 
+										<span lang='latex'>
+											\large
+											\begin{bmatrix}
+											\cos(\Omega) & \hspace{0.1cm}-\sin(\Omega)\\
+											\sin(\Omega) & \hspace{0.6cm}\cos(\Omega)
+										    \end{bmatrix}										   
+										</span>
+										&nbsp; is the rotational matrix and the general notation for representing it is<span lang='latex'>\large \mathbb{R}</span>. Thus, knowing the angle <span lang='latex'>\large \angle \Omega</span> and the <span lang='latex'>\large \vec{p}</span> vector 
+										we can obtain <span lang='latex'>\large {\vec{p}\, }'</span>. Finally, the equation can be rewritten as, 
+
+										<div lang='latex' style='text-align: center;'>
+											\large
+											\begin{matrix}
+											{\vec{p}\,}' = \mathbb{R} \vec{p} 
+											\end{matrix}
+										</div>
+									</p>
+
+									<h2>Translation</h2>
+                                    <p style="text-align: justify; font-size: 17px;">
+										In translation every point moves the same distance in space given in any direction when the space is Euclidean space i.e. any translation is 
+										isometry. Isometry stands for distance preserving transformation between metric-spaces. 
+                                    </p>
+
+									<p style="text-align: center;">
+										<img src="images/translation.png" alt="" width = "600" height = "500" class = "center"/></a>								
+									</p>									
+
+									<p style="text-align: justify; font-size: 17px;">
+										Translation of a coordinate <span lang='latex'>\large (x, y)</span> in Eucledian space can be represnted algebrically as, 
+										<div lang='latex' style='text-align: center;'>
+											\large
+											\begin{matrix}
+											x' = \delta x + x \\
+											y' = \delta y + y 
+											\end{matrix}
+										</div>
+									</p>
+
+									<p style='text-align: justify; font-size: 17px'>
+										The vector representation for the same is just vector addition, 
+										<div lang='latex' style='text-align: center;'>
+											\large
+											\begin{bmatrix}
+											x' \\
+											y' 
+											\end{bmatrix} = 
+											\begin{bmatrix}
+											\delta x \\
+											\delta y
+											\end{bmatrix} + 
+											\begin{bmatrix}
+											x \\
+											y 
+											\end{bmatrix} 																						
+										</div>										
+									</p>
+
+									<h2> Does order matter for transformation?</h2>
+									<p style='text-align: justify; font-size: 17px'>
+									 <b>Here, we look into the order of transformation i.e. is rotation then translation same as translation then rotation? Why should we worry about 
+									 the order of the transformations?</b> To put it simply, the commutative rules doesn't satisfy if we change the order of the transformation. Let's 
+									 say translation and rotation are the expressions below, 
+									 
+									 <div lang='latex' style='text-align: center;'>
+										\large
+										\begin{matrix}
+											T(x) = x + b & (Translation) \\
+											R(x) = Ax & (Rotational)
+										\end{matrix}
+									 </div>
+							
+									</p>
+
+									<p style='text-align: justify; font-size: 17px'>
+										Let's compare the order by first performing rotation then translation and equate it to translation then rotation using the above expressions, 
+										<div lang='latex' style='text-align: center;'>
+											\large
+											\begin{matrix}
+												TR = T(R(x)) = T(Ax) = Ax + b  \\
+												RT = R(T(x)) = R(x + b) = A(x + b) = Ax + Ab 
+											\end{matrix}
+										 </div>	
+									</p>		
+									
+									<p style='text-align: justify; font-size: 17px'>
+										From the above equation it is clear that <span lang='latex'> \large RT \neq TR</span>, therefore it is <b>NOT</b> commutative. 
+									</p>	
+									
+									<h2>Pratical Use Case with OpenCV</h2>
+
+									<p style='text-align: justify; font-size: 17px'>
+										<!--<span class="image left"><img src="images/joker.jpeg" alt="" width="300px" height="500px"/></span>-->Let's try to apply the concepts we read above in solving 
+										a problem which you can extend with some variation in you applications. <br><br>Assume we have a usecase where we need to find key point of the eyes given in an 
+										image guaranteed with one face were eyes are clearly visible. The catch is that the image we are given is rotated 90 degree clockwise and the hypothetical
+										model we have for key point detection works only on tightly cropped face (no hair, background etc) and the face 
+										should be upright (no other orrientation is accepted). Hmmm, seems a bit easy, let's spice it up even further. The face detction model also accepts  
+										upright faces only. The pipeline we will follow to solve the problem is given below, 
+
+										<p style="text-align: center;">
+											<img src="images/pipeline.png" alt="" width="1000px" height="200px"  class = "center"/></a>								
+										</p>
+									</p>
+
+									<p style='text-align: justify; font-size: 17px'>
+										Let's break down the above steps mentioned in the pipeline above into sections has shown in the table below, 										
+									</p>
+
+									<div class="table-wrapper">
+										<table>
+											<thead>
+												<tr>
+													<th>Steps</th>
+													<th>Description</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>1.</td>
+													<td>Make the Image Upright</td>													
+												</tr>
+												<tr>
+													<td>2.</td>
+													<td>Detect a Face</td>
+												</tr>
+												<tr>
+													<td>3.</td>													
+													<td>Crop the Detected Face</td>													
+												</tr>
+												<tr>
+													<td>4.</td>													
+													<td>Generate Key Points For the Eyes</td>													
+												</tr>
+												<tr>
+													<td>5.</td>													
+													<td>Translate the detected key point with respect to the original image.</td>													
+												</tr>												
+												<tr>
+													<td>6.</td>													
+													<td>Rotate the Image back to Original Orientation along with the key points.</td>													
+												</tr>
+											</tbody>
+										</table>								
+									</div>
+									<br>
+									<section>
+										<h2>1. Make the Image Upright</h2>
+										<p style='text-align: justify; font-size: 17px'>
+											As we know the input image is rotated 90 degree clockwise but the hypothetical models we have only accept upright images for giving us valid inference, 
+											hence we rotate the image 90 degree counter clockwise. To do this, we will use OpenCV's <code>cv2.getRotationMatrix2D</code> and <code>cv2.warpAffine</code> 
+											methods. 
+
+											
+										</p>
+										<h2>2. Detect a Face</h2>
+										<h2>3. Crop the Detected Face</h2>
+										<h2>4. Generate Key Points For the Eyes</h2>
+										<h2>5. Translate the detected key point with respect to the original image</h2>
+										<h2>6. Rotate the Image back to it's Original Orientation along with the key points.</h2>
+									</section>
 
 								</section>                              
 
@@ -76,12 +408,13 @@
 									<ul>
 										<li><a href="index.html">Geometeric Camera Calibration</a></li>
 										<li><a href="generic.html">I. Rigid Body Transformation</a></li>
-										<li><a href="elements.html">II. Geometery of Image Formation</a></li>
-                                        <li><a href="elements.html">III. Extrinsic Camera Parameters</a></li>
-                                        <li><a href="elements.html">IV. Intrinsic Camera Parameters</a></li>
-                                        <li><a href="elements.html">V. Singular Value Decomposition</a></li>
-                                        <li><a href="elements.html">VI. Calibration Cameras</a></li>
-                                        <li><a href="elements.html">VII. Demo</a></li>
+										<li><a href="generic.html">II. Homogenous Coordinates</a></li>
+										<li><a href="elements.html">III. Geometery of Image Formation</a></li>
+                                        <li><a href="elements.html">IV. Extrinsic Camera Parameters</a></li>
+                                        <li><a href="elements.html">V. Intrinsic Camera Parameters</a></li>
+                                        <li><a href="elements.html">VI. Singular Value Decomposition</a></li>
+                                        <li><a href="elements.html">VII. Calibration Cameras</a></li>
+                                        <li><a href="elements.html">VIII. Demo</a></li>
 									</ul>
 								</nav>
 
@@ -141,7 +474,7 @@
 			<script src="../../../assets/js/breakpoints.min.js"></script>
 			<script src="../../../assets/js/util.js"></script>
 			<script src="../../../assets/js/main.js"></script>
-            
+			<script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>			            
 
 	</body>
 </html>
