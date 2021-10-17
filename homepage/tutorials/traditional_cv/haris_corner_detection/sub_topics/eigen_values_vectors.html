@@ -1,0 +1,357 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Eigen Value and Eigen Vectors</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../../../../assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo">Machine Learning <strong>Cognitio</strong> </a>
+									<ul class="icons">
+										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+									</ul>
+								</header>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>Eigen Values and Eigen Vectors</h1>
+									</header>
+
+                                    <p style="text-align: justify; font-size: 17px;">
+                                        Most vectors after transformation will get knocked out from their initial span. However, some vectors will remain on the 
+                                        same span but might be scaled by a scalar <span lang='latex'>'\lambda'</span>. These vectors are known as <strong>eigen vectors</strong> and the scalar which scales these vectors 
+                                        are known as <strong>eigen values</strong>. To understand this let's take a matrix which shears parallel to the x-axis in the vector  
+                                        space. The transformation matrix for this is given below,
+										<div lang='latex' style='text-align: center;'>
+											\large
+                                            A = 
+											\begin{bmatrix}
+											3 & \hspace{0.1cm}2\\
+											0 & \hspace{0.1cm}2
+										    \end{bmatrix}										   
+                                        </div>                                          
+                                    </p>                                    
+                                    
+                                    <p style='text-align: justify; font-size: 17px;'>
+                                        We apply this transformation to the standard coordinate system's basis vectors which are, 
+                                        <div lang='latex' style='text-align: center;'>
+                                            \large
+                                            \bar{x} = 
+                                            \begin{bmatrix}
+                                            1 \\
+                                            0
+                                            \end{bmatrix}
+
+                                            \hspace{2 mm}
+
+                                            \bar{y} = 
+                                            \begin{bmatrix}
+                                            0 \\
+                                            1
+                                            \end{bmatrix}                                            
+                                        </div>
+                                    </p>
+
+                                    <p style='text-align: justify; font-size: 17px;'>
+                                        The transformation matrix <span lang='latex'>\large A</span> when applied to <span lang='latex'>\large \bar{x}</span> and <span lang='latex'>\large \bar{y}</span> yields <span lang='latex'>\large \bar{x}'</span> and 
+                                        <span lang='latex'>\large \bar{y}'</span>. As shown below, 
+                                    </p>
+
+                                    <div lang='latex' style='text-align: center;'>
+                                        \large 
+                                        \bar{x}' = A\bar{x} = 
+                                        \begin{bmatrix}
+                                            3 & \hspace{0.1cm}2 \\
+                                            0 & \hspace{0.1cm}2 
+                                        \end{bmatrix}
+                                        .
+                                        \begin{bmatrix}
+                                        1 \\
+                                        0
+                                        \end{bmatrix}
+                                        =
+                                        \begin{bmatrix}
+                                        3 \\
+                                        0
+                                        \end{bmatrix}  
+                                        =
+                                        3
+                                        \begin{bmatrix}
+                                        1 \\
+                                        0
+                                        \end{bmatrix} 
+                                    </div>
+                                    <br>
+                                    <div lang='latex' style='text-align: center;'>
+                                        \large 
+                                        \bar{y}' = A\bar{y} = 
+                                        \begin{bmatrix}
+                                            3 & \hspace{0.1cm}2 \\
+                                            0 & \hspace{0.1cm}2 
+                                        \end{bmatrix}
+                                        .
+                                        \begin{bmatrix}
+                                        0 \\
+                                        1
+                                        \end{bmatrix}
+                                        =
+                                        \begin{bmatrix}
+                                        2 \\
+                                        2
+                                        \end{bmatrix}  
+                                        =
+                                        2
+                                        \begin{bmatrix}
+                                        1 \\
+                                        1
+                                        \end{bmatrix}                                                                               
+                                    </div>
+                                    
+                                    <br>
+
+                                    <p style='text-align: justify; font-size: 17px;'>
+                                        If we plot <span lang='latex'>\large \bar{x}'</span> and <span lang='latex'>\large \bar{y}'</span> on a grid we can clearly see <span lang='latex'>\large \bar{x}'</span> still lies on the same 
+                                        span as <span lang='latex'>\large \bar{x}</span> whereas the vector <span lang='latex'>\large \bar{y}</span> span has changed after transformation. This can be visually seen below.                                        
+                                    </p>
+
+                                    <p style="text-align: center;">
+										<img src="../images/shear_example.png" alt="" width = "1100" height = "400" class = "center"/></a>								
+									</p>
+
+                                    <p style='text-align: justify; font-size: 17px;'>
+                                        The vector <span lang='latex'>\large \bar{x}'</span> in image B is nothing but <span lang='latex'>\large 3 \bar{x}</span> where <span lang='latex'>\large 3</span> represents the eigen value and <span lang='latex'>\large \bar{x}</span> 
+                                        is an eigen vector. Basically, any vector in the same direction as <span lang='latex'>\large \bar{x}</span> is an eigen vector which can be mathematically represented by <span lang='latex'>\large \lambda \bar{x}</span>. In general, we 
+                                        can write the eigen value equation or eigenequation as, 
+                                    </p>                                    
+
+                                    <div lang='latex' style='text-align: center;'>
+                                        \large 
+                                        A \bar{x} = \lambda \bar{x}
+                                    </div>
+                                    <br>
+                                    <p style='text-align: justify; font-size: 17px;'>
+                                        Where <span lang='latex'>\large \lambda</span> is known as eigen value or characterisitc value associated with vector <span lang='latex'>\large \bar{x}</span> and <span lang='latex'>\large A</span> is the transformation matrix. Next we, will 
+                                        look at how to calculate the eigen vectors and eigen values given an transformation matrix. 
+                                    </p>                                                                              
+                                </section>    
+                                
+                                <section>
+                                    <h2>How to calculate eigen values and eigen vectors?</h2>
+
+                                    <p style='text-align: justify; font-size: 17px;'>
+                                        We can calculate eigen values and eigen vectors for square matrixes only, for non-square matrix we calculate singlular values. We won't be covering about singular values in this tutorial. So, let's take the eigenequation from which we will first 
+                                        calculate eigen values then the eigen vectors. We derive for a 2D space but the same intution can be extended n dimensional space. 
+
+                                        <div lang='latex' style='text-align: center;'>
+                                            \large 
+                                            A \overrightarrow{v} = \lambda \overrightarrow{v}                                        
+                                        </div>  
+                                        <br>
+                                        <div lang='latex' style='text-align: center;'>
+                                            \large 
+                                            A \overrightarrow{v} = \lambda 
+                                            \begin{bmatrix}
+                                            1 & 0 \\
+                                            0 & 1
+                                            \end{bmatrix}
+                                            \overrightarrow{v}                                        
+                                        </div>
+                                        <br>
+                                        <div lang='latex' style='text-align: center;'>
+                                            \large 
+                                            \begin{bmatrix}
+                                            a_{00} & a_{01} \\
+                                            a_{10} & a_{11}
+                                            \end{bmatrix}
+                                             \overrightarrow{v} = 
+                                             \begin{bmatrix}
+                                             \lambda & 0 \\
+                                             0 & \lambda
+                                             \end{bmatrix}                                             
+                                             \overrightarrow{v}                                        
+                                        </div>     
+                                        <br>
+                                        <div lang='latex' style='text-align: center;'>
+                                            \large 
+                                            \begin{bmatrix}
+                                            a_{00} & a_{01} \\
+                                            a_{10} & a_{11}
+                                            \end{bmatrix}
+                                             \overrightarrow{v} - 
+                                             \begin{bmatrix}
+                                             \lambda & 0 \\
+                                             0 & \lambda
+                                             \end{bmatrix}                                             
+                                             \overrightarrow{v} =
+                                             \overrightarrow{0}
+                                        </div>                                          
+                                        <br>
+                                        <div lang='latex' style='text-align: center;'>
+                                            \large 
+                                            (
+                                            \begin{bmatrix}
+                                            a_{00} & a_{01} \\
+                                            a_{10} & a_{11}
+                                            \end{bmatrix}
+                                              - 
+                                             \begin{bmatrix}
+                                             \lambda & 0 \\
+                                             0 & \lambda
+                                             \end{bmatrix}                                             
+                                            )
+                                            \overrightarrow{v}                                            
+                                              =
+                                             \overrightarrow{0}
+                                        </div>   
+                                        <br>
+                                        <div lang='latex' style='text-align: center;'>
+                                            \large 
+                                            (
+                                            \begin{bmatrix}
+                                            a_{00} - \lambda & a_{01} \\
+                                            a_{10} & a_{11} - \lambda
+                                            \end{bmatrix}                                          
+                                            )
+                                            \overrightarrow{v}                                            
+                                              =
+                                             \overrightarrow{0}
+                                        </div>      
+                                        <br>
+                                        <div lang='latex' style='text-align: center;'>
+                                            \large 
+                                            (A - \lambda I)
+                                            \overrightarrow{v}                                            
+                                              =
+                                             \overrightarrow{0}
+                                        </div>
+                                        <br>
+                                        <p style='text-align: justify; font-size: 17px;'>
+                                            From the above equation we see that either <span lang='latex'>\large \overrightarrow{v}</span> or <span lang='latex'>\large (A - \lambda I)</span> should be the zero vector. We don't want 
+                                            <span lang='latex'>\large \overrightarrow{v}</span> to be zero because then it doesn't give any information so basically we would like <span lang='latex'>\large (A - \lambda I)</span> to equal zero vector. 
+                                            Speaking geometerically we can say that it squishes the space to a point (the zero vector) hence the area (becuse it's 2D it's area for n-dimensional it would have been volume) is zero. One way to think about deteminants 
+                                            is that it tells us how much the transformation will scale the intital area. Hence, using determinants we can rewrite the above equation as, 
+
+                                            <div lang='latex' style='text-align: center;'>
+                                                \large 
+                                                det(A - \lambda I)                                            
+                                                  =
+                                                 0
+                                            </div>
+                                        </p>      
+
+                                        <p style='text-align: justify; font-size: 17px;'>
+                                            After solving the above equation and obtaining the values of <span lang='latex'>\large \lambda</span> we substitue the <span lang='latex'> \large \lambda</span> values in the equation <span lang='latex'>\large (A - \lambda I)</span> and 
+                                            solving for <span lang='latex'>\large \overrightarrow{v}</span>. Thus obtaining both eigen values and eigen vectors for the matrix <span lang='latex'>\large A</span>.
+                                        </p>                                                                                 
+                                    </p>                                                                         
+                                </section>
+
+                                <section>
+                                    <h2>Final thoughts</h2>
+
+                                    <p style='text-align: justify; font-size: 17px;'>
+                                        Not all square matrixes have eigen vectors, one such example will be rotating a vector space by 90 degree clockwise in 2D. Here, all the vectors in the space will be knocked out of their span after the transformation. In contrast, for a transformation matrix all the vectors
+                                        in the vector space is a eigen vector. I hope by end of this tutorial you were able to get a geometerical understanding of eigen values and eigen vectors and how to compute them. Next we look into Eigen basis and change of basis. 
+                                    </p> 
+                                </section>
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="index.html">Harris Corner Detection</a></li>
+										<li><a href="generic.html">I. Eigen Values and Eigen Vectors</a></li>
+										<li><a href="generic.html">II. Eigen Basis and Change of Basis</a></li>
+										<li><a href="#">III. Eigen Application: Ellipse</a></li>
+										<li><a href="elements.html">IV. Taylor Expansion</a></li>
+                                        <li><a href="elements.html">V. Theory</a></li>
+                                        <li><a href="elements.html">VI. Pratical Example using OpenCV</a></li>
+									</ul>
+								</nav>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Ante interdum</h2>
+									</header>
+									<div class="mini-posts">
+										<article>
+											<a href="#" class="image"><img src="rigid_body_images/pic07.jpg" alt="" /></a>
+											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="rigid_body_images/pic08.jpg" alt="" /></a>
+											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="rigid_body_images/pic09.jpg" alt="" /></a>
+											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+										</article>
+									</div>
+									<ul class="actions">
+										<li><a href="#" class="button">More</a></li>
+									</ul>
+								</section>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Get in touch</h2>
+									</header>
+									<p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+									<ul class="contact">
+										<li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
+										<li class="icon solid fa-phone">(000) 000-0000</li>
+										<li class="icon solid fa-home">1234 Somewhere Road #8254<br />
+										Nashville, TN 00000-0000</li>
+									</ul>
+								</section>
+
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+								</footer>
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../../../../assets/js/jquery.min.js"></script>
+			<script src="../../../../assets/js/browser.min.js"></script>
+			<script src="../../../../assets/js/breakpoints.min.js"></script>
+			<script src="../../../../assets/js/util.js"></script>
+			<script src="../../../../assets/js/main.js"></script>
+			<script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>			            
+
+	</body>
+</html>
