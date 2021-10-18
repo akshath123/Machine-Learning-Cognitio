@@ -1,0 +1,279 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Eigen Value and Eigen Vectors</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../../../../assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo">Machine Learning <strong>Cognitio</strong> </a>
+									<ul class="icons">
+										<li>Date Published: </li>
+										<li>Last Updated:</li>
+									</ul>
+								</header>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>Eigen Decomposition (Diagonalization)</h1>
+									</header>
+                                    
+                                    <p style="text-align: justify; font-size: 17px;">
+										One can say eigen decomposition a.k.a diagonalization is performing a change of basis from the coordinate sytem the linear transformation matrix 
+										<span lang='latex'>\large A</span> is in, to a new coordinate sytem where the basis set are the eigen vectors of <span lang='latex'>\large A</span>. 
+										This set of basis vectors are known as <strong>eigen basis</strong> of <span lang='latex'>\large A</span>. However, a linear transformation matrix 
+										can only have eigen basis if certain conditions are satisfied which we will look in this tutorial and then about eigen decomposition. 
+										  
+										<h2>Eigen Basis</h2>										
+                                    </p>
+
+									<p style="text-align: justify; font-size: 17px;">
+										Let a matrix <span lang='latex'>\large A</span> whose elements be defined with respect to the standard basis, 
+										<span lang='latex'>\large B_{s} = \{ v_{1}, v_{2}, v_{3}, ....., v_{n}\}</span>. The eigenvalue problem for the matrix <span lang='latex'>\large A</span>
+										consists of finding all the eigen values <span lang='latex'>\large \lambda_{i}</span> such that, 
+
+										<div lang='latex' style='text-align: center'>
+											\large 
+											A \overrightarrow{v}_{j} = \lambda_{j} \overrightarrow{v}_{j}, \hspace{4mm} \overrightarrow{v}_{j} \neq 0  \hspace{5mm}  for \hspace{2mm} j = 1, 2, ..., n.
+										</div>
+									</p>
+
+									<p style="text-align: justify; font-size: 17px;">
+										As mentioned in the tutorial <a href="#">II. Eigen Values and Eigen Vectors</a> <span lang='latex'>\large \lambda_{j}</span> are the root of the characteristic polynomial 
+										such that <span lang='latex'>\large det(A - \lambda I) = 0</span>. So, this is an <span lang='latex'>\large n^{th}</span> order polynomial equation which has <span lang='latex'>\large n</span>
+										roots. Some roots (eigen values) can be <strong>degenerate</strong> (degenerate eigen values are the one having more than one linearly independent eigenvectors). Then <span lang='latex'>\large A</span> 
+										may or may not have independent eigen vectors. If the roots (eigen values) are non-degenrate then we have <span lang='latex'>\large n</span> independent eigen vectors, then the matrix <span lang='latex'>\large A</span> 
+										is called <i>simple</i>.
+									</p>
+
+									<p style="text-align: justify; font-size: 17px;">
+										If <span lang='latex'>\large A</span> has degenerate roots but have linearly independent eigen vectors, then <span lang='latex'>\large A</span> is considered as <i>semi-simple</i>. If some of the eigen values of <span lang='latex'>\large A</span>
+										are degenerate and it's eigen vectors don't span the vector space <span lang='latex'>\large V</span>, then we say that <span lang='latex'>\large A</span> is <i>defictive</i>. 
+									</p>
+
+									<p style="text-align: justify; font-size: 17px;">
+										<strong>Diagonalization of a matrix can only happen if only if there are as many linear independent eigen vectors as the basis of the space which <span lang='latex'>\large A</span> exists in and the set of eigen vectors span vector space <span lang='latex'>\large V</span>.
+										</strong> Then this set of basis vectors which constitue only eigen vectors are known as <strong>eigen basis</strong>. One, can also say <span lang='latex'>\large A</span> must be either <i>simple</i> or <i>semi-simple</i> to be diagonalizable. 
+									</p>
+
+								</section>
+
+								<section>
+									<h2>Diagonalizing a Matrix</h2>
+
+									<p style="text-align: justify; font-size: 17px;">
+										Let a matrix <span lang='latex'>\large A</span> in the standard coordinate system have a dimension of <span lang='latex'>\large n \times n</span>. We can write it's eigen equation has, 
+													
+										<div lang='latex' style='text-align: center;'>
+											\large 
+											Ax_{1} = \lambda_{1}x_{1}, \hspace{2mm} Ax_{2} = \lambda_{2}x_{2}, \hspace{2mm} ...., \hspace{2mm} Ax_{n} = \lambda_{n}x_{n}
+										</div>																													
+									</p>	
+									
+									<p style="text-align: justify; font-size: 17px;">
+										Where <span lang='latex'>\large x_{1}, x_{2}, ..., x_{n}</span> are the eigen vectors (they are also column vectors) of dimension <span lang='latex'>\large (n \times 1)</span> and the correspoinding eigen values are <span lang='latex'>\large \lambda_{1}, \lambda_{2}, ...., \lambda_{n}</span>. We can rewrite the above equation in matrix notation as given below, 
+
+										<div lang='latex' style='text-align: center;'>
+											\large 
+											X_{n \times n} = 
+											\begin{bmatrix}
+											| & | & .... & | \\
+											| & | & .... & | \\
+											x_{1} & x_{2} & .... & x_{n} \\
+											| & | & .... & | \\
+											| & | & .... & | \\
+											\end{bmatrix}
+										</div>
+										<br>
+										<div lang='latex' style='text-align: center;'>
+											\large 
+											\Lambda_{n \times n} = 
+
+											\begin{bmatrix}
+											\lambda_{1} & 0 & ... & ... & 0 \\
+											0 & \lambda_{2} & ... & ... & ... \\
+											. & . & . & ... & ... \\
+											. & . & ... & . & 0 \\ 
+											0 & 0 & ... & 0 & \lambda_{n}\\
+											\end{bmatrix}
+										</div>
+										<br>
+										<div lang='latex' style='text-align: center;'>
+											\large 
+											AX = X\Lambda
+										</div>										
+									</p>
+
+									<p style="text-align: justify; font-size: 17px;">
+										Now to diagonalizable <span lang='latex'>\large A</span> we multiply the L.H.S and R.H.S with <span lang='latex'>\large X^{-1}</span> giving us the diagonalized version of the matrix <span lang='latex'>\large A</span> 
+										as shown below, 
+
+										<div lang='latex' style='text-align: center;'>
+											\large 
+											X^{-1}AX = X^{-1}X\Lambda											
+										</div>	
+										<br>
+										<div lang='latex' style='text-align: center;'>
+											\large 
+											X^{-1}AX = (X^{-1}X)\Lambda											
+										</div>										
+										<br>
+										<div lang='latex' style='text-align: center;'>
+											\large 
+											X^{-1}AX = (I)\Lambda											
+										</div>
+										<br>
+										<div lang='latex' style='text-align: center;'>
+											\large 
+											\Lambda	= X^{-1}AX
+										</div>
+										<br>
+									</p>
+
+									<p style="text-align: justify; font-size: 17px;">
+										The term <span lang='latex'>\large \Lambda	= X^{-1}AX</span> is known as diagonalizing <span lang='latex'>\large A</span> if we rearange this we get <span lang='latex'>\large A = X \Lambda X^{-1}</span> which tells us 
+										how <span lang='latex'>\large A</span> is broken down into eigenvectors and it's corresponding eigen values. The <span lang='latex'>\large \Lambda</span> a diagonal matrix, where the diagonals are the eigen values of the matrix 
+										<span lang='latex'>\large A</span>.
+									</p>
+								</section>
+
+								<section>
+									<h2>Application of Eigen Decomposition</h2>
+
+									<p style="text-align: justify; font-size: 17px;">
+										One application of this is ease of computing a square matrix raised to a power <span lang='latex'>\large n</span>. To show the ease of the computing let's assume <span lang='latex'>\large n = 3</span> from which we can easily generalize 
+										to the power <span lang='latex'>\large n</span>.
+
+										<div lang='latex' style='text-align: center'>
+											\large 
+											A^{3} = ( X \Lambda X^{-1})^{3}
+										</div>
+										<br>
+										<div lang='latex' style='text-align: center'>
+											\large 
+											A^{3} =  X \Lambda X^{-1} . X \Lambda X^{-1} . X \Lambda X^{-1}											
+										</div>
+										<br>
+										<div lang='latex' style='text-align: center'>
+											\large 
+											A^{3} =  X \Lambda (X^{-1} X) \Lambda (X^{-1}  X) \Lambda X^{-1}											
+										</div>	
+										<br>
+										<div lang='latex' style='text-align: center'>
+											\large 
+											A^{3} =  X \Lambda (I) \Lambda (I) \Lambda X^{-1}											
+										</div>	
+										<br>
+										<div lang='latex' style='text-align: center'>
+											\large 
+											A^{3} =  X (\Lambda \Lambda \Lambda) X^{-1}											
+										</div>			
+										<br>
+										<div lang='latex' style='text-align: center'>
+											\large 
+											A^{3} =  X (\Lambda)^{3} X^{-1}											
+										</div>										
+									</p>
+
+									<p style="text-align: justify; font-size: 17px;">
+										From the above we can generalize that to compute <span lang='latex'>\large A^{n}</span> directly would be difficult say if <span lang='latex'>n = 1000</span>. However, as <span lang='latex'>\large \Lambda</span> is diagonal matrix, computation 
+										becomes much easier because we only have to raise the diagonal matrix to a power of <span lang='latex'>\large n</span> where the upper and lower traingular matrix is basically zeros and values are only present in the diagonals.
+									</p>
+								</section>
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="index.html">Harris Corner Detection</a></li>
+										<li><a href="generic.html">I. Eigen Values and Eigen Vectors</a></li>
+										<li><a href="generic.html">II. Eigen Basis and Change of Basis</a></li>
+										<li><a href="#">III. Eigen Application: Ellipse</a></li>
+										<li><a href="elements.html">IV. Taylor Expansion</a></li>
+                                        <li><a href="elements.html">V. Theory</a></li>
+                                        <li><a href="elements.html">VI. Pratical Example using OpenCV</a></li>
+									</ul>
+								</nav>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Ante interdum</h2>
+									</header>
+									<div class="mini-posts">
+										<article>
+											<a href="#" class="image"><img src="rigid_body_images/pic07.jpg" alt="" /></a>
+											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="rigid_body_images/pic08.jpg" alt="" /></a>
+											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="rigid_body_images/pic09.jpg" alt="" /></a>
+											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+										</article>
+									</div>
+									<ul class="actions">
+										<li><a href="#" class="button">More</a></li>
+									</ul>
+								</section>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Get in touch</h2>
+									</header>
+									<p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+									<ul class="contact">
+										<li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
+										<li class="icon solid fa-phone">(000) 000-0000</li>
+										<li class="icon solid fa-home">1234 Somewhere Road #8254<br />
+										Nashville, TN 00000-0000</li>
+									</ul>
+								</section>
+
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+								</footer>
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../../../../assets/js/jquery.min.js"></script>
+			<script src="../../../../assets/js/browser.min.js"></script>
+			<script src="../../../../assets/js/breakpoints.min.js"></script>
+			<script src="../../../../assets/js/util.js"></script>
+			<script src="../../../../assets/js/main.js"></script>
+			<script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>			            
+
+	</body>
+</html>
