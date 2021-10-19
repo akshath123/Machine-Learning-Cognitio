@@ -220,7 +220,6 @@
 												\lambda_{1} x^{2} + \lambda_{2} y^{2} = 1
 											</div>
 										</p>
-										<br>
 										<p style="text-align: justify; font-size: 17px;">
 											where, <span lang='latex'>\large \lambda_{1}</span> and <span lang='latex'>\large \lambda_{2}</span> are the eigen values of the matrix <span lang='latex'>\large M</span>. 
 									</p>
@@ -228,32 +227,31 @@
 									<p style="text-align: justify; font-size: 17px;">
 										<strong><u>Proof:</u></strong> Let's take a vector <span lang='latex'>\large \begin{bmatrix}x \\ y\end{bmatrix}</span> in the standard coordinate system and perform change of basis to the coordinate system 
 										of the eigen vectors to get <span lang='latex'>\large \overrightarrow{v}</span> as shown below, 
-
 										<div lang='latex' style='text-align: center'>
 											\large 
 											\overrightarrow{v} = \begin{bmatrix}\overrightarrow{u}_1 & \overrightarrow{u}_2\end{bmatrix} \begin{bmatrix}x \\ y\end{bmatrix}
 										</div>
-										
+										<br>
 										<div lang='latex' style='text-align: center'>
 											\large 
 											\overrightarrow{v} = x \overrightarrow{u}_{1} + y \overrightarrow{u}_2
 										</div>	
-										
+										<br>
 										<div lang='latex' style='text-align: center'>
 											\large 
 											\overrightarrow{v}^{T} M \overrightarrow{v} = (x \overrightarrow{u}_{1} + y \overrightarrow{u}_2)^T M (x \overrightarrow{u}_{1} + y \overrightarrow{u}_2) \\
 										</div>	
-										
+										<br>
 										<div lang='latex' style='text-align: center'>
 											\large 
 											\overrightarrow{v}^{T} M \overrightarrow{v} = (x\overrightarrow{u}_{1} + y \overrightarrow{u}_2)^T (M x \overrightarrow{u}_{1} + M y \overrightarrow{u}_2)
 										</div>	
-										
+										<br>
 										<div lang='latex' style='text-align: center'>
 											\large 
 											\overrightarrow{v}^{T} M \overrightarrow{v} = (x\overrightarrow{u}_{1} + y \overrightarrow{u}_2)^T (x M \overrightarrow{u}_{1} + y M \overrightarrow{u}_2)
 										</div>		
-										
+										<br>
 										<div lang='latex' style='text-align: center'>
 											\large 
 											\overrightarrow{v}^{T} M \overrightarrow{v} = (x\overrightarrow{u}_{1} + y \overrightarrow{u}_2)^T (x \lambda_{1} \overrightarrow{u}_{1} + y \lambda_{2} \overrightarrow{u}_2)
@@ -266,12 +264,12 @@
 												\large 
 												\overrightarrow{v}^{T} M \overrightarrow{v} = x^{2} \lambda_{1} + x y \lambda_{2} \overrightarrow{u}_{1}^{T} . \overrightarrow{u}_{2} + x y \lambda_{1} \overrightarrow{u}_{2}^{T}. \overrightarrow{u}_{1} + y^{2} \lambda_{2}
 											</div>
-
+											<br>
 											<div lang='latex' style='text-align: center'>
 												\large 
 												\overrightarrow{v}^{T} M \overrightarrow{v} = x^{2} \lambda_{1} + y^{2} \lambda_{2}
 											</div>			
-											
+											<br>
 											<div lang='latex' style='text-align: center'>
 												\large 
 												\overrightarrow{v}^{T} M \overrightarrow{v} = \dfrac{x^{2}}{(\dfrac{1}{\sqrt{\lambda_{1}}})^2} + \dfrac{y^{2}}{(\dfrac{1}{\sqrt{\lambda_{2}}})^2} \hspace{5mm} (2)
@@ -304,7 +302,7 @@
 										as shown below, 
 										<div lang='latex' style="text-align: center">
 											\large 
-											x^{T}Mx \hspace{10mm} (3)
+											x^{T}Mx = 1\hspace{10mm} (3)
 										</div>									
 									</p>
 
@@ -326,9 +324,40 @@
 
 										<div lang='latex' style="text-align: center">
 											\large 
-											x^{T}Mx = x^{T} \begin{bmatrix} e_{1} & e_{2} \end{bmatrix} \begin{bmatrix} \lambda_{1} & 0 \\ 0 & \lambda_{2} \end{bmatrix} \begin{bmatrix} e_{1} \\ e_{2} \end{bmatrix} x 
+											x^{T}Mx = x^{T} \begin{bmatrix} e_{1} & e_{2} \end{bmatrix} \begin{bmatrix} \lambda_{1} & 0 \\ 0 & \lambda_{2} \end{bmatrix} \begin{bmatrix} e_{1} \\ e_{2} \end{bmatrix} x  = 1
 										</div>
 									</p>
+
+									<p style="text-align: justify; font-size: 17px;">
+										where <span lang='latex'>\large e_{1}</span> and <span lang='latex'>\large e_{2}</span> are the eigen vectors and the corresponding eigen values are <span lang='latex'>\large \lambda_{1}</span> and <span lang='latex'>\large \lambda_{2}</span> 
+										of the matrix <span lang='latex'>\large M</span>. If we solve the above equation we get, 
+
+										<div lang='latex' style="text-align: center">
+											\large 
+											x^{T}Mx = \lambda_{1} x^{T} e_{1} e_{1}^{T} x + \lambda_{2} x^{T} e_{2} e_{2}^{T} x = 1
+										</div>		
+										<br>
+										<div lang='latex' style="text-align: center">
+											\large 
+											x^{T}Mx = \lambda_{1} (e_{1}^{T} x)^T e_{1}^{T} x + \lambda_{2} (e_{2}^{T} x)^{T} e_{2}^{T} x = 1
+										</div>		
+										<br>
+										<div lang='latex' style="text-align: center">
+											\large 
+											x^{T}Mx = \lambda_{1} (e_{1}^{T} x)^{2} + \lambda_{2} (e_{2}^{T} x)^{2} = 1
+										</div>
+										<br>
+										<div lang='latex' style="text-align: center">
+											\large 
+											\dfrac{(e_{1}^{T} x)^{2}}{(\dfrac{1}{\sqrt{\lambda_{1}}})^{2}} + \dfrac{(e_{2}^{T} x)^{2}}{(\dfrac{1}{\sqrt{\lambda_{2}}})^{2}} = 1
+										</div>										
+									</p>
+
+									<p style="text-align: justify; font-size: 17px;">
+										We will use what you have learnt in this tutorial and the next tutorial (Taylor expansion) to understand 
+										and derieve the harris corner detection equation. 
+									</p>
+
 								</section>
 						</div>
 					</div>
