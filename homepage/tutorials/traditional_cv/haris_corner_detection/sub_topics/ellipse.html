@@ -41,7 +41,7 @@
                                     <p style="text-align: justify; font-size: 17px;">
                                         An ellipse looks like a squashed circle , usually we represent an ellipse with respect to the cartesian coordinate system
                                         having a semi major axsis - <span lang='latex'>\large a</span> and a semi minor axsis - <span lang='latex'>\large b</span>. 
-                                        Then the equation of the ellipse can be written as, 
+                                        Then the equation of the ellipse can be written as below and let them be equation <span lang='latex'>\large (1)</span>.
                                         
                                         <div style='text-align: center'>
                                             <img src="../images/ellipse.png" width="600" height="300"/>
@@ -49,7 +49,7 @@
 
                                         <div lang='latex' style='text-align: center;'>
                                             \large 
-                                            \dfrac{x^{2}}{a^{2}} + \dfrac{y^{2}}{b^{2}} = 1
+                                            \dfrac{x^{2}}{a^{2}} + \dfrac{y^{2}}{b^{2}} = 1 \hspace{10mm}(1)
                                         </div>
                                     </p>
 
@@ -241,11 +241,95 @@
 										
 										<div lang='latex' style='text-align: center'>
 											\large 
-											\overrightarrow{v}^{T} M \overrightarrow{v} = (\overrightarrow{v} = x \overrightarrow{u}_{1} + y \overrightarrow{u}_2)^T M (\overrightarrow{v} = x \overrightarrow{u}_{1} + y \overrightarrow{u}_2)
-										</div>											
+											\overrightarrow{v}^{T} M \overrightarrow{v} = (x \overrightarrow{u}_{1} + y \overrightarrow{u}_2)^T M (x \overrightarrow{u}_{1} + y \overrightarrow{u}_2) \\
+										</div>	
+										
+										<div lang='latex' style='text-align: center'>
+											\large 
+											\overrightarrow{v}^{T} M \overrightarrow{v} = (x\overrightarrow{u}_{1} + y \overrightarrow{u}_2)^T (M x \overrightarrow{u}_{1} + M y \overrightarrow{u}_2)
+										</div>	
+										
+										<div lang='latex' style='text-align: center'>
+											\large 
+											\overrightarrow{v}^{T} M \overrightarrow{v} = (x\overrightarrow{u}_{1} + y \overrightarrow{u}_2)^T (x M \overrightarrow{u}_{1} + y M \overrightarrow{u}_2)
+										</div>		
+										
+										<div lang='latex' style='text-align: center'>
+											\large 
+											\overrightarrow{v}^{T} M \overrightarrow{v} = (x\overrightarrow{u}_{1} + y \overrightarrow{u}_2)^T (x \lambda_{1} \overrightarrow{u}_{1} + y \lambda_{2} \overrightarrow{u}_2)
+										</div>		
+										<br>
+										<p style="text-align: justify; font-size: 17px;">
+											As <span lang='latex'>\large \overrightarrow{u}_{1}</span> and  <span lang='latex'>\large \overrightarrow{u}_{2}</span> are unit vectors and  <span lang='latex'>\large \overrightarrow{u}_1 . \overrightarrow{u}_2 = 0</span> the above equation can be simplified as, 
+
+											<div lang='latex' style='text-align: center'>
+												\large 
+												\overrightarrow{v}^{T} M \overrightarrow{v} = x^{2} \lambda_{1} + x y \lambda_{2} \overrightarrow{u}_{1}^{T} . \overrightarrow{u}_{2} + x y \lambda_{1} \overrightarrow{u}_{2}^{T}. \overrightarrow{u}_{1} + y^{2} \lambda_{2}
+											</div>
+
+											<div lang='latex' style='text-align: center'>
+												\large 
+												\overrightarrow{v}^{T} M \overrightarrow{v} = x^{2} \lambda_{1} + y^{2} \lambda_{2}
+											</div>			
+											
+											<div lang='latex' style='text-align: center'>
+												\large 
+												\overrightarrow{v}^{T} M \overrightarrow{v} = \dfrac{x^{2}}{(\dfrac{1}{\sqrt{\lambda_{1}}})^2} + \dfrac{y^{2}}{(\dfrac{1}{\sqrt{\lambda_{2}}})^2} \hspace{5mm} (2)
+											</div>												
+										</p>
+										<p style="text-align: justify; font-size: 17px;">
+											Now using the equation <span lang='latex'>\large (1)</span> defined at the begining of this tutorial we can compare equation <span lang='latex'>\large (2)</span> given above as, 
+
+											<div lang='latex' style='text-align: center'>
+												\large 
+												a = \dfrac{1}{\sqrt{\lambda_{1}}} \hspace{5mm} b = \dfrac{1}{\sqrt{\lambda_{2}}}
+											</div>
+										</p>
+
+										<p style="text-align: justify; font-size: 17px;">
+											From the above equation we can see the relation between eigen values and axes of ellipse. The major axis corresponds to small eigen value while the minor axis to the big 
+											eigen value. The eigen vectors of the ellipse tell you at which direction the ellipse is being squished in and eigen values tell you how much it is squished in (from a circle as it's initial shape).
+											So, this tells us given an positive definite quadratic equation how to calculate the ellipse equation from it. In the next section we will see how to find the ellipse equation and length of the axes 
+											given a positive definite quadratic equation. 
+										</p>
 									</p>
 
                                 </section>
+
+								<section>
+									<h2>Calculate the equation of the ellipse given an positive definite quadratic equation</h2>
+
+									<p style="text-align: justify; font-size: 17px;">
+										Let's take the matrix notation of an quadratic equation and assume the quadratic equation to be in positive definite form 
+										as shown below, 
+										<div lang='latex' style="text-align: center">
+											\large 
+											x^{T}Mx \hspace{10mm} (3)
+										</div>									
+									</p>
+
+									<p style="text-align: justify; font-size: 17px;">
+										Where <span lang='latex'>\large M</span> consitutes the coefficients of the general equation of the ellipse which is 
+										<span lang='latex'>\large Ax^{2} + Bxy + Cy^{2} = 1</span> as shown below, 
+
+										<div lang='latex' style='text-align: center;'>
+											M = \begin{bmatrix}
+                                            A & \dfrac{B}{2}\\
+                                            \dfrac{B}{2}& C \\
+                                            \end{bmatrix}
+										</div>
+									</p>
+									
+									<p style="text-align: justify; font-size: 17px;">
+										Next we perform the eigen decomposition of the matrix <span lang='latex'>\large M</span> assuming <span lang='latex'>\large M</span> is of dimension <span lang='latex'>\large (2 \times 2)</span>
+										to get the following representation of the equation <span lang='latex'>\large (3)</span>.
+
+										<div lang='latex' style="text-align: center">
+											\large 
+											x^{T}Mx = x^{T} \begin{bmatrix} e_{1} & e_{2} \end{bmatrix} \begin{bmatrix} \lambda_{1} & 0 \\ 0 & \lambda_{2} \end{bmatrix} \begin{bmatrix} e_{1} \\ e_{2} \end{bmatrix} x 
+										</div>
+									</p>
+								</section>
 						</div>
 					</div>
 
