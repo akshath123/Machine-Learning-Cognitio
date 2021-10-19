@@ -1,0 +1,328 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Eigen Application: Ellipse</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../../../../assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo">Machine Learning <strong>Cognitio</strong> </a>
+									<ul class="icons">
+										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+									</ul>
+								</header>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>Eigen Application: Ellipse</h1>
+									</header>
+
+                                    <p style="text-align: justify; font-size: 17px;">
+                                        An ellipse looks like a squashed circle , usually we represent an ellipse with respect to the cartesian coordinate system
+                                        having a semi major axsis - <span lang='latex'>\large a</span> and a semi minor axsis - <span lang='latex'>\large b</span>. 
+                                        Then the equation of the ellipse can be written as, 
+                                        
+                                        <div style='text-align: center'>
+                                            <img src="../images/ellipse.png" width="600" height="300"/>
+                                        </div>
+
+                                        <div lang='latex' style='text-align: center;'>
+                                            \large 
+                                            \dfrac{x^{2}}{a^{2}} + \dfrac{y^{2}}{b^{2}} = 1
+                                        </div>
+                                    </p>
+
+                                    <p style="text-align: justify; font-size: 17px;">
+                                        where <span lang='latex'>\large a > b</span> and the longest diameter is <span lang='latex'>\large 2a</span> and the shortest diameter is <span lang='latex'>\large 2b</span>. Now, let's say 
+                                        if a circle is not squished in the direction of <span lang='latex'>\large x-axis</span> or <span lang='latex'>\large y-axis</span> but in some other 
+                                        direction leaving us with the following questions, 
+                                        <ol style="text-align: justify; font-size: 17px;">
+                                            <li>What will be the equation of the ellipse then?</li>
+                                            <li>How to figure out what are the semi-major axis and semi-minor axis of the ellipse?</li>
+                                        </ol>
+                                    </p>
+
+                                    <p style="text-align: justify; font-size: 17px;">
+                                        To answer let's represent the ellipse with it's general equation as below and then find the eigen values and eigen vectors of the coefficients in the equation.
+                                        
+                                        <div lang='latex' style='text-align: center'>
+                                            \large 
+                                            Ax^{2} + Bxy + Cy^{2} = 1
+                                        </div>
+                                    </p>
+
+                                    <p style="text-align: justify; font-size: 17px;">
+                                        The above equation is quadratic equation and it will represent an ellipse if and only if the equation is an positive definite i.e,  
+                                        <div lang='latex' style='text-align: center'>
+                                            \large 
+                                            \{ 
+                                                \begin{bmatrix} 
+                                                    x \\
+                                                    y
+                                                \end{bmatrix}
+                                                \in 
+                                                \mathbb{R}^{2} : 
+                                                Ax^{2} + Bxy + Cy^{2} = 1
+                                            \} \\                                             
+                                        </div>
+
+                                        <div lang='latex' style='text-align: center'>
+                                        where \hspace{1.5mm} A, B, C \hspace{1.5mm} give \hspace{1.5mm} a \hspace{1.5mm} positive \hspace{1.5mm}  definate \hspace{1.5mm} quadratic \hspace{1.5mm} form. 
+                                        </div>
+                                    </p>
+
+                                    <p style="text-align: justify; font-size: 17px;">
+                                        In other words, A, B, C can't be negative numbers. Next, we will represent a quadratic equation in it's matrix form, 
+
+                                        <div lang='latex' style='text-align: center'>
+                                            \large 
+                                            \overrightarrow{v} = \begin{bmatrix} x \\ y\end{bmatrix} 
+                                            \hspace{5mm}
+                                            M = \begin{bmatrix}
+                                            A & \dfrac{B}{2}\\
+                                            \dfrac{B}{2}& C \\
+                                            \end{bmatrix}
+                                        </div>
+                                        <br>
+                                        <div lang='latex' style='text-align: center'>
+                                            \large 
+                                            \overrightarrow{v}^{T}M\overrightarrow{v} = \begin{bmatrix} x & y \end{bmatrix}      
+                                            \begin{bmatrix}
+                                            A & \dfrac{B}{2} \\
+                                            \dfrac{B}{2} & C \\
+                                            \end{bmatrix}
+                                            \begin{bmatrix} x \\ y\end{bmatrix}
+                                        </div>  
+                                        <br>
+                                        <div lang='latex' style='text-align: center'>
+                                            \large 
+                                            \overrightarrow{v}^{T}M\overrightarrow{v} =
+                                            \begin{bmatrix} x & y \end{bmatrix} 
+                                            \begin{bmatrix}
+                                                Ax + y \dfrac{B}{2} \\
+                                                x \dfrac{B}{2} + Cy \\
+                                            \end{bmatrix}
+                                        </div>
+                                        <br>
+                                        <div lang='latex' style='text-align: center'>
+                                            \large 
+                                            \overrightarrow{v}^{T}M\overrightarrow{v} = Ax^{2} + Bxy + Cy^{2}
+                                        </div>                                        
+                                    </p>
+                                </section>
+
+                                <section>
+                                    <h2>Relation between the eigen values and major & minor axis</h2>
+
+
+									<p style="text-align: justify; font-size: 17px;">
+
+										Before we find the relation between the eigen values and major & minor axis let's prove a lemma. Which will later be used in finding the relation. 
+										<br><br>
+
+										<strong><u>Lemma:</u></strong> If <span lang='latex'>\large M</span> is a symmeteric matrix <span lang='latex'>\large (M^{T} = M)</span> and it's eigen values <span lang='latex'>\large \lambda_{1}, \lambda_{2}</span> are distinct then 
+										the correspoinding eigen vectors (<span lang='latex'>\large \overrightarrow{u_{1}}, \overrightarrow{u_{2}}</span>)are orthogonal. Assuming <span lang='latex'>\large M</span> is of <span lang='latex'>\large (2 \times 2)</span> 
+										dimension. 
+
+										<br><br>
+
+										<strong><u>Proof:</u></strong>  
+										<div lang='latex' style='text-align: center;'>
+											\large 
+											M \overrightarrow{v}_{1} = \lambda_{1} \overrightarrow{v}_1,  \hspace{4mm} M \overrightarrow{v}_{2} = \lambda_{2} \overrightarrow{v}_2
+										</div>
+
+										<p style="text-align: justify; font-size: 17px;">
+											Consider the expression:- 
+
+											<div lang='latex' style='text-align: center;'>
+												\large 
+												\overrightarrow{u}_{1}^{T} M \overrightarrow{u}_{2} = \overrightarrow{u}_{1}^{T} \lambda_{2} \overrightarrow{u}_{2} = \lambda_{2} \overrightarrow{u}_{1}^{T} \overrightarrow{u}_{2} = \lambda_{2} \overrightarrow{u}_{1} . \overrightarrow{u}_{2}
+											</div>																						
+											
+											<p style="text-align: justify; font-size: 17px;">
+												As <span lang='latex'>\large (M^{T} = M)</span> symmeteric matrix, 
+
+												<div lang='latex' style='text-align: center;'>
+													\large 
+													\overrightarrow{u}_{1}^{T} M \overrightarrow{u}_{2} = \overrightarrow{u}_{1}^{T} M^{T} \overrightarrow{u}_{2} = (M \overrightarrow{u}_{1})^{T} \overrightarrow{u}_{2} = \lambda_{1} \overrightarrow{u}_{1}^{T} \overrightarrow{u}_{2} = \lambda_{1} \overrightarrow{u}_{1} . \overrightarrow{u}_{2}
+												</div>
+											</p>
+										</p>
+									</p>
+
+									<p style="text-align: justify; font-size: 17px;">
+										equating the above two eqauations we get, 
+										<div lang='latex' style='text-align: center;'>
+											\large 
+											\lambda_{2} \overrightarrow{u}_{1} . \overrightarrow{u}_{2} = \lambda_{1} \overrightarrow{u}_{1} . \overrightarrow{u}_{2} 
+										</div>
+										<br>
+										<div lang='latex' style='text-align: center;'>
+											\large 
+											(\lambda_{2} - \lambda{1}) \overrightarrow{u}_{1} . \overrightarrow{u}_2 = 0
+										</div>
+									</p>
+
+									<p style="text-align: justify; font-size: 17px;">
+										As mentioned earlier <span lang = 'latex'>\large \lambda_{1}</span> and <span lang='latex'>\large \lambda_{2}</span> are distinct then <span lang='latex'>\large (\lambda_{2} - \lambda_{1})</span> can't be <span lang='latex'>\large 0</span>
+										hence proving that the eigen vectors <span lang='latex'>\large \overrightarrow{u}_1</span> and <span lang='latex'>\large \overrightarrow{u}_2</span> are orthogonal that is there dot product is <span lang='latex'>\large 0</span>. 
+
+										<div lang="latex" style='text-align: center;'>
+											\large 
+											\overrightarrow{u}_1 . \overrightarrow{u}_2 = 0
+										</div>
+									</p>
+
+									<p style="text-align: justify; font-size: 17px;">
+
+										Now let's use the above lemma to prove the theorem given below which will give us the relation between eigen values and the major axis & minor axis of an ellipse. 
+										<br><br>
+										<strong><u>Theorem:</u></strong> if the new major and minor axis point along the direction of the eigen vectors 
+										(<span lang='latex'>\large \overrightarrow{u_{1}}</span> and <span lang='latex'>\large \overrightarrow{u_{2}}</span>) of the matrix 
+										, 
+                                        <div lang='latex' style='text-align: center'>
+                                            \large 
+                                            M = \begin{bmatrix}
+                                            A & \dfrac{B}{2} \\
+                                            \dfrac{B}{2} & C \\
+                                            \end{bmatrix}
+                                        </div> 		
+										<br>
+										<p style="text-align: justify; font-size: 17px;">
+											where <span lang='latex'>\large \overrightarrow{u_{1}}</span> and <span lang='latex'>\large \overrightarrow{u_{2}}</span> are normalized 
+											vectors having length <span lang='latex'>\large 1</span> and are the basis vectors of the new coordinate system. Then the equation of ellipse 
+											becomes, 
+
+											<div lang='latex' style='text-align: center'>
+												\large 
+												\lambda_{1} x^{2} + \lambda_{2} y^{2} = 1
+											</div>
+										</p>
+										<br>
+										<p style="text-align: justify; font-size: 17px;">
+											where, <span lang='latex'>\large \lambda_{1}</span> and <span lang='latex'>\large \lambda_{2}</span> are the eigen values of the matrix <span lang='latex'>\large M</span>. 
+									</p>
+
+									<p style="text-align: justify; font-size: 17px;">
+										<strong><u>Proof:</u></strong> Let's take a vector <span lang='latex'>\large \begin{bmatrix}x \\ y\end{bmatrix}</span> in the standard coordinate system and perform change of basis to the coordinate system 
+										of the eigen vectors to get <span lang='latex'>\large \overrightarrow{v}</span> as shown below, 
+
+										<div lang='latex' style='text-align: center'>
+											\large 
+											\overrightarrow{v} = \begin{bmatrix}\overrightarrow{u}_1 & \overrightarrow{u}_2\end{bmatrix} \begin{bmatrix}x \\ y\end{bmatrix}
+										</div>
+										
+										<div lang='latex' style='text-align: center'>
+											\large 
+											\overrightarrow{v} = x \overrightarrow{u}_{1} + y \overrightarrow{u}_2
+										</div>	
+										
+										<div lang='latex' style='text-align: center'>
+											\large 
+											\overrightarrow{v}^{T} M \overrightarrow{v} = (\overrightarrow{v} = x \overrightarrow{u}_{1} + y \overrightarrow{u}_2)^T M (\overrightarrow{v} = x \overrightarrow{u}_{1} + y \overrightarrow{u}_2)
+										</div>											
+									</p>
+
+                                </section>
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="index.html">Harris Corner Detection</a></li>
+										<li><a href="generic.html">I. Eigen Values and Eigen Vectors</a></li>
+										<li><a href="generic.html">II. Eigen Basis and Change of Basis</a></li>
+										<li><a href="#">III. Eigen Application: Ellipse</a></li>
+										<li><a href="elements.html">IV. Taylor Expansion</a></li>
+                                        <li><a href="elements.html">V. Theory</a></li>
+                                        <li><a href="elements.html">VI. Pratical Example using OpenCV</a></li>
+									</ul>
+								</nav>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Ante interdum</h2>
+									</header>
+									<div class="mini-posts">
+										<article>
+											<a href="#" class="image"><img src="rigid_body_images/pic07.jpg" alt="" /></a>
+											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="rigid_body_images/pic08.jpg" alt="" /></a>
+											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="rigid_body_images/pic09.jpg" alt="" /></a>
+											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+										</article>
+									</div>
+									<ul class="actions">
+										<li><a href="#" class="button">More</a></li>
+									</ul>
+								</section>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Get in touch</h2>
+									</header>
+									<p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+									<ul class="contact">
+										<li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
+										<li class="icon solid fa-phone">(000) 000-0000</li>
+										<li class="icon solid fa-home">1234 Somewhere Road #8254<br />
+										Nashville, TN 00000-0000</li>
+									</ul>
+								</section>
+
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+								</footer>
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../../../../assets/js/jquery.min.js"></script>
+			<script src="../../../../assets/js/browser.min.js"></script>
+			<script src="../../../../assets/js/breakpoints.min.js"></script>
+			<script src="../../../../assets/js/util.js"></script>
+			<script src="../../../../assets/js/main.js"></script>
+			<script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>			            
+
+	</body>
+</html>
