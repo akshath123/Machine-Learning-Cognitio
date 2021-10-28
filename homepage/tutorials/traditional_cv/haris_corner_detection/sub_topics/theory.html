@@ -310,7 +310,7 @@
 
 										<div lang='latex' style='text-align: center'>
 											\large 
-											M = R^{T} \begin{bmatrix} \lambda_{1} & 0 \\ 0 & \lambda_{2} \end{bmatrix} R 
+											M = e^{T} \begin{bmatrix} \lambda_{1} & 0 \\ 0 & \lambda_{2} \end{bmatrix} e 
 										</div>
 									</p>
 
@@ -337,8 +337,61 @@
 
 									<p style="text-align: center;">
 										<img src='../images/ellipse_fitting_gradient.png' height="300" width="930"/>
-									</p>									
+									</p>		
+									
+									<p style="text-align: justify; font-size: 17px;">
+										The relation between eigen values and determining whether a patch has a corner or not is basically the following scenarios.  
+										<ul style="font-size: 17px;">
+											<li>If <span lang='latex'>\large \lambda_{1} >> \lambda_{2}</span> or <span lang='latex'>\large \lambda_{1} << \lambda_{2}</span> then the patch contains a edge region. </li>
+											<li>If <span lang='latex'>\large \lambda_{1} \sim \lambda_{2}</span> and <span lang='latex'>\large \lambda_{1}</span>  & <span lang='latex'>\large \lambda_{2}</span>  are small then it's a flat region.</li>
+											<li>If <span lang='latex'>\large \lambda_{1} \sim \lambda_{2}</span> and <span lang='latex'>\large \lambda_{1}</span>  & <span lang='latex'>\large \lambda_{2}</span>  are large then it's a corner region.</li>
+										</ul>										
+									</p>							
 
+								</section>
+
+								<section>
+									<h2>Harris Corner Response Function</h2>
+
+									<p style="text-align: justify; font-size: 17px;">
+										Now, let's compute the measure of corner response which is given by the equation below, 
+										<div lang='latex' style='text-align: center'>
+											\large 
+											R = det(M) - \alpha \hspace{1mm} trace(M) 
+										</div>
+										<div lang='latex' style='text-align: center'>
+											\large 
+											R = \lambda_{1} \lambda_{2} - \alpha \hspace{1mm} (\lambda_{1} + \lambda_{2}) 
+										</div>										
+									</p>
+
+									<p style="text-align: justify; font-size: 17px;">
+										Different scenarios for <span lang='latex'>\large R</span> are given below, 
+										<ul style="font-size: 17px;">
+											<li><span lang='latex'>\large R</span> is large if it's a corner region.</li>
+											<li><span lang='latex'>\large R</span> is negative with large magnitude for an edge</li>
+											<li><span lang='latex'>\large |R|</span> is small for a flat region.</li>
+										</ul>										
+									</p>
+
+									<p style="text-align: justify; font-size: 17px;">
+										Finally, if you threshold on <span lang='latex'>\large R</span> then you can compute the corner like features in an image. This is entire Harris corner detection algorithm. Many of the other 
+										corner detection algorithm such as Shi-Tomasi corner detection algorithm (used in <code>cv2.goodFeaturesToTrack()</code>) are variant of harris corner detection algorithm. Finally, in the last 
+										section we will write down the algorithm. 										
+									</p>
+
+								</section>
+
+								<section>
+									<h2>Algorithm</h2>
+
+									<ol style="font-size: 17px;">
+										<li>Compute Gaussian derivaties at each pixel location in the image.</li>
+										<li>Compute second moment matrix M in a Gaussian window around each pixel.</li>
+										<li>Compute corner response function <span lang='latex'>\large R</span>.</li>
+										<li>Threshold on <span lang='latex'>\large R</span>.</li>
+										<li>Find local maxima of response function (non-maximum suppression).</li>
+									</o.>										
 								</section>
 						</div>
 					</div>
