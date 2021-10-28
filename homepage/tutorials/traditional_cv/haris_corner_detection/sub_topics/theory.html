@@ -198,6 +198,18 @@
 
 										<div lang='latex' style='text-align: center'>
 											\large 
+											E_u(0, 0) = \sum_{x, y} 2 w(x, y) [\cancelto{0}{I(x, y) - I(x, y)}] I_{x}(x, y) = 0
+										</div>
+										<br>
+
+										<div lang='latex' style='text-align: center'>
+											\large 
+											E_v(0, 0) = \sum_{x, y} 2 w(x, y) [\cancelto{0}{I(x, y) - I(x, y)}] I_{y}(x, y) = 0
+										</div>
+										<br>										
+
+										<div lang='latex' style='text-align: center'>
+											\large 
 											E_{uu}(0, 0) = \sum_{x,y} 2 w(x, y) I_x^{2}(x,y) + 
 											\sum_{x, y} 2 w(x, y) [\cancelto{0}{I(x, y) - I(x, y)}] I_{xx}(x, y)
 										</div>		
@@ -215,8 +227,117 @@
 										<div lang='latex' style='text-align: center'>
 											\large 
 											E_{vv}(0, 0) = \sum_{x,y} 2 w(x, y) I_y^{2}(x,y)											
+										</div>										
+										<br>
+
+										<div lang='latex' style='text-align: center'>
+											\large 
+											E_{uv}(0, 0) = \sum_{x,y} 2 w(x, y) I_y(x,y) I_x(x, y) + \\
+											\sum_{x, y} 2 w(x, y) [\cancelto{0}{I(x, y) - I(x, y)}] I_{xy}(x, y)
+										</div>		
+										<div lang='latex' style='text-align: center'>
+											\large 
+											E_{uv}(0, 0) = \sum_{x,y} 2 w(x, y) I_y(x,y) I_x(x, y) 											
 										</div>																			
 									</p>
+
+									<p style="text-align: justify; font-size: 17px;">
+										Now substituting the above simplied equation in the matrix representation of the second order approximation of the error function yields us the following approximation given below, 
+
+										<div lang='latex' style='text-align: center'>
+											\large 
+											E(u, v) \approx 
+										\dfrac{1}{2} \begin{bmatrix} u & v\end{bmatrix} \begin{bmatrix} \sum_{x,y} 2 w(x, y) I_x^{2}(x,y)	 & \sum_{x,y} 2 w(x, y) I_y(x,y) I_x(x, y)  \\ \sum_{x,y} 2 w(x, y) I_y(x,y) I_x(x, y)  & \sum_{x,y} 2 w(x, y) I_y^{2}(x,y)	 \end{bmatrix} \begin{bmatrix} u \\ v\end{bmatrix} 
+										</div>											
+									</p>
+
+									<p style="text-align: justify; font-size: 17px;">
+										Simplifying the above equation even further and using shorthand representation for <span lang='latex'>I_x^{2}(x,y)</span> and <span lang='latex'>I_y^{2}(x,y)</span> as <span lang='latex'>\large I_x^{2}</span> and <span lang='latex'>\large I_y^{2}</span> we rewrite the 
+										above equation as, 
+
+										<div lang='latex' style='text-align: center'>
+											\large 
+											E(u, v) \approx 
+										    \begin{bmatrix} u & v\end{bmatrix} \sum_{x,y} w(x, y)  \begin{bmatrix} I_x^{2}	 &  I_y I_x  \\ I_y I_x  &  I_y^{2}	 \end{bmatrix} \begin{bmatrix} u \\ v\end{bmatrix} 
+										</div>											
+									</p>
+
+									<p style="text-align: justify; font-size: 17px;">
+										Assuming the window function to be the simplest case <span lang='latex'>\large w = 1</span> we can rewrite the equation as, 
+
+										<div lang='latex' style='text-align: center'>
+											\large 
+											M = \begin{bmatrix} \sum I_x^{2}	 &  \sum I_y I_x  \\ \sum I_y I_x  &  \sum I_y^{2}	 \end{bmatrix} 
+										</div>
+										<div lang='latex' style='text-align: center'>
+											\large 
+											E(u, v) \approx \begin{bmatrix} u & v\end{bmatrix} M \begin{bmatrix} u \\ v\end{bmatrix} 
+										</div>
+									</p>
+
+									<p style="text-align: justify; font-size: 17px;">
+										<span lang='latex'>\large M</span> is a symmeteric matrix and is known as second order structure tensor. In the next section of this tutorial we will see how the structure tensor relates to ellipse equation we 
+										went through in the section <a href = "ellipse.html">II. Eigen Application: Ellipse</a>.
+									</p>
+
+								</section>
+
+								<section>
+									<h2>Interpreting Structure Tensor</h2>
+
+									<p style="text-align: justify; font-size: 17px;">
+										In the end of the previous section the error function <span lang='latex'>\large E(u, v)</span> in the form of structure tensor <span lang='latex'>\large M</span> can be thought as an equation of an ellipse and be 
+										rewritten as below, 
+
+										<div lang='latex' style='text-align: center'>
+											\large 
+											\sum I_{x}^{2} u^{2} + 2 \sum I_{x} I_{y} uv + \sum I_{y}^2v^2 = E(u, v) = k
+										</div>										
+
+										<p style="text-align: justify; font-size: 17px;">
+											General equation of the ellipse, 
+											<div lang='latex' style='text-align: center'>
+												\large 
+												Ax^2 + Bxy + Cy^2 = 1
+											</div>
+										</p>
+									</p>
+
+									<p style="text-align: justify; font-size: 17px;">
+										There is a starking resemblance between the two eqations above but the only difference is that the general equation of an ellipse is for the standard cartesian coordinate system where as the error function <span lang='latex'>\large E(u, v)</span>
+										is defined for <span lang='latex'>\large u</span> and <span lang='latex'>\large v</span> space. So, to compute the major and minor axsis of an ellipse we need to compute the eigen values (<span lang='latex'>\large \lambda_1, \lambda_2</span>)
+										for <span lang='latex'>\large M</span>. This can be done by diagonalizing <span lang='latex'>\large M</span> as shown below (In depth explantion of this is provided in this article <a href = "ellipse.html">II. Eigen Application: Ellipse</a>), 
+
+										<div lang='latex' style='text-align: center'>
+											\large 
+											M = R^{T} \begin{bmatrix} \lambda_{1} & 0 \\ 0 & \lambda_{2} \end{bmatrix} R 
+										</div>
+									</p>
+
+									<p style="text-align: justify; font-size: 17px;">
+										The relation between the eigen values and the length of the major & minor axis is given below. Where <span lang='latex'>\large a</span> is major axsis and <span lang='latex'>\large b</span> is minor axsis if <span lang='latex'>\large \lambda_1 < \lambda_2</span>.
+										<div lang='latex' style='text-align: center'>
+											\large 
+											a = \dfrac{1}{\sqrt{\lambda_1}} \hspace{2mm} and \hspace{2mm}  b = \dfrac{1}{\sqrt{\lambda_2}} 
+										</div>										
+									</p>
+
+									<p style="text-align: justify; font-size: 17px;">
+										To relate the length of the major and minor axsis of an ellipse to the determination of a corner in a window, let's look at the windows (window M, window O and window B) initially used to get the basic idea of harris corner detection algorithm. 										
+									</p>
+
+									<p style="text-align: center;">
+										<img src='../images/gradient_of_corner.png' height="300" width="330"/>
+									</p>
+
+									<p style="text-align: justify; font-size: 17px;">
+										From this we can make the following inference, window M has has no change in gradient in any direction because all the intensities are the same whereas in window O the change in gradient is present in along the edge only which is x-gradient. Finally, window B 
+										has a gradients in both x and y direction. Now, if we fit an ellipse to each of the patch gradients we will get the following diagrams below, (NOTE: This is just illustration not accuractely calculated)
+									</p>
+
+									<p style="text-align: center;">
+										<img src='../images/ellipse_fitting_gradient.png' height="300" width="930"/>
+									</p>									
 
 								</section>
 						</div>
