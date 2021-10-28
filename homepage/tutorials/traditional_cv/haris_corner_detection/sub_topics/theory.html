@@ -58,10 +58,167 @@
 
                                     <p style="text-align: justify; font-size: 17px;">
                                         Image A has three different colored (black, maroon and orange) windows looking at different regions in an image. For the sake of convenience let's 
-                                        name the coloured windows as - maroon coloured window be <u>widnow M</u>, black coloured window be <u>window B</u> and orange coloured window be <u>window O</u>. 
+                                        name the coloured windows - Let maroon coloured window be <u>widnow M</u>, black coloured window be <u>window B</u> and orange coloured window be <u>window O</u>. 
+										The green coloured dashed windows represent small change in the position of the respective windows. Next, let's classify each window based on the region in the 
+										image it is looking on, 
                                     </p>
 
+									<ol style="text-align: justify; font-size: 17px;">
+										<li><strong>Flat region:</strong> Window M covers an flat region and if window moves in any direction there is no change in appearance.</li>
+										<li><strong>Edge region:</strong> Window O covers an edge region and if window moves in any direction there is only change in on direction (along the edge).</li>
+										<li><strong>Corner region:</strong> Window B covers an corner region and if the window moves any direction there is change in appearance in all directions.</li>
+									</ol>
+
+									<p style="text-align: justify; font-size: 17px;">
+										Harris corner detector gives a mathematical approach for determining which of the region is the window looking at.
+									</p>
+
                                 </section>
+
+								<section>
+									<h2>Error Function</h2>
+
+									<p style="text-align: justify; font-size: 17px;">
+										Let's assume we have an Image <span lang='latex'>\large I</span> and we compute the error <span lang='latex'>\large E</span> for a small shift <span lang='latex'>\large (u, v)</span> 
+										by calculating the sum of squared error of the intensity over a window as shown below, 
+
+										<div lang='latex' style='text-align: center'>
+											\large 
+											E(u, v) = \sum_{x,y} w(x, y) [I(x + u, y + v) - I(x, y)]^{2}
+										</div>
+									</p>
+
+									<ul style="text-align: justify; font-size: 17px;">
+										<li><span lang='latex'>\large I(x, y)</span>: represents the image intensity at the pixel location <span lang='latex'>\large (x, y)</span>. </li>
+										<li><span lang='latex'>\large I(x+u, y+v)</span>: shifted intensity. </li>
+										<li><span lang='latex'>\large w(x, y)</span>: Window function. The window can be a square window for faster computation or a Gaussian window if we would 
+											like to give more weightage to a certain pixel within the window hence getting a smoother result. 
+									</ul>
+
+									<p style="text-align: justify; font-size: 17px;">
+										What we would like to model is how the error function behaves for a small shifts &nbsp; <span lang='latex'>\large (u, v)</span> &nbsp; near &nbsp; <span lang='latex'>\large (0, 0)</span> &nbsp;. 
+										Idealy, we would like to see a significant change even for a small shifts of &nbsp; <span lang='latex'>\large (u, v)</span> &nbsp; telling us if the window is looking at a corner. How do you predict 
+										the value of the function for small shift? Answer: Taylor Expansion, a second order taylor expansion of &nbsp; <span lang='latex'>\large E(u, v)</span> &nbsp; about &nbsp; <span lang='latex'>\large (0, 0)</span> &nbsp;.
+									</p>
+								</section>
+
+								<section>
+
+									<h2>Second Order Taylor Expansion of E(u, v)</h2>
+									
+									<p style="text-align: justify; font-size: 17px;">
+										In the Taylor expansion section I had explained how to approximate the function depending on a single variable using polynomials. Here, the function &nbsp; <span lang='latex'>\large E(u, v)</span> &nbsp; depends on two 
+										variables &nbsp; <span lang='latex'>\large (u, v)</span> &nbsp; and if you had a subject in undergrad on multivariable calculus you might remember how to compute gradient (derivative) of function depending on multiple variables. 
+										It is basically the sum of partial derivatives of the function with it's dependent variables. As shown below, 
+
+										<div lang='latex' style='text-align: center'>
+											\large 
+											f(x1, x2) = f_{x_{1}} + f_{x_{2}}										
+										</div>
+									</p>
+
+									<p style="text-align: justify; font-size: 17px;">
+										In the above equation <span lang='latex'>\large f_{x_{1}}</span> and <span lang='latex'>\large f_{x_{2}}</span> are the partial derivatives of the function with respect to two independent variables <span lang='latex'>\large x_{1}</span> and 
+										<span lang='latex'>\large x_{2}</span>. The same can be extended for second order taylor expansion for approximating &nbsp; <span lang='latex'>\large E(u, v)</span> &nbsp; given below, 
+
+										<div lang='latex' style='text-align: center'>
+											\large 
+											E(u, v) \approx E(0, 0) + u E_{u}(0, 0) + v E_{v}(0, 0) + \dfrac{1}{2} u^{2} E_{uu}(0, 0) + \dfrac{1}{2} v^{2} E_{vv}(0, 0) + uvE_{uv}(0, 0)
+										</div>
+
+										<div lang='latex' style='text-align: center'>
+											\large 
+											E(u, v) \approx E(0, 0) + u E_{u}(0, 0) + v E_{v}(0, 0) + \dfrac{1}{2} (u^{2} E_{uu}(0, 0) + v^{2} E_{vv}(0, 0) + 2uvE_{uv}(0, 0))
+										</div>										
+									</p>
+
+									<p style="text-align: justify; font-size: 17px;">
+										Let's convert the above into matrix representation as below if you remember in Ellipse tutorial article I had mentioned how we can represent a quadratic equation 
+										in matrix representation. Same, can be followed here,
+
+										<div lang='latex' style='text-align: center'>
+											\large 
+											E(u, v) \approx E(0, 0) + \begin{bmatrix} u & v\end{bmatrix} \begin{bmatrix} E_{u}(0, 0) \\ E_{v}(0, 0) \end{bmatrix} 
+											+ \dfrac{1}{2} \begin{bmatrix} u & v\end{bmatrix} \begin{bmatrix} E_{uu}(0, 0) & E_{uv}(0, 0) \\ E_{uv}(0, 0) & E_{vv}(0, 0) \end{bmatrix} \begin{bmatrix} u \\ v\end{bmatrix} 
+										</div>										
+									</p>
+
+									<p style="text-align: justify; font-size: 17px;">
+										The above statment is the second order approximation of the error function &nbsp; <span lang='latex'>\large E(u, v)</span>. Next we expand  
+										&nbsp; <span lang='latex'>\large E_{u}, E_{v}, E_{uu}, E_{vv} </span> and &nbsp; <span lang='latex'>\large E_{uv}</span> in the above equation. As a reminder, <span lang='latex'>\large E_u</span> 
+										represents derivative of the error term with respect to <span lang='latex'>\large u</span>. Similarly, <span lang='latex'>\large E_v</span> represents derivative of the error term with respect to 
+										<span lang='latex'>\large v</span>. The second order derivatives of <span lang='latex'>\large E</span> are <span lang='latex'>\large E_{uu}</span>, <span lang='latex'>\large E_{vv}</span> and 
+										<span lang='latex'>\large E_{uv}</span>.
+									</p>
+
+									<h3>Expanding E<sub>u</sub> and E<sub>v</sub> </h3>
+
+									<div lang='latex' style='text-align: center'>
+										\large 
+										E_u(u, v) = \sum_{x, y} 2 w(x, y) [I(x + u, y + v) - I(x, y)] I_{x}(x + u, y + v)
+									</div>
+
+									<p style="text-align: justify; font-size: 17px;">
+										<span lang='latex'>\large u</span> is in the same direction as <span lang='latex'>\large x</span> so if you are computing the image gradient with respect to <span lang='latex'>\large u</span> it same as 
+										computing the image gradient respect to <span lang='latex'>\large u</span>. Similarly, we can compute for <span lang='latex'>\large v</span> as, 
+
+										<div lang='latex' style='text-align: center'>
+											\large 
+											E_v(u, v) = \sum_{x, y} 2 w(x, y) [I(x + u, y + v) - I(x, y)] I_{y}(x + u, y + v)
+										</div>										
+									</p>
+
+									<h3>Now Expanding The Second Order derivaties E<sub>uu</sub>, E<sub>vv</sub> and E<sub>uv</sub> </h3>
+
+									<p style="text-align: justify; font-size: 17px;">
+										Using chain rule in calculus we can compute the second order derivatives for as given below, 
+
+										<div lang='latex' style='text-align: center'>
+											\large 
+											E_{uu}(u, v) = \sum_{x,y} 2 w(x, y) I_x(x+u,y+v) I_x(x+u, y+v) + 
+											\sum_{x, y} 2 w(x, y) [I(x + u, y + v) - I(x, y)] I_{xx}(x + u, y + v)
+										</div>
+										<br>
+										<div lang='latex' style='text-align: center'>
+											\large 
+											E_{vv}(u, v) = \sum_{x,y} 2 w(x, y) I_y(x+u,y+v) I_y(x+u, y+v) + 
+											\sum_{x, y} 2 w(x, y) [I(x + u, y + v) - I(x, y)] I_{yy}(x + u, y + v)
+										</div>	
+										<br>
+										<div lang='latex' style='text-align: center'>
+											\large 
+											E_{uv}(u, v) = \sum_{x,y} 2 w(x, y) I_y(x+u,y+v) I_x(x+u, y+v) + 
+											\sum_{x, y} 2 w(x, y) [I(x + u, y + v) - I(x, y)] I_{xy}(x + u, y + v)
+										</div>										
+									</p>
+
+									<p style="text-align: justify; font-size: 17px;">
+										Now simplifying the above equations of first derivative and second derivative by substituting the value <span lang='latex'>\large (0, 0)</span> in place of <span lang='latex'>\large (u, v)</span> as we are 
+										approximating the error function near <span lang='latex'>\large (0, 0)</span>. The equations are simplied as below, 
+
+										<div lang='latex' style='text-align: center'>
+											\large 
+											E_{uu}(0, 0) = \sum_{x,y} 2 w(x, y) I_x^{2}(x,y) + 
+											\sum_{x, y} 2 w(x, y) [\cancelto{0}{I(x, y) - I(x, y)}] I_{xx}(x, y)
+										</div>		
+										<div lang='latex' style='text-align: center'>
+											\large 
+											E_{uu}(0, 0) = \sum_{x,y} 2 w(x, y) I_x^{2}(x,y)											
+										</div>		
+										<br>
+										
+										<div lang='latex' style='text-align: center'>
+											\large 
+											E_{vv}(0, 0) = \sum_{x,y} 2 w(x, y) I_y^{2}(x,y) + 
+											\sum_{x, y} 2 w(x, y) [\cancelto{0}{I(x, y) - I(x, y)}] I_{yy}(x, y)
+										</div>	
+										<div lang='latex' style='text-align: center'>
+											\large 
+											E_{vv}(0, 0) = \sum_{x,y} 2 w(x, y) I_y^{2}(x,y)											
+										</div>																			
+									</p>
+
+								</section>
 						</div>
 					</div>
 
