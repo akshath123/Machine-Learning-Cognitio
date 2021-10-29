@@ -136,7 +136,7 @@
                                     </p>
 
                                     <p style="text-align: center;">
-										<img src="../images/shear_example.png" alt="" width = "1100" height = "400" class = "center"/></a>								
+										<img src="../images/shear_example.png" alt="" width = "900" height = "400" class = "center"/></a>								
 									</p>
 
                                     <p style='text-align: justify; font-size: 17px;'>
@@ -161,7 +161,7 @@
 
                                     <p style='text-align: justify; font-size: 17px;'>
                                         We can calculate eigen values and eigen vectors for square matrixes only, for non-square matrix we calculate singlular values. We won't be covering about singular values in this tutorial. So, let's take the eigenequation from which we will first 
-                                        calculate eigen values then the eigen vectors. We derive for a 2D space but the same intution can be extended n dimensional space. 
+                                        calculate eigen values then the eigen vectors. We derive for a 2D space but the same intution can be extended to <span lang='latex'>\large n</span> dimensional space. 
 
                                         <div lang='latex' style='text-align: center;'>
                                             \large 
@@ -250,7 +250,7 @@
                                             From the above equation we see that either <span lang='latex'>\large \overrightarrow{v}</span> or <span lang='latex'>\large (A - \lambda I)</span> should be the zero vector. We don't want 
                                             <span lang='latex'>\large \overrightarrow{v}</span> to be zero because then it doesn't give any information so basically we would like <span lang='latex'>\large (A - \lambda I)</span> to equal zero vector. 
                                             Speaking geometerically we can say that it squishes the space to a point (the zero vector) hence the area (becuse it's 2D it's area for n-dimensional it would have been volume) is zero. One way to think about deteminants 
-                                            is that it tells us how much the transformation will scale the intital area. Hence, using determinants we can rewrite the above equation as, 
+                                            is that it tells us how much the transformation will scale the intital space. Hence, using determinants we can rewrite the above equation as, 
 
                                             <div lang='latex' style='text-align: center;'>
                                                 \large 
@@ -262,7 +262,7 @@
 
                                         <p style='text-align: justify; font-size: 17px;'>
                                             After solving the above equation and obtaining the values of <span lang='latex'>\large \lambda</span> we substitue the <span lang='latex'> \large \lambda</span> values in the equation <span lang='latex'>\large (A - \lambda I)</span> and 
-                                            solving for <span lang='latex'>\large \overrightarrow{v}</span>. Thus obtaining both eigen values and eigen vectors for the matrix <span lang='latex'>\large A</span>.
+                                            solve for <span lang='latex'>\large \overrightarrow{v}</span>. Thus obtaining both eigen values and eigen vectors for the matrix <span lang='latex'>\large A</span>.
                                         </p>                                                                                 
                                     </p>                                                                         
                                 </section>
@@ -271,8 +271,8 @@
                                     <h2>Final thoughts</h2>
 
                                     <p style='text-align: justify; font-size: 17px;'>
-                                        Not all square matrixes have eigen vectors, one such example will be rotating a vector space by 90 degree clockwise in 2D. Here, all the vectors in the space will be knocked out of their span after the transformation. In contrast, for a transformation matrix all the vectors
-                                        in the vector space is a eigen vector. I hope by end of this tutorial you were able to get a geometerical understanding of eigen values and eigen vectors and how to compute them. Next we look into Eigen basis and change of basis. 
+                                        Not all square matrixes have eigen vectors, one such example will be rotating a vector space by 90 degree clockwise in 2D. Here, all the vectors in the space will be knocked out of their span after the transformation. In contrast, for a transformation matrix which just scales the space, all the vectors
+                                        in the vector space is a eigen vector. I hope by end of this tutorial you were able to get a geometerical understanding of eigen values and eigen vectors and how to compute them.
                                     </p> 
                                 </section>
 						</div>
@@ -288,58 +288,29 @@
 										<h2>Menu</h2>
 									</header>
 									<ul>
-										<li><a href="index.html">Harris Corner Detection</a></li>
-										<li><a href="generic.html">I. Eigen Values and Eigen Vectors</a></li>
-										<li><a href="generic.html">II. Eigen Basis and Change of Basis</a></li>
-										<li><a href="#">III. Eigen Application: Ellipse</a></li>
-										<li><a href="elements.html">IV. Taylor Expansion</a></li>
-                                        <li><a href="elements.html">V. Theory</a></li>
-                                        <li><a href="elements.html">VI. Pratical Example using OpenCV</a></li>
+										<li><a href="../home_page.html">Harris Corner Detection</a></li>
+										<li><a href="../sub_topics/change_of_basis.html">I. Change of Basis</a></li>
+										<li><a href="../sub_topics/eigen_values_vectors.html">II. Eigen Values and Eigen Vectors</a></li>
+										<li><a href="../sub_topics/eigen_decomposition.html">III. Eigen Decomposition (Diagonalization)</a></li>
+										<li><a href="../sub_topics/ellipse.html">IV. Eigen Application: Ellipse</a></li>
+										<li><a href="../sub_topics/taylor_expansion.html">V. Taylor Expansion</a></li>
+                                        <li><a href="../sub_topics/theory.html">VI. Harris Corner Detection (Theory)</a></li>
+                                        <li><a href="../sub_topics/pratical.html">VII. Harris Corner Detection (Pratical)</a></li>
 									</ul>
 								</nav>
 
 							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>Ante interdum</h2>
-									</header>
-									<div class="mini-posts">
-										<article>
-											<a href="#" class="image"><img src="rigid_body_images/pic07.jpg" alt="" /></a>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="rigid_body_images/pic08.jpg" alt="" /></a>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="rigid_body_images/pic09.jpg" alt="" /></a>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-										</article>
-									</div>
-									<ul class="actions">
-										<li><a href="#" class="button">More</a></li>
-									</ul>
-								</section>
+                            <section>
+                                <header class="major">
+                                    <h2>About the Author</h2>
+                                </header>
+                                <p>The author of the blog is Akshath Varugeese. You can find more about him <a href="https://akshath123.github.io/About_Me/">here</a>.</p>
+                            </section>
 
-							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>Get in touch</h2>
-									</header>
-									<p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-									<ul class="contact">
-										<li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
-										<li class="icon solid fa-phone">(000) 000-0000</li>
-										<li class="icon solid fa-home">1234 Somewhere Road #8254<br />
-										Nashville, TN 00000-0000</li>
-									</ul>
-								</section>
-
-							<!-- Footer -->
-								<footer id="footer">
-									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-								</footer>
+                        <!-- Footer -->
+                            <footer id="footer">
+                                <p class="copyright">&copy; Machine Learning Cognitio. All rights reserved.</p>
+                            </footer>
 						</div>
 					</div>
 
