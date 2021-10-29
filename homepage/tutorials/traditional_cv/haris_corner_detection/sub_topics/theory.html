@@ -350,18 +350,19 @@
 
 								</section>
 
-								<section>
+								<section id="harris_corner_detection_formula">
 									<h2>Harris Corner Response Function</h2>
 
 									<p style="text-align: justify; font-size: 17px;">
-										Now, let's compute the measure of corner response which is given by the equation below, 
+										Now, let's compute the measure of corner response which is given by the equation below. Where <span lang='latex'>\large k</span> is a free parameter and <span lang='latex'>\large \lambda_1</span> and <spa lang='latex'>\large \lambda_2</spa> 
+										are eigen values of <span lang='latex'>\large M</span>. 
+										<!-- <div lang='latex' style='text-align: center'>
+											\large 
+											R = det(M) - k \hspace{1mm} trace(M) 
+										</div> -->
 										<div lang='latex' style='text-align: center'>
 											\large 
-											R = det(M) - \alpha \hspace{1mm} trace(M) 
-										</div>
-										<div lang='latex' style='text-align: center'>
-											\large 
-											R = \lambda_{1} \lambda_{2} - \alpha \hspace{1mm} (\lambda_{1} + \lambda_{2}) 
+											R = \lambda_{1} \lambda_{2} - k \hspace{1mm} (\lambda_{1} + \lambda_{2}) 
 										</div>										
 									</p>
 

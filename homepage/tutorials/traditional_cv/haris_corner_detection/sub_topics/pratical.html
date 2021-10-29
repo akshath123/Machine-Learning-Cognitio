@@ -35,7 +35,49 @@
 										<h1>Harris Corner Detection (Pratical)</h1>
 									</header>
                                     
-                                    
+                                    <p style="text-align: justify; font-size: 17px;">
+										For the final part in this tutorial let's find corners in a sample image and test out the earlier statements made in previous sections 
+										about Harris Corner detection being resilant to change in illumincation, rotation and translation using the images given below, 
+									</p>
+
+									<p style='text-align: center;'>
+										<img src = "../images/region_of_interest.png" width = "450" height = "150">
+									</p>
+
+									<p style="text-align: justify; font-size: 17px;">
+										In the above image we would like to detect the corner (enclosed within a circle) in various settings of the same image. Let's use OpenCV's 
+										API to perform this task. Let's use the code below to get the output. 
+										
+										<script src="https://gist.github.com/akshath123/bec71e8daa1e3f5a5a8125ede60c3f11.js"></script>
+									</p>
+
+									<p style="text-align: justify; font-size: 17px;">
+										OpenCV's API Harris Corner Detection algorithm <code>cv2.cornerHarris()</code> have the following arguments, 										
+									</p>
+
+									<ul style="text-align: justify; font-size: 17px;">
+										<li><strong>src: </strong> Input single-channel 8-bit or floating-point image.</li>
+										<li><strong>dst: </strong> 	Image to store the Harris detector responses. It has the type CV_32FC1 and the same size as src .</li>
+										<li><strong>blockSize: </strong> Neighborhood size (window size).</li>
+										<li><strong>k: </strong> Harris detector free parameter. See the formula <a href="#">here</a>.</li>
+										<li><strong>borderType:</strong>Pixel extrapolation method.</li>
+									</ul>
+
+									<p style="text-align: justify; font-size: 17px;">
+										The above information has been taken from the OpenCV's <a href="https://docs.opencv.org/4.5.3/dd/d1a/group__imgproc__feature.html#gac1fc3598018010880e370e2f709b4345">documentation</a>. Using the above code we 
+										get the following output shown below, 
+									</p>
+
+									<p style='text-align: center;'>
+										<img src = "../images/detected_corners.png" width = "450" height = "170">
+									</p>		
+									
+									<p style="text-align: justify; font-size: 17px;">
+										Though we get corners in all the images having different settings of the same image. However, we get bunch of pixels detected as corner near the corner regions in the images. To mitage that we can 
+										use <code>cv2.cornerSubPix()</code> which is method ffor obtaining corners with sub pixel accuracy. It relies on the method of dot product. I will talk more about this with it's mathematics in future blog
+										posts. For now, this is it. I hope you have understood how an harris corner detector works, it's theory and how you can use it practise. 
+									</p>
+
 								</section>
 						</div>
 					</div>
