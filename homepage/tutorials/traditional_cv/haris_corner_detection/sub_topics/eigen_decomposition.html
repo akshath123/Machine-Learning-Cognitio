@@ -37,40 +37,42 @@
                                     
                                     <p style="text-align: justify; font-size: 17px;">
 										One can say eigen decomposition a.k.a diagonalization is performing a change of basis from the coordinate sytem the linear transformation matrix 
-										<span lang='latex'>\large A</span> is in, to a new coordinate sytem where the basis set are the eigen vectors of <span lang='latex'>\large A</span>. 
-										This set of basis vectors are known as <strong>eigen basis</strong> of <span lang='latex'>\large A</span>. However, a linear transformation matrix 
+										<span ><img src="https://latex.codecogs.com/png.image?\large A"/></span> is in, to a new coordinate sytem where the basis set are the eigen vectors of <span ><img src="https://latex.codecogs.com/png.image?\large A"/></span>. 
+										This set of basis vectors are known as <strong>eigen basis</strong> of <span ><img src="https://latex.codecogs.com/png.image?\large A"/></span>. However, a linear transformation matrix 
 										can only have eigen basis if certain conditions are satisfied which we will look in this tutorial and then about eigen decomposition. 
 										  
 										<h2>Eigen Basis</h2>										
                                     </p>
 
 									<p style="text-align: justify; font-size: 17px;">
-										Let a matrix <span lang='latex'>\large A</span> whose elements be defined with respect to the standard basis, 
-										<span lang='latex'>\large B_{s} = \{ v_{1}, v_{2}, v_{3}, ....., v_{n}\}</span>. The eigenvalue problem for the matrix <span lang='latex'>\large A</span>
-										consists of finding all the eigen values <span lang='latex'>\large \lambda_{i}</span> such that, 
+										Let a matrix <span ><img src="https://latex.codecogs.com/png.image?\large A"/></span> whose elements be defined with respect to the standard basis, 
+										<span ><img src="https://latex.codecogs.com/png.image?\large B_{s} = \{ v_{1}, v_{2}, v_{3}, ....., v_{n}\}"/></span>. The eigenvalue problem for the matrix <span ><img src="https://latex.codecogs.com/png.image?\large A"/></span>
+										consists of finding all the eigen values <span ><img src="https://latex.codecogs.com/png.image?\large \lambda_{i}"/></span> such that, 
 
-										<div lang='latex' style='text-align: center'>
+										<div  style='text-align: center'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											A \overrightarrow{v}_{j} = \lambda_{j} \overrightarrow{v}_{j}, \hspace{4mm} \overrightarrow{v}_{j} \neq 0  \hspace{5mm}  for \hspace{2mm} j = 1, 2, ..., n.
+											"/>
 										</div>
 									</p>
 
 									<p style="text-align: justify; font-size: 17px;">
-										As mentioned in the tutorial <a href="#">II. Eigen Values and Eigen Vectors</a> <span lang='latex'>\large \lambda_{j}</span> are the root of the characteristic polynomial 
-										such that <span lang='latex'>\large det(A - \lambda I) = 0</span>. So, this is an <span lang='latex'>\large n^{th}</span> order polynomial equation which has <span lang='latex'>\large n</span>
-										roots. Some roots (eigen values) can be <strong>degenerate</strong> (degenerate eigen values are the one having more than one linearly independent eigenvectors). Then <span lang='latex'>\large A</span> 
-										may or may not have independent eigen vectors. If the roots (eigen values) are non-degenrate then we have <span lang='latex'>\large n</span> independent eigen vectors, then the matrix <span lang='latex'>\large A</span> 
+										As mentioned in the tutorial <a href="#">II. Eigen Values and Eigen Vectors</a> <span ><img src="https://latex.codecogs.com/png.image?\large \lambda_{j}"/></span> are the root of the characteristic polynomial 
+										such that <span ><img src="https://latex.codecogs.com/png.image?\large det(A - \lambda I) = 0"/></span>. So, this is an <span ><img src="https://latex.codecogs.com/png.image?\large n^{th}"/></span> order polynomial equation which has <span ><img src="https://latex.codecogs.com/png.image?\large n"/></span>
+										roots. Some roots (eigen values) can be <strong>degenerate</strong> (degenerate eigen values are the one having more than one linearly independent eigenvectors). Then <span ><img src="https://latex.codecogs.com/png.image?\large A"/></span> 
+										may or may not have independent eigen vectors. If the roots (eigen values) are non-degenrate then we have <span ><img src="https://latex.codecogs.com/png.image?\large n"/></span> independent eigen vectors, then the matrix <span ><img src="https://latex.codecogs.com/png.image?\large A"/></span> 
 										is called <i>simple</i>.
 									</p>
 
 									<p style="text-align: justify; font-size: 17px;">
-										If <span lang='latex'>\large A</span> has degenerate roots but have linearly independent eigen vectors, then <span lang='latex'>\large A</span> is considered as <i>semi-simple</i>. If some of the eigen values of <span lang='latex'>\large A</span>
-										are degenerate and it's eigen vectors don't span the vector space <span lang='latex'>\large V</span>, then we say that <span lang='latex'>\large A</span> is <i>defictive</i>. 
+										If <span ><img src="https://latex.codecogs.com/png.image?\large A"/></span> has degenerate roots but have linearly independent eigen vectors, then <span ><img src="https://latex.codecogs.com/png.image?\large A"/></span> is considered as <i>semi-simple</i>. If some of the eigen values of <span ><img src="https://latex.codecogs.com/png.image?\large A"/></span>
+										are degenerate and it's eigen vectors don't span the vector space <span ><img src="https://latex.codecogs.com/png.image?\large V"/></span>, then we say that <span ><img src="https://latex.codecogs.com/png.image?\large A"/></span> is <i>defictive</i>. 
 									</p>
 
 									<p style="text-align: justify; font-size: 17px;">
-										<strong>Diagonalization of a matrix can only happen if only if there are as many linear independent eigen vectors as the basis of the space which <span lang='latex'>\large A</span> exists in and the set of eigen vectors span vector space <span lang='latex'>\large V</span>.
-										</strong> Then this set of basis vectors which constitue only eigen vectors are known as <strong>eigen basis</strong>. One, can also say <span lang='latex'>\large A</span> must be either <i>simple</i> or <i>semi-simple</i> to be diagonalizable. 
+										<strong>Diagonalization of a matrix can only happen if only if there are as many linear independent eigen vectors as the basis of the space which <span ><img src="https://latex.codecogs.com/png.image?\large A"/></span> exists in and the set of eigen vectors span vector space <span ><img src="https://latex.codecogs.com/png.image?\large V"/></span>.
+										</strong> Then this set of basis vectors which constitue only eigen vectors are known as <strong>eigen basis</strong>. One, can also say <span ><img src="https://latex.codecogs.com/png.image?\large A"/></span> must be either <i>simple</i> or <i>semi-simple</i> to be diagonalizable. 
 									</p>
 
 								</section>
@@ -79,18 +81,21 @@
 									<h2>Diagonalizing a Matrix</h2>
 
 									<p style="text-align: justify; font-size: 17px;">
-										Let a matrix <span lang='latex'>\large A</span> in the standard coordinate system have a dimension of <span lang='latex'>\large n \times n</span>. We can write it's eigen equation has, 
+										Let a matrix <span ><img src="https://latex.codecogs.com/png.image?\large A"/></span> in the standard coordinate system have a dimension of <span ><img src="https://latex.codecogs.com/png.image?\large n \times n"/></span>. We can write it's eigen equation has, 
 													
-										<div lang='latex' style='text-align: center;'>
+										<div  style='text-align: center;'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											Ax_{1} = \lambda_{1}x_{1}, \hspace{2mm} Ax_{2} = \lambda_{2}x_{2}, \hspace{2mm} ...., \hspace{2mm} Ax_{n} = \lambda_{n}x_{n}
+											"/>
 										</div>																													
 									</p>	
 									
 									<p style="text-align: justify; font-size: 17px;">
-										Where <span lang='latex'>\large x_{1}, x_{2}, ..., x_{n}</span> are the eigen vectors (they are also column vectors) of dimension <span lang='latex'>\large (n \times 1)</span> and the correspoinding eigen values are <span lang='latex'>\large \lambda_{1}, \lambda_{2}, ...., \lambda_{n}</span>. We can rewrite the above equation in matrix notation as given below, 
+										Where <span ><img src="https://latex.codecogs.com/png.image?\large x_{1}, x_{2}, ..., x_{n}"/></span> are the eigen vectors (they are also column vectors) of dimension <span ><img src="https://latex.codecogs.com/png.image?\large (n \times 1)"/></span> and the correspoinding eigen values are <span ><img src="https://latex.codecogs.com/png.image?\large \lambda_{1}, \lambda_{2}, ...., \lambda_{n}"/></span>. We can rewrite the above equation in matrix notation as given below, 
 
-										<div lang='latex' style='text-align: center;'>
+										<div  style='text-align: center;'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											X_{n \times n} = 
 											\begin{bmatrix}
@@ -100,9 +105,11 @@
 											| & | & .... & | \\
 											| & | & .... & | \\
 											\end{bmatrix}
+											"/>
 										</div>
 										<br>
-										<div lang='latex' style='text-align: center;'>
+										<div  style='text-align: center;'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											\Lambda_{n \times n} = 
 
@@ -113,44 +120,55 @@
 											. & . & ... & . & 0 \\ 
 											0 & 0 & ... & 0 & \lambda_{n}\\
 											\end{bmatrix}
+											"/>
 										</div>
 										<br>
-										<div lang='latex' style='text-align: center;'>
+										<div  style='text-align: center;'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											AX = X\Lambda
+											"/>
 										</div>										
 									</p>
 
 									<p style="text-align: justify; font-size: 17px;">
-										Now to diagonalizable <span lang='latex'>\large A</span> we multiply the L.H.S and R.H.S with <span lang='latex'>\large X^{-1}</span> giving us the diagonalized version of the matrix <span lang='latex'>\large A</span> 
+										Now to diagonalizable <span ><img src="https://latex.codecogs.com/png.image?\large A"/></span> we multiply the L.H.S and R.H.S with <span ><img src="https://latex.codecogs.com/png.image?\large X^{-1}"/></span> giving us the diagonalized version of the matrix <span ><img src="https://latex.codecogs.com/png.image?\large A"/></span> 
 										as shown below, 
 
-										<div lang='latex' style='text-align: center;'>
+										<div  style='text-align: center;'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
-											X^{-1}AX = X^{-1}X\Lambda											
+											X^{-1}AX = X^{-1}X\Lambda		
+											"/>									
 										</div>	
 										<br>
-										<div lang='latex' style='text-align: center;'>
+										<div  style='text-align: center;'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
-											X^{-1}AX = (X^{-1}X)\Lambda											
+											X^{-1}AX = (X^{-1}X)\Lambda		
+											"/>									
 										</div>										
 										<br>
-										<div lang='latex' style='text-align: center;'>
+										<div  style='text-align: center;'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
-											X^{-1}AX = (I)\Lambda											
+											X^{-1}AX = (I)\Lambda			
+											"/>								
 										</div>
 										<br>
-										<div lang='latex' style='text-align: center;'>
+										<div  style='text-align: center;'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											\Lambda	= X^{-1}AX
+											"/>
 										</div>
 										<br>
 									</p>
 
 									<p style="text-align: justify; font-size: 17px;">
-										The term <span lang='latex'>\large \Lambda	= X^{-1}AX</span> is known as diagonalizing <span lang='latex'>\large A</span> if we rearange this we get <span lang='latex'>\large A = X \Lambda X^{-1}</span> which tells us 
-										how <span lang='latex'>\large A</span> is broken down into eigenvectors and it's corresponding eigen values. The <span lang='latex'>\large \Lambda</span> a diagonal matrix, where the diagonals are the eigen values of the matrix 
-										<span lang='latex'>\large A</span>.
+										The term <span ><img src="https://latex.codecogs.com/png.image?\large \Lambda	= X^{-1}AX"/></span> is known as diagonalizing <span ><img src="https://latex.codecogs.com/png.image?\large A"/></span> if we rearange this we get <span ><img src="https://latex.codecogs.com/png.image?\large A = X \Lambda X^{-1}"/></span> which tells us 
+										how <span ><img src="https://latex.codecogs.com/png.image?\large A"/></span> is broken down into eigenvectors and it's corresponding eigen values. The <span ><img src="https://latex.codecogs.com/png.image?\large \Lambda"/></span> a diagonal matrix, where the diagonals are the eigen values of the matrix 
+										<span ><img src="https://latex.codecogs.com/png.image?\large A"/></span>.
 									</p>
 								</section>
 
@@ -158,43 +176,55 @@
 									<h2>Application of Eigen Decomposition</h2>
 
 									<p style="text-align: justify; font-size: 17px;">
-										One application of this is ease of computing a square matrix raised to a power <span lang='latex'>\large n</span>. To show the ease of the computing let's assume <span lang='latex'>\large n = 3</span> from which we can easily generalize 
-										to the power <span lang='latex'>\large n</span>.
+										One application of this is ease of computing a square matrix raised to a power <span ><img src="https://latex.codecogs.com/png.image?\large n"/></span>. To show the ease of the computing let's assume <span ><img src="https://latex.codecogs.com/png.image?\large n = 3"/></span> from which we can easily generalize 
+										to the power <span ><img src="https://latex.codecogs.com/png.image?\large n"/></span>.
 
-										<div lang='latex' style='text-align: center'>
+										<div  style='text-align: center'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											A^{3} = ( X \Lambda X^{-1})^{3}
+											"/>
 										</div>
 										<br>
-										<div lang='latex' style='text-align: center'>
+										<div  style='text-align: center'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											A^{3} =  (X \Lambda X^{-1}) (X \Lambda X^{-1}) (X \Lambda X^{-1})
+											"/>
 										</div>
 										<br>
-										<div lang='latex' style='text-align: center'>
+										<div  style='text-align: center'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
-											A^{3} =  X \Lambda (X^{-1} X) \Lambda (X^{-1}  X) \Lambda X^{-1}											
+											A^{3} =  X \Lambda (X^{-1} X) \Lambda (X^{-1}  X) \Lambda X^{-1}	
+											"/>										
 										</div>	
 										<br>
-										<div lang='latex' style='text-align: center'>
+										<div  style='text-align: center'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
-											A^{3} =  X \Lambda (I) \Lambda (I) \Lambda X^{-1}											
+											A^{3} =  X \Lambda (I) \Lambda (I) \Lambda X^{-1}
+											"/>											
 										</div>	
 										<br>
-										<div lang='latex' style='text-align: center'>
+										<div  style='text-align: center'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
-											A^{3} =  X (\Lambda \Lambda \Lambda) X^{-1}											
+											A^{3} =  X (\Lambda \Lambda \Lambda) X^{-1}		
+											"/>									
 										</div>			
 										<br>
-										<div lang='latex' style='text-align: center'>
+										<div  style='text-align: center'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
-											A^{3} =  X (\Lambda)^{3} X^{-1}											
+											A^{3} =  X (\Lambda)^{3} X^{-1}		
+											"/>									
 										</div>										
 									</p>
 
 									<p style="text-align: justify; font-size: 17px;">
-										From the above we can generalize that to compute <span lang='latex'>\large A^{n}</span> directly would be difficult say if <span lang='latex'>n = 1000</span>. However, as <span lang='latex'>\large \Lambda</span> is diagonal matrix, computation 
-										becomes much easier because we only have to raise the diagonal matrix to a power of <span lang='latex'>\large n</span> where the upper and lower traingular matrix is basically zeros and values are only present in the diagonals.
+										From the above we can generalize that to compute <span ><img src="https://latex.codecogs.com/png.image?\large A^{n}"/></span> directly would be difficult say if <span ><img src="https://latex.codecogs.com/png.image?\large n = 1000"/></span>. However, as <span ><img src="https://latex.codecogs.com/png.image?\large \Lambda"/></span> is diagonal matrix, computation 
+										becomes much easier because we only have to raise the diagonal matrix to a power of <span ><img src="https://latex.codecogs.com/png.image?\large n"/></span> where the upper and lower traingular matrix is basically zeros and values are only present in the diagonals.
 									</p>
 								</section>
 						</div>

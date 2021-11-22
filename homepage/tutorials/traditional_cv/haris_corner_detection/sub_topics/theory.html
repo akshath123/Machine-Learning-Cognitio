@@ -79,26 +79,28 @@
 									<h2>Error Function</h2>
 
 									<p style="text-align: justify; font-size: 17px;">
-										Let's assume we have an Image <span lang='latex'>\large I</span> and we compute the error <span lang='latex'>\large E</span> for a small shift <span lang='latex'>\large (u, v)</span> 
+										Let's assume we have an Image <span ><span ><img src="https://latex.codecogs.com/png.image?\large I"/></span> and we compute the error <span ><span ><img src="https://latex.codecogs.com/png.image?\large E"/></span> for a small shift <span ><span ><img src="https://latex.codecogs.com/png.image?\large (u, v)"/></span> 
 										by calculating the sum of squared error of the intensity over a window as shown below, 
 
-										<div lang='latex' style='text-align: center'>
+										<div  style='text-align: center'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											E(u, v) = \sum_{x,y} w(x, y) [I(x + u, y + v) - I(x, y)]^{2}
+											"/>
 										</div>
 									</p>
 
 									<ul style="text-align: justify; font-size: 17px;">
-										<li><span lang='latex'>\large I(x, y)</span>: represents the image intensity at the pixel location <span lang='latex'>\large (x, y)</span>. </li>
-										<li><span lang='latex'>\large I(x+u, y+v)</span>: shifted intensity. </li>
-										<li><span lang='latex'>\large w(x, y)</span>: Window function. The window can be a square window for faster computation or a Gaussian window if we would 
+										<li><span ><span ><img src="https://latex.codecogs.com/png.image?\large I(x, y)"/></span>: represents the image intensity at the pixel location <span ><span ><img src="https://latex.codecogs.com/png.image?\large (x, y)"/></span>. </li>
+										<li><span ><span ><img src="https://latex.codecogs.com/png.image?\large I(x+u, y+v)"/></span>: shifted intensity. </li>
+										<li><span ><span ><img src="https://latex.codecogs.com/png.image?\large w(x, y)"/></span>: Window function. The window can be a square window for faster computation or a Gaussian window if we would 
 											like to give more weightage to a certain pixel within the window hence getting a smoother result. 
 									</ul>
 
 									<p style="text-align: justify; font-size: 17px;">
-										What we would like to model is how the error function behaves for a small shifts &nbsp; <span lang='latex'>\large (u, v)</span> &nbsp; near &nbsp; <span lang='latex'>\large (0, 0)</span> &nbsp;. 
-										Idealy, we would like to see a significant change even for a small shifts of &nbsp; <span lang='latex'>\large (u, v)</span> &nbsp; telling us if the window is looking at a corner. How do you predict 
-										the value of the function for small shift? Answer: Taylor Expansion, a second order taylor expansion of &nbsp; <span lang='latex'>\large E(u, v)</span> &nbsp; about &nbsp; <span lang='latex'>\large (0, 0)</span> &nbsp;.
+										What we would like to model is how the error function behaves for a small shifts &nbsp; <span ><span ><img src="https://latex.codecogs.com/png.image?\large (u, v)"/></span> &nbsp; near &nbsp; <span ><span ><img src="https://latex.codecogs.com/png.image?\large (0, 0)"/></span> &nbsp;. 
+										Idealy, we would like to see a significant change even for a small shifts of &nbsp; <span ><span ><img src="https://latex.codecogs.com/png.image?\large (u, v)"/></span> &nbsp; telling us if the window is looking at a corner. How do you predict 
+										the value of the function for small shift? Answer: Taylor Expansion, a second order taylor expansion of &nbsp; <span ><span ><img src="https://latex.codecogs.com/png.image?\large E(u, v)"/></span> &nbsp; about &nbsp; <span ><span ><img src="https://latex.codecogs.com/png.image?\large (0, 0)"/></span> &nbsp;.
 									</p>
 								</section>
 
@@ -107,28 +109,34 @@
 									<h2>Second Order Taylor Expansion of E(u, v)</h2>
 									
 									<p style="text-align: justify; font-size: 17px;">
-										In the Taylor expansion section I had explained how to approximate the function depending on a single variable using polynomials. Here, the function &nbsp; <span lang='latex'>\large E(u, v)</span> &nbsp; depends on two 
-										variables &nbsp; <span lang='latex'>\large (u, v)</span> &nbsp; and if you had a subject in undergrad on multivariable calculus you might remember how to compute gradient (derivative) of function depending on multiple variables. 
+										In the Taylor expansion section I had explained how to approximate the function depending on a single variable using polynomials. Here, the function &nbsp; <span ><span ><img src="https://latex.codecogs.com/png.image?\large E(u, v)"/></span> &nbsp; depends on two 
+										variables &nbsp; <span ><span ><img src="https://latex.codecogs.com/png.image?\large (u, v)"/></span> &nbsp; and if you had a subject in undergrad on multivariable calculus you might remember how to compute gradient (derivative) of function depending on multiple variables. 
 										It is basically the sum of partial derivatives of the function with it's dependent variables. As shown below, 
 
-										<div lang='latex' style='text-align: center'>
+										<div  style='text-align: center'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
-											f(x1, x2) = f_{x_{1}} + f_{x_{2}}										
+											f(x1, x2) = f_{x_{1}} + f_{x_{2}}	
+											"/>									
 										</div>
 									</p>
 
 									<p style="text-align: justify; font-size: 17px;">
-										In the above equation <span lang='latex'>\large f_{x_{1}}</span> and <span lang='latex'>\large f_{x_{2}}</span> are the partial derivatives of the function with respect to two independent variables <span lang='latex'>\large x_{1}</span> and 
-										<span lang='latex'>\large x_{2}</span>. The same can be extended for second order taylor expansion for approximating &nbsp; <span lang='latex'>\large E(u, v)</span> &nbsp; given below, 
+										In the above equation <span ><span ><img src="https://latex.codecogs.com/png.image?\large f_{x_{1}}"/></span> and <span ><span ><img src="https://latex.codecogs.com/png.image?\large f_{x_{2}}"/></span> are the partial derivatives of the function with respect to two independent variables <span ><span ><img src="https://latex.codecogs.com/png.image?\large x_{1}"/></span> and 
+										<span ><span ><img src="https://latex.codecogs.com/png.image?\large x_{2}"/></span>. The same can be extended for second order taylor expansion for approximating &nbsp; <span ><span ><img src="https://latex.codecogs.com/png.image?\large E(u, v)"/></span> &nbsp; given below, 
 
-										<div lang='latex' style='text-align: center'>
+										<div  style='text-align: center'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											E(u, v) \approx E(0, 0) + u E_{u}(0, 0) + v E_{v}(0, 0) + \dfrac{1}{2} u^{2} E_{uu}(0, 0) + \dfrac{1}{2} v^{2} E_{vv}(0, 0) + uvE_{uv}(0, 0)
+											"/>
 										</div>
 
-										<div lang='latex' style='text-align: center'>
+										<div  style='text-align: center'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											E(u, v) \approx E(0, 0) + u E_{u}(0, 0) + v E_{v}(0, 0) + \dfrac{1}{2} (u^{2} E_{uu}(0, 0) + v^{2} E_{vv}(0, 0) + 2uvE_{uv}(0, 0))
+											"/>
 										</div>										
 									</p>
 
@@ -136,35 +144,41 @@
 										Let's convert the above into matrix representation as below if you remember in Ellipse tutorial article I had mentioned how we can represent a quadratic equation 
 										in matrix representation. Same, can be followed here,
 
-										<div lang='latex' style='text-align: center'>
+										<div  style='text-align: center'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											E(u, v) \approx E(0, 0) + \begin{bmatrix} u & v\end{bmatrix} \begin{bmatrix} E_{u}(0, 0) \\ E_{v}(0, 0) \end{bmatrix} 
 											+ \dfrac{1}{2} \begin{bmatrix} u & v\end{bmatrix} \begin{bmatrix} E_{uu}(0, 0) & E_{uv}(0, 0) \\ E_{uv}(0, 0) & E_{vv}(0, 0) \end{bmatrix} \begin{bmatrix} u \\ v\end{bmatrix} 
+											"/>
 										</div>										
 									</p>
 
 									<p style="text-align: justify; font-size: 17px;">
-										The above statment is the second order approximation of the error function &nbsp; <span lang='latex'>\large E(u, v)</span>. Next we expand  
-										&nbsp; <span lang='latex'>\large E_{u}, E_{v}, E_{uu}, E_{vv} </span> and &nbsp; <span lang='latex'>\large E_{uv}</span> in the above equation. As a reminder, <span lang='latex'>\large E_u</span> 
-										represents derivative of the error term with respect to <span lang='latex'>\large u</span>. Similarly, <span lang='latex'>\large E_v</span> represents derivative of the error term with respect to 
-										<span lang='latex'>\large v</span>. The second order derivatives of <span lang='latex'>\large E</span> are <span lang='latex'>\large E_{uu}</span>, <span lang='latex'>\large E_{vv}</span> and 
-										<span lang='latex'>\large E_{uv}</span>.
+										The above statment is the second order approximation of the error function &nbsp; <span ><span ><img src="https://latex.codecogs.com/png.image?\large E(u, v)"/></span>. Next we expand  
+										&nbsp; <span ><span ><img src="https://latex.codecogs.com/png.image?\large E_{u}, E_{v}, E_{uu}, E_{vv}"/> </span> and &nbsp; <span ><span ><img src="https://latex.codecogs.com/png.image?\large E_{uv}"/></span> in the above equation. As a reminder, <span ><span ><img src="https://latex.codecogs.com/png.image?\large E_u"/></span> 
+										represents derivative of the error term with respect to <span ><span ><img src="https://latex.codecogs.com/png.image?\large u"/></span>. Similarly, <span ><span ><img src="https://latex.codecogs.com/png.image?\large E_v"/></span> represents derivative of the error term with respect to 
+										<span ><span ><img src="https://latex.codecogs.com/png.image?\large v"/></span>. The second order derivatives of <span ><span ><img src="https://latex.codecogs.com/png.image?\large E"/></span> are <span ><img src="https://latex.codecogs.com/png.image?\large E_{uu}"/></span>, <span ><img src="https://latex.codecogs.com/png.image?\large E_{vv}"/></span> and 
+										<span ><span ><img src="https://latex.codecogs.com/png.image?\large E_{uv}"/></span>.
 									</p>
 
 									<h3>Expanding E<sub>u</sub> and E<sub>v</sub> </h3>
 
-									<div lang='latex' style='text-align: center'>
+									<div  style='text-align: center'>
+										<img src="https://latex.codecogs.com/png.image?
 										\large 
 										E_u(u, v) = \sum_{x, y} 2 w(x, y) [I(x + u, y + v) - I(x, y)] I_{x}(x + u, y + v)
+										"/>
 									</div>
 
 									<p style="text-align: justify; font-size: 17px;">
-										<span lang='latex'>\large u</span> is in the same direction as <span lang='latex'>\large x</span> so if you are computing the image gradient with respect to <span lang='latex'>\large u</span> it same as 
-										computing the image gradient respect to <span lang='latex'>\large u</span>. Similarly, we can compute for <span lang='latex'>\large v</span> as, 
+										<span ><img src="https://latex.codecogs.com/png.image?\large u"/></span> is in the same direction as <span ><span ><img src="https://latex.codecogs.com/png.image?\large x"/></span> so if you are computing the image gradient with respect to <span ><span ><img src="https://latex.codecogs.com/png.image?\large u"/></span> it same as 
+										computing the image gradient respect to <img src="https://latex.codecogs.com/png.image?\large u"/></span>. Similarly, we can compute for <span ><img src="https://latex.codecogs.com/png.image?\large v"/></span> as, 
 
-										<div lang='latex' style='text-align: center'>
+										<div  style='text-align: center'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											E_v(u, v) = \sum_{x, y} 2 w(x, y) [I(x + u, y + v) - I(x, y)] I_{y}(x + u, y + v)
+											"/>
 										</div>										
 									</p>
 
@@ -173,110 +187,141 @@
 									<p style="text-align: justify; font-size: 17px;">
 										Using chain rule in calculus we can compute the second order derivatives for as given below, 
 
-										<div lang='latex' style='text-align: center'>
+										<div  style='text-align: center'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											E_{uu}(u, v) = \sum_{x,y} 2 w(x, y) I_x(x+u,y+v) I_x(x+u, y+v) + 
 											\sum_{x, y} 2 w(x, y) [I(x + u, y + v) - I(x, y)] I_{xx}(x + u, y + v)
+											"/>
 										</div>
 										<br>
-										<div lang='latex' style='text-align: center'>
+										<div  style='text-align: center'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											E_{vv}(u, v) = \sum_{x,y} 2 w(x, y) I_y(x+u,y+v) I_y(x+u, y+v) + 
 											\sum_{x, y} 2 w(x, y) [I(x + u, y + v) - I(x, y)] I_{yy}(x + u, y + v)
+											"/>
 										</div>	
 										<br>
-										<div lang='latex' style='text-align: center'>
+										<div  style='text-align: center'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											E_{uv}(u, v) = \sum_{x,y} 2 w(x, y) I_y(x+u,y+v) I_x(x+u, y+v) + 
 											\sum_{x, y} 2 w(x, y) [I(x + u, y + v) - I(x, y)] I_{xy}(x + u, y + v)
+											"/>
 										</div>										
 									</p>
 
 									<p style="text-align: justify; font-size: 17px;">
-										Now simplifying the above equations of first derivative and second derivative by substituting the value <span lang='latex'>\large (0, 0)</span> in place of <span lang='latex'>\large (u, v)</span> as we are 
-										approximating the error function near <span lang='latex'>\large (0, 0)</span>. The equations are simplied as below, 
+										Now simplifying the above equations of first derivative and second derivative by substituting the value <span ><span ><img src="https://latex.codecogs.com/png.image?\large (0, 0)"/></span> in place of <span ><img src="https://latex.codecogs.com/png.image?\large (u, v)"/></span> as we are 
+										approximating the error function near <span ><img src="https://latex.codecogs.com/png.image?\large (0, 0)"/></span>. The equations are simplied as below, 
 
-										<div lang='latex' style='text-align: center'>
+										<div  style='text-align: center'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											E_u(0, 0) = \sum_{x, y} 2 w(x, y) [\cancelto{0}{I(x, y) - I(x, y)}] I_{x}(x, y) = 0
+											"/>
 										</div>
 										<br>
 
-										<div lang='latex' style='text-align: center'>
+										<div  style='text-align: center'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											E_v(0, 0) = \sum_{x, y} 2 w(x, y) [\cancelto{0}{I(x, y) - I(x, y)}] I_{y}(x, y) = 0
+											"/>
 										</div>
 										<br>										
 
-										<div lang='latex' style='text-align: center'>
+										<div  style='text-align: center'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											E_{uu}(0, 0) = \sum_{x,y} 2 w(x, y) I_x^{2}(x,y) + 
 											\sum_{x, y} 2 w(x, y) [\cancelto{0}{I(x, y) - I(x, y)}] I_{xx}(x, y)
+											"/>
 										</div>		
-										<div lang='latex' style='text-align: center'>
+										<div  style='text-align: center'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
-											E_{uu}(0, 0) = \sum_{x,y} 2 w(x, y) I_x^{2}(x,y)											
+											E_{uu}(0, 0) = \sum_{x,y} 2 w(x, y) I_x^{2}(x,y)	
+											"/>										
 										</div>		
 										<br>
 										
-										<div lang='latex' style='text-align: center'>
+										<div  style='text-align: center'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											E_{vv}(0, 0) = \sum_{x,y} 2 w(x, y) I_y^{2}(x,y) + 
 											\sum_{x, y} 2 w(x, y) [\cancelto{0}{I(x, y) - I(x, y)}] I_{yy}(x, y)
+											"/>
 										</div>	
-										<div lang='latex' style='text-align: center'>
+										<div  style='text-align: center'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
-											E_{vv}(0, 0) = \sum_{x,y} 2 w(x, y) I_y^{2}(x,y)											
+											E_{vv}(0, 0) = \sum_{x,y} 2 w(x, y) I_y^{2}(x,y)	
+											"/>										
 										</div>										
 										<br>
 
-										<div lang='latex' style='text-align: center'>
+										<div  style='text-align: center'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
-											E_{uv}(0, 0) = \sum_{x,y} 2 w(x, y) I_y(x,y) I_x(x, y) + \\
+											E_{uv}(0, 0) = \sum_{x,y} 2 w(x, y) I_y(x,y) I_x(x, y) + 
 											\sum_{x, y} 2 w(x, y) [\cancelto{0}{I(x, y) - I(x, y)}] I_{xy}(x, y)
-										</div>		
-										<div lang='latex' style='text-align: center'>
+											"/>
+										</div>	
+										<br>	
+										<div  style='text-align: center'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
-											E_{uv}(0, 0) = \sum_{x,y} 2 w(x, y) I_y(x,y) I_x(x, y) 											
+											E_{uv}(0, 0) = \sum_{x,y} 2 w(x, y) I_y(x,y) I_x(x, y) 	
+											"/>										
 										</div>																			
 									</p>
 
 									<p style="text-align: justify; font-size: 17px;">
 										Now substituting the above simplied equation in the matrix representation of the second order approximation of the error function yields us the following approximation given below, 
 
-										<div lang='latex' style='text-align: center'>
+										<div  style='text-align: center'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											E(u, v) \approx 
 										\dfrac{1}{2} \begin{bmatrix} u & v\end{bmatrix} \begin{bmatrix} \sum_{x,y} 2 w(x, y) I_x^{2}(x,y)	 & \sum_{x,y} 2 w(x, y) I_y(x,y) I_x(x, y)  \\ \sum_{x,y} 2 w(x, y) I_y(x,y) I_x(x, y)  & \sum_{x,y} 2 w(x, y) I_y^{2}(x,y)	 \end{bmatrix} \begin{bmatrix} u \\ v\end{bmatrix} 
+										"/>
 										</div>											
 									</p>
 
 									<p style="text-align: justify; font-size: 17px;">
-										Simplifying the above equation even further and using shorthand representation for <span lang='latex'>I_x^{2}(x,y)</span> and <span lang='latex'>I_y^{2}(x,y)</span> as <span lang='latex'>\large I_x^{2}</span> and <span lang='latex'>\large I_y^{2}</span> we rewrite the 
+										Simplifying the above equation even further and using shorthand representation for <span ><span ><img src="https://latex.codecogs.com/png.image?I_x^{2}(x,y)"/></span> and <span ><img src="https://latex.codecogs.com/png.image?I_y^{2}(x,y)"/></span> as <span ><img src="https://latex.codecogs.com/png.image?\large I_x^{2}"/></span> and <span ><img src="https://latex.codecogs.com/png.image?\large I_y^{2}"/></span> we rewrite the 
 										above equation as, 
-
-										<div lang='latex' style='text-align: center'>
+										
+										<div  style='text-align: center'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											E(u, v) \approx 
 										    \begin{bmatrix} u & v\end{bmatrix} \sum_{x,y} w(x, y)  \begin{bmatrix} I_x^{2}	 &  I_y I_x  \\ I_y I_x  &  I_y^{2}	 \end{bmatrix} \begin{bmatrix} u \\ v\end{bmatrix} 
+											"/>
 										</div>											
 									</p>
 
 									<p style="text-align: justify; font-size: 17px;">
-										Assuming the window function to be the simplest case <span lang='latex'>\large w = 1</span> we can rewrite the equation as, 
+										Assuming the window function to be the simplest case <span ><span ><img src="https://latex.codecogs.com/png.image?\large w = 1"/></span> we can rewrite the equation as, 
 
-										<div lang='latex' style='text-align: center'>
+										<div  style='text-align: center'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											M = \begin{bmatrix} \sum I_x^{2}	 &  \sum I_y I_x  \\ \sum I_y I_x  &  \sum I_y^{2}	 \end{bmatrix} 
+											"/>
 										</div>
-										<div lang='latex' style='text-align: center'>
+										<div  style='text-align: center'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											E(u, v) \approx \begin{bmatrix} u & v\end{bmatrix} M \begin{bmatrix} u \\ v\end{bmatrix} 
+											"/>
 										</div>
 									</p>
 
 									<p style="text-align: justify; font-size: 17px;">
-										<span lang='latex'>\large M</span> is a symmeteric matrix and is known as second order structure tensor. In the next section of this tutorial we will see how the structure tensor relates to ellipse equation we 
+										<span ><span ><img src="https://latex.codecogs.com/png.image?\large M"/></span> is a symmeteric matrix and is known as second order structure tensor. In the next section of this tutorial we will see how the structure tensor relates to ellipse equation we 
 										went through in the section <a href = "ellipse.html">II. Eigen Application: Ellipse</a>.
 									</p>
 
@@ -286,39 +331,47 @@
 									<h2>Interpreting Structure Tensor</h2>
 
 									<p style="text-align: justify; font-size: 17px;">
-										In the end of the previous section the error function <span lang='latex'>\large E(u, v)</span> in the form of structure tensor <span lang='latex'>\large M</span> can be thought as an equation of an ellipse and be 
+										In the end of the previous section the error function <span ><span ><img src="https://latex.codecogs.com/png.image?\large E(u, v)"/></span> in the form of structure tensor <span ><img src="https://latex.codecogs.com/png.image?\large M"/></span> can be thought as an equation of an ellipse and be 
 										rewritten as below, 
 
-										<div lang='latex' style='text-align: center'>
+										<div  style='text-align: center'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											\sum I_{x}^{2} u^{2} + 2 \sum I_{x} I_{y} uv + \sum I_{y}^2v^2 = E(u, v) = k
+											"/>
 										</div>										
 
 										<p style="text-align: justify; font-size: 17px;">
 											General equation of the ellipse, 
-											<div lang='latex' style='text-align: center'>
+											<div  style='text-align: center'>
+												<img src="https://latex.codecogs.com/png.image?
 												\large 
 												Ax^2 + Bxy + Cy^2 = 1
+												"/>
 											</div>
 										</p>
 									</p>
 
 									<p style="text-align: justify; font-size: 17px;">
-										There is a starking resemblance between the two eqations above but the only difference is that the general equation of an ellipse is for the standard cartesian coordinate system where as the error function <span lang='latex'>\large E(u, v)</span>
-										is defined for <span lang='latex'>\large u</span> and <span lang='latex'>\large v</span> space. So, to compute the major and minor axsis of an ellipse we need to compute the eigen values (<span lang='latex'>\large \lambda_1, \lambda_2</span>)
-										for <span lang='latex'>\large M</span>. This can be done by diagonalizing <span lang='latex'>\large M</span> as shown below (In depth explantion of this is provided in this article <a href = "ellipse.html">II. Eigen Application: Ellipse</a>), 
+										There is a starking resemblance between the two eqations above but the only difference is that the general equation of an ellipse is for the standard cartesian coordinate system where as the error function <span ><span ><img src="https://latex.codecogs.com/png.image?\large E(u, v)"/></span>
+										is defined for <span ><span ><img src="https://latex.codecogs.com/png.image?\large u"/></span> and <span ><img src="https://latex.codecogs.com/png.image?\large v"/></span> space. So, to compute the major and minor axsis of an ellipse we need to compute the eigen values (<span ><img src="https://latex.codecogs.com/png.image?\large \lambda_1, \lambda_2"/></span>)
+										for <span ><span ><img src="https://latex.codecogs.com/png.image?\large M"/></span>. This can be done by diagonalizing <span ><img src="https://latex.codecogs.com/png.image?\large M"/></span> as shown below (In depth explantion of this is provided in this article <a href = "ellipse.html">II. Eigen Application: Ellipse</a>), 
 
-										<div lang='latex' style='text-align: center'>
+										<div  style='text-align: center'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											M = e^{T} \begin{bmatrix} \lambda_{1} & 0 \\ 0 & \lambda_{2} \end{bmatrix} e 
+											"/>
 										</div>
 									</p>
 
 									<p style="text-align: justify; font-size: 17px;">
-										The relation between the eigen values and the length of the major & minor axis is given below. Where <span lang='latex'>\large a</span> is major axsis and <span lang='latex'>\large b</span> is minor axsis if <span lang='latex'>\large \lambda_1 < \lambda_2</span>.
-										<div lang='latex' style='text-align: center'>
+										The relation between the eigen values and the length of the major & minor axis is given below. Where <span ><span ><img src="https://latex.codecogs.com/png.image?\large a"/></span> is major axsis and <span ><span ><img src="https://latex.codecogs.com/png.image?\large b"/></span> is minor axsis if <span ><img src="https://latex.codecogs.com/png.image?\large \lambda_1 < \lambda_2"/></span>.
+										<div  style='text-align: center'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											a = \dfrac{1}{\sqrt{\lambda_1}} \hspace{2mm} and \hspace{2mm}  b = \dfrac{1}{\sqrt{\lambda_2}} 
+											"/>
 										</div>										
 									</p>
 
@@ -342,9 +395,9 @@
 									<p style="text-align: justify; font-size: 17px;">
 										The relation between eigen values and determining whether a patch has a corner or not is basically the following scenarios.  
 										<ul style="font-size: 17px;">
-											<li>If <span lang='latex'>\large \lambda_{1} >> \lambda_{2}</span> or <span lang='latex'>\large \lambda_{1} << \lambda_{2}</span> then the patch contains a edge region. </li>
-											<li>If <span lang='latex'>\large \lambda_{1} \sim \lambda_{2}</span> and <span lang='latex'>\large \lambda_{1}</span>  & <span lang='latex'>\large \lambda_{2}</span>  are small then it's a flat region.</li>
-											<li>If <span lang='latex'>\large \lambda_{1} \sim \lambda_{2}</span> and <span lang='latex'>\large \lambda_{1}</span>  & <span lang='latex'>\large \lambda_{2}</span>  are large then it's a corner region.</li>
+											<li>If <span ><span ><img src="https://latex.codecogs.com/png.image?\large \lambda_{1} >> \lambda_{2}"/></span> or <span ><span ><img src="https://latex.codecogs.com/png.image?\large \lambda_{1} << \lambda_{2}"/></span> then the patch contains a edge region. </li>
+											<li>If <span ><span ><img src="https://latex.codecogs.com/png.image?\large \lambda_{1} \sim \lambda_{2}"/></span> and <span ><span ><img src="https://latex.codecogs.com/png.image?\large \lambda_{1}"/></span>  & <span ><span ><img src="https://latex.codecogs.com/png.image?\large \lambda_{2}"/></span>  are small then it's a flat region.</li>
+											<li>If <span ><span ><img src="https://latex.codecogs.com/png.image?\large \lambda_{1} \sim \lambda_{2}"/></span> and <span ><span ><img src="https://latex.codecogs.com/png.image?\large \lambda_{1}"/></span>  & <span ><span ><img src="https://latex.codecogs.com/png.image?\large \lambda_{2}"/></span>  are large then it's a corner region.</li>
 										</ul>										
 									</p>							
 
@@ -354,29 +407,31 @@
 									<h2>Harris Corner Response Function</h2>
 
 									<p style="text-align: justify; font-size: 17px;">
-										Now, let's compute the measure of corner response which is given by the equation below. Where <span lang='latex'>\large k</span> is a free parameter and <span lang='latex'>\large \lambda_1</span> and <spa lang='latex'>\large \lambda_2</spa> 
-										are eigen values of <span lang='latex'>\large M</span>. 
-										<!-- <div lang='latex' style='text-align: center'>
+										Now, let's compute the measure of corner response which is given by the equation below. Where <span ><span ><img src="https://latex.codecogs.com/png.image?\large k"/></span> is a free parameter and <span ><span ><img src="https://latex.codecogs.com/png.image?\large \lambda_1"/></span> and <spa >\large \lambda_2</spa> 
+										are eigen values of <span ><span ><img src="https://latex.codecogs.com/png.image?\large M"/></span>. 
+										<!-- <div  style='text-align: center'>
 											\large 
 											R = det(M) - k \hspace{1mm} trace(M) 
 										</div> -->
-										<div lang='latex' style='text-align: center'>
+										<div  style='text-align: center'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											R = \lambda_{1} \lambda_{2} - k \hspace{1mm} (\lambda_{1} + \lambda_{2}) 
+											"/>
 										</div>										
 									</p>
 
 									<p style="text-align: justify; font-size: 17px;">
-										Different scenarios for <span lang='latex'>\large R</span> are given below, 
+										Different scenarios for <span ><span ><img src="https://latex.codecogs.com/png.image?\large R"/></span> are given below, 
 										<ul style="font-size: 17px;">
-											<li><span lang='latex'>\large R</span> is large if it's a corner region.</li>
-											<li><span lang='latex'>\large R</span> is negative with large magnitude for an edge</li>
-											<li><span lang='latex'>\large |R|</span> is small for a flat region.</li>
+											<li><span ><span ><img src="https://latex.codecogs.com/png.image?\large R"/></span> is large if it's a corner region.</li>
+											<li><span ><span ><img src="https://latex.codecogs.com/png.image?\large R"/></span> is negative with large magnitude for an edge</li>
+											<li><span ><span ><img src="https://latex.codecogs.com/png.image?\large |R|"/></span> is small for a flat region.</li>
 										</ul>										
 									</p>
 
 									<p style="text-align: justify; font-size: 17px;">
-										Finally, if you threshold on <span lang='latex'>\large R</span> then you can compute the corner like features in an image. This is entire Harris corner detection algorithm. Many of the other 
+										Finally, if you threshold on <span ><span ><img src="https://latex.codecogs.com/png.image?\large R"/></span> then you can compute the corner like features in an image. This is entire Harris corner detection algorithm. Many of the other 
 										corner detection algorithm such as Shi-Tomasi corner detection algorithm (used in <code>cv2.goodFeaturesToTrack()</code>) are variant of harris corner detection algorithm. Finally, in the last 
 										section we will write down the algorithm. 										
 									</p>
@@ -389,8 +444,8 @@
 									<ol style="font-size: 17px;">
 										<li>Compute Gaussian derivaties at each pixel location in the image.</li>
 										<li>Compute second moment matrix M in a Gaussian window around each pixel.</li>
-										<li>Compute corner response function <span lang='latex'>\large R</span>.</li>
-										<li>Threshold on <span lang='latex'>\large R</span>.</li>
+										<li>Compute corner response function <span ><span ><img src="https://latex.codecogs.com/png.image?\large R"/></span>.</li>
+										<li>Threshold on <span ><span ><img src="https://latex.codecogs.com/png.image?\large R"/></span>.</li>
 										<li>Find local maxima of response function (non-maximum suppression).</li>
 									</o.>										
 								</section>

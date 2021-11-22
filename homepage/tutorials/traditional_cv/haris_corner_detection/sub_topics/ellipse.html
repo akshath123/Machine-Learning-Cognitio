@@ -40,22 +40,24 @@
 
                                     <p style="text-align: justify; font-size: 17px;">
                                         An ellipse looks like a squashed circle , usually we represent an ellipse with respect to the cartesian coordinate system
-                                        having a semi major axsis - <span lang='latex'>\large a</span> and a semi minor axsis - <span lang='latex'>\large b</span>. 
-                                        Then the equation of the ellipse can be written as below and let them be equation <span lang='latex'>\large (1)</span>.
+                                        having a semi major axsis - <span ><img src="https://latex.codecogs.com/png.image?\large a"/></span> and a semi minor axsis - <span ><img src="https://latex.codecogs.com/png.image?\large b"/></span>. 
+                                        Then the equation of the ellipse can be written as below and let them be equation <span ><img src="https://latex.codecogs.com/png.image?\large (1)"/></span>.
                                         
                                         <div style='text-align: center'>
                                             <img src="../images/ellipse.png" width="600" height="300"/>
                                         </div>
 
-                                        <div lang='latex' style='text-align: center;'>
+                                        <div  style='text-align: center;'>
+											<img src="https://latex.codecogs.com/png.image?
                                             \large 
                                             \dfrac{x^{2}}{a^{2}} + \dfrac{y^{2}}{b^{2}} = 1 \hspace{10mm}(1)
+											"/>
                                         </div>
                                     </p>
 
                                     <p style="text-align: justify; font-size: 17px;">
-                                        where <span lang='latex'>\large a > b</span> and the longest diameter is <span lang='latex'>\large 2a</span> and the shortest diameter is <span lang='latex'>\large 2b</span>. Now, let's say 
-                                        if a circle is not squished in the direction of <span lang='latex'>\large x-axis</span> or <span lang='latex'>\large y-axis</span> but in some other 
+                                        where <span ><img src="https://latex.codecogs.com/png.image?\large a > b"/></span> and the longest diameter is <span ><img src="https://latex.codecogs.com/png.image?\large 2a"/></span> and the shortest diameter is <span ><img src="https://latex.codecogs.com/png.image?\large 2b"/></span>. Now, let's say 
+                                        if a circle is not squished in the direction of <span ><img src="https://latex.codecogs.com/png.image?\large x-axis"/></span> or <span ><img src="https://latex.codecogs.com/png.image?\large y-axis"/></span> but in some other 
                                         direction leaving us with the following questions, 
                                         <ol style="text-align: justify; font-size: 17px;">
                                             <li>What will be the equation of the ellipse then?</li>
@@ -66,15 +68,18 @@
                                     <p style="text-align: justify; font-size: 17px;">
                                         To answer let's represent the ellipse with it's general equation as below and then find the eigen values and eigen vectors of the coefficients in the equation.
                                         
-                                        <div lang='latex' style='text-align: center'>
+                                        <div  style='text-align: center'>
+											<img src="https://latex.codecogs.com/png.image?
                                             \large 
                                             Ax^{2} + Bxy + Cy^{2} = 1
+											"/>
                                         </div>
                                     </p>
 
                                     <p style="text-align: justify; font-size: 17px;">
                                         The above equation is quadratic equation and it will represent an ellipse if and only if the equation is an positive definite i.e,  
-                                        <div lang='latex' style='text-align: center'>
+                                        <div  style='text-align: center'>
+											<img src="https://latex.codecogs.com/png.image?
                                             \large 
                                             \{ 
                                                 \begin{bmatrix} 
@@ -84,18 +89,22 @@
                                                 \in 
                                                 \mathbb{R}^{2} : 
                                                 Ax^{2} + Bxy + Cy^{2} = 1
-                                            \} \\                                             
+                                            \} \\ 
+											"/>                                            
                                         </div>
 
-                                        <div lang='latex' style='text-align: center'>
-                                        where \hspace{1.5mm} A, B, C \hspace{1.5mm} give \hspace{1.5mm} a \hspace{1.5mm} positive \hspace{1.5mm}  definate \hspace{1.5mm} quadratic \hspace{1.5mm} form. 
+                                        <div  style='text-align: center'>
+											<img src="https://latex.codecogs.com/png.image?
+											where \hspace{1.5mm} A, B, C \hspace{1.5mm} give \hspace{1.5mm} a \hspace{1.5mm} positive \hspace{1.5mm}  definate \hspace{1.5mm} quadratic \hspace{1.5mm} form. 
+											"/>
                                         </div>
                                     </p>
 
                                     <p style="text-align: justify; font-size: 17px;">
                                         In other words, A, B, C can't be negative numbers. Next, we will represent a quadratic equation in it's matrix form, 
 
-                                        <div lang='latex' style='text-align: center'>
+                                        <div  style='text-align: center'>
+											<img src="https://latex.codecogs.com/png.image?
                                             \large 
                                             \overrightarrow{v} = \begin{bmatrix} x \\ y\end{bmatrix} 
                                             \hspace{5mm}
@@ -103,9 +112,11 @@
                                             A & \dfrac{B}{2}\\
                                             \dfrac{B}{2}& C \\
                                             \end{bmatrix}
+											"/>
                                         </div>
                                         <br>
-                                        <div lang='latex' style='text-align: center'>
+                                        <div  style='text-align: center'>
+											<img src="https://latex.codecogs.com/png.image?
                                             \large 
                                             \overrightarrow{v}^{T}M\overrightarrow{v} = \begin{bmatrix} x & y \end{bmatrix}      
                                             \begin{bmatrix}
@@ -113,9 +124,11 @@
                                             \dfrac{B}{2} & C \\
                                             \end{bmatrix}
                                             \begin{bmatrix} x \\ y\end{bmatrix}
+											"/>
                                         </div>  
                                         <br>
-                                        <div lang='latex' style='text-align: center'>
+                                        <div  style='text-align: center'>
+											<img src="https://latex.codecogs.com/png.image?
                                             \large 
                                             \overrightarrow{v}^{T}M\overrightarrow{v} =
                                             \begin{bmatrix} x & y \end{bmatrix} 
@@ -123,11 +136,14 @@
                                                 Ax + y \dfrac{B}{2} \\
                                                 x \dfrac{B}{2} + Cy \\
                                             \end{bmatrix}
+											"/>
                                         </div>
                                         <br>
-                                        <div lang='latex' style='text-align: center'>
+                                        <div  style='text-align: center'>
+											<img src="https://latex.codecogs.com/png.image?
                                             \large 
                                             \overrightarrow{v}^{T}M\overrightarrow{v} = Ax^{2} + Bxy + Cy^{2}
+											"/>
                                         </div>                                        
                                     </p>
                                 </section>
@@ -141,32 +157,38 @@
 										Before we find the relation between the eigen values and major & minor axis let's prove a lemma. Which will later be used in finding the relation. 
 										<br><br>
 
-										<strong><u>Lemma:</u></strong> If <span lang='latex'>\large M</span> is a symmeteric matrix <span lang='latex'>\large (M^{T} = M)</span> and it's eigen values <span lang='latex'>\large \lambda_{1}, \lambda_{2}</span> are distinct then 
-										the correspoinding eigen vectors (<span lang='latex'>\large \overrightarrow{u_{1}}, \overrightarrow{u_{2}}</span>)are orthogonal. Assuming <span lang='latex'>\large M</span> is of <span lang='latex'>\large (2 \times 2)</span> 
+										<strong><u>Lemma:</u></strong> If <span ><img src="https://latex.codecogs.com/png.image?\large M"/></span> is a symmeteric matrix <span ><img src="https://latex.codecogs.com/png.image?\large (M^{T} = M)"/></span> and it's eigen values <span ><img src="https://latex.codecogs.com/png.image?\large \lambda_{1}, \lambda_{2}"/></span> are distinct then 
+										the correspoinding eigen vectors (<span ><img src="https://latex.codecogs.com/png.image?\large \overrightarrow{u_{1}}, \overrightarrow{u_{2}}"/></span>)are orthogonal. Assuming <span ><img src="https://latex.codecogs.com/png.image?\large M"/></span> is of <span ><img src="https://latex.codecogs.com/png.image?\large (2 \times 2)"/></span> 
 										dimension. 
 
 										<br><br>
 
 										<strong><u>Proof:</u></strong>  
-										<div lang='latex' style='text-align: center;'>
+										<div  style='text-align: center;'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											M \overrightarrow{v}_{1} = \lambda_{1} \overrightarrow{v}_1,  \hspace{4mm} M \overrightarrow{v}_{2} = \lambda_{2} \overrightarrow{v}_2
+											"/>
 										</div>
 
 										<p style="text-align: justify; font-size: 17px;">
 											Consider the expression:- 
 
-											<div lang='latex' style='text-align: center;'>
+											<div  style='text-align: center;'>
+												<img src="https://latex.codecogs.com/png.image?
 												\large 
 												\overrightarrow{u}_{1}^{T} M \overrightarrow{u}_{2} = \overrightarrow{u}_{1}^{T} \lambda_{2} \overrightarrow{u}_{2} = \lambda_{2} \overrightarrow{u}_{1}^{T} \overrightarrow{u}_{2} = \lambda_{2} \overrightarrow{u}_{1} . \overrightarrow{u}_{2}
+												"/>
 											</div>																						
 											
 											<p style="text-align: justify; font-size: 17px;">
-												As <span lang='latex'>\large (M^{T} = M)</span> symmeteric matrix, 
+												As <span ><img src="https://latex.codecogs.com/png.image?\large (M^{T} = M)"/></span> symmeteric matrix, 
 
-												<div lang='latex' style='text-align: center;'>
+												<div  style='text-align: center;'>
+													<img src="https://latex.codecogs.com/png.image?
 													\large 
 													\overrightarrow{u}_{1}^{T} M \overrightarrow{u}_{2} = \overrightarrow{u}_{1}^{T} M^{T} \overrightarrow{u}_{2} = (M \overrightarrow{u}_{1})^{T} \overrightarrow{u}_{2} = \lambda_{1} \overrightarrow{u}_{1}^{T} \overrightarrow{u}_{2} = \lambda_{1} \overrightarrow{u}_{1} . \overrightarrow{u}_{2}
+													"/>
 												</div>
 											</p>
 										</p>
@@ -174,24 +196,31 @@
 
 									<p style="text-align: justify; font-size: 17px;">
 										equating the above two eqauations we get, 
-										<div lang='latex' style='text-align: center;'>
+										
+										<div  style='text-align: center;'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											\lambda_{2} \overrightarrow{u}_{1} . \overrightarrow{u}_{2} = \lambda_{1} \overrightarrow{u}_{1} . \overrightarrow{u}_{2} 
+											"/>
 										</div>
 										<br>
-										<div lang='latex' style='text-align: center;'>
+										<div  style='text-align: center;'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											(\lambda_{2} - \lambda{1}) \overrightarrow{u}_{1} . \overrightarrow{u}_2 = 0
+											"/>
 										</div>
 									</p>
 
 									<p style="text-align: justify; font-size: 17px;">
-										As mentioned earlier <span lang = 'latex'>\large \lambda_{1}</span> and <span lang='latex'>\large \lambda_{2}</span> are distinct then <span lang='latex'>\large (\lambda_{2} - \lambda_{1})</span> can't be <span lang='latex'>\large 0</span>
-										hence proving that the eigen vectors <span lang='latex'>\large \overrightarrow{u}_1</span> and <span lang='latex'>\large \overrightarrow{u}_2</span> are orthogonal that is there dot product is <span lang='latex'>\large 0</span>. 
+										As mentioned earlier <span><img src="https://latex.codecogs.com/png.image?\large \lambda_{1}"/></span> and <span ><img src="https://latex.codecogs.com/png.image?\large \lambda_{2}"/></span> are distinct then <span ><img src="https://latex.codecogs.com/png.image?\large (\lambda_{2} - \lambda_{1})"/></span> can't be <span ><img src="https://latex.codecogs.com/png.image?\large 0"/></span>
+										hence proving that the eigen vectors <span ><img src="https://latex.codecogs.com/png.image?\large \overrightarrow{u}_1"/></span> and <span ><img src="https://latex.codecogs.com/png.image?\large \overrightarrow{u}_2"/></span> are orthogonal that is there dot product is <span ><img src="https://latex.codecogs.com/png.image?\large 0"/></span>. 
 
-										<div lang="latex" style='text-align: center;'>
+										<div style='text-align: center;'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											\overrightarrow{u}_1 . \overrightarrow{u}_2 = 0
+											"/>
 										</div>
 									</p>
 
@@ -200,87 +229,109 @@
 										Now let's use the above lemma to prove the theorem given below which will give us the relation between eigen values and the major axis & minor axis of an ellipse. 
 										<br><br>
 										<strong><u>Theorem:</u></strong> if the new major and minor axis point along the direction of the eigen vectors 
-										(<span lang='latex'>\large \overrightarrow{u_{1}}</span> and <span lang='latex'>\large \overrightarrow{u_{2}}</span>) of the matrix 
+										(<span ><img src="https://latex.codecogs.com/png.image?\large \overrightarrow{u_{1}}"/></span> and <span ><img src="https://latex.codecogs.com/png.image?\large \overrightarrow{u_{2}}"/></span>) of the matrix 
 										, 
-                                        <div lang='latex' style='text-align: center'>
+                                        <div  style='text-align: center'>
+											<img src="https://latex.codecogs.com/png.image?
                                             \large 
                                             M = \begin{bmatrix}
                                             A & \dfrac{B}{2} \\
                                             \dfrac{B}{2} & C \\
                                             \end{bmatrix}
+											"/>
                                         </div> 		
 										<br>
 										<p style="text-align: justify; font-size: 17px;">
-											where <span lang='latex'>\large \overrightarrow{u_{1}}</span> and <span lang='latex'>\large \overrightarrow{u_{2}}</span> are normalized 
-											vectors having length <span lang='latex'>\large 1</span> and are the basis vectors of the new coordinate system. Then the equation of ellipse 
+											where <span ><img src="https://latex.codecogs.com/png.image?\large \overrightarrow{u_{1}}"/></span> and <span ><img src="https://latex.codecogs.com/png.image?\large \overrightarrow{u_{2}}"/></span> are normalized 
+											vectors having length <span ><img src="https://latex.codecogs.com/png.image?\large 1"/></span> and are the basis vectors of the new coordinate system. Then the equation of ellipse 
 											becomes, 
 
-											<div lang='latex' style='text-align: center'>
+											<div  style='text-align: center'>
+												<img src="https://latex.codecogs.com/png.image?
 												\large 
 												\lambda_{1} x^{2} + \lambda_{2} y^{2} = 1
+												"/>
 											</div>
 										</p>
 										<p style="text-align: justify; font-size: 17px;">
-											where, <span lang='latex'>\large \lambda_{1}</span> and <span lang='latex'>\large \lambda_{2}</span> are the eigen values of the matrix <span lang='latex'>\large M</span>. 
+											where, <span ><img src="https://latex.codecogs.com/png.image?\large \lambda_{1}"/></span> and <span ><img src="https://latex.codecogs.com/png.image?\large \lambda_{2}"/></span> are the eigen values of the matrix <span ><img src="https://latex.codecogs.com/png.image?\large M"/></span>. 
 									</p>
 
 									<p style="text-align: justify; font-size: 17px;">
-										<strong><u>Proof:</u></strong> Let's take a vector <span lang='latex'>\large \begin{bmatrix}x \\ y\end{bmatrix}</span> in the standard coordinate system and perform change of basis to the coordinate system 
-										of the eigen vectors to get <span lang='latex'>\large \overrightarrow{v}</span> as shown below, 
-										<div lang='latex' style='text-align: center'>
+										<strong><u>Proof:</u></strong> Let's take a vector <span ><img src="https://latex.codecogs.com/png.image?\large \begin{bmatrix}x \\ y\end{bmatrix}"/></span> in the standard coordinate system and perform change of basis to the coordinate system 
+										of the eigen vectors to get <span ><img src="https://latex.codecogs.com/png.image?\large \overrightarrow{v}"/></span> as shown below, 
+										<div  style='text-align: center'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											\overrightarrow{v} = \begin{bmatrix}\overrightarrow{u}_1 & \overrightarrow{u}_2\end{bmatrix} \begin{bmatrix}x \\ y\end{bmatrix}
+											"/>
 										</div>
 										<br>
-										<div lang='latex' style='text-align: center'>
+										<div  style='text-align: center'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											\overrightarrow{v} = x \overrightarrow{u}_{1} + y \overrightarrow{u}_2
+											"/>
 										</div>	
 										<br>
-										<div lang='latex' style='text-align: center'>
+										<div  style='text-align: center'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											\overrightarrow{v}^{T} M \overrightarrow{v} = (x \overrightarrow{u}_{1} + y \overrightarrow{u}_2)^T M (x \overrightarrow{u}_{1} + y \overrightarrow{u}_2) \\
+											"/>
 										</div>	
 										<br>
-										<div lang='latex' style='text-align: center'>
+										<div  style='text-align: center'>
 											\large 
 											\overrightarrow{v}^{T} M \overrightarrow{v} = (x\overrightarrow{u}_{1} + y \overrightarrow{u}_2)^T (M x \overrightarrow{u}_{1} + M y \overrightarrow{u}_2)
 										</div>	
 										<br>
-										<div lang='latex' style='text-align: center'>
+										<div  style='text-align: center'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											\overrightarrow{v}^{T} M \overrightarrow{v} = (x\overrightarrow{u}_{1} + y \overrightarrow{u}_2)^T (x M \overrightarrow{u}_{1} + y M \overrightarrow{u}_2)
+											"/>
 										</div>		
 										<br>
-										<div lang='latex' style='text-align: center'>
+										<div  style='text-align: center'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											\overrightarrow{v}^{T} M \overrightarrow{v} = (x\overrightarrow{u}_{1} + y \overrightarrow{u}_2)^T (x \lambda_{1} \overrightarrow{u}_{1} + y \lambda_{2} \overrightarrow{u}_2)
+											"/>
 										</div>		
 										<br>
 										<p style="text-align: justify; font-size: 17px;">
-											As <span lang='latex'>\large \overrightarrow{u}_{1}</span> and  <span lang='latex'>\large \overrightarrow{u}_{2}</span> are unit vectors and  <span lang='latex'>\large \overrightarrow{u}_1 . \overrightarrow{u}_2 = 0</span> the above equation can be simplified as, 
+											As <span ><img src="https://latex.codecogs.com/png.image?\large \overrightarrow{u}_{1}"/></span> and  <span ><img src="https://latex.codecogs.com/png.image?\large \overrightarrow{u}_{2}"/></span> are unit vectors and  <span ><img src="https://latex.codecogs.com/png.image?\large \overrightarrow{u}_1 . \overrightarrow{u}_2 = 0"/></span> the above equation can be simplified as, 
 
-											<div lang='latex' style='text-align: center'>
+											<div  style='text-align: center'>
+												<img src="https://latex.codecogs.com/png.image?
 												\large 
 												\overrightarrow{v}^{T} M \overrightarrow{v} = x^{2} \lambda_{1} + x y \lambda_{2} \overrightarrow{u}_{1}^{T} . \overrightarrow{u}_{2} + x y \lambda_{1} \overrightarrow{u}_{2}^{T}. \overrightarrow{u}_{1} + y^{2} \lambda_{2}
+												"/>
 											</div>
 											<br>
-											<div lang='latex' style='text-align: center'>
+											<div  style='text-align: center'>
+												<img src="https://latex.codecogs.com/png.image?
 												\large 
 												\overrightarrow{v}^{T} M \overrightarrow{v} = x^{2} \lambda_{1} + y^{2} \lambda_{2}
+												"/>
 											</div>			
 											<br>
-											<div lang='latex' style='text-align: center'>
+											<div  style='text-align: center'>
+												<img src="https://latex.codecogs.com/png.image?
 												\large 
 												\overrightarrow{v}^{T} M \overrightarrow{v} = \dfrac{x^{2}}{(\dfrac{1}{\sqrt{\lambda_{1}}})^2} + \dfrac{y^{2}}{(\dfrac{1}{\sqrt{\lambda_{2}}})^2} \hspace{5mm} (2)
+												"/>
 											</div>												
 										</p>
 										<p style="text-align: justify; font-size: 17px;">
-											Now using the equation <span lang='latex'>\large (1)</span> defined at the begining of this tutorial we can compare equation <span lang='latex'>\large (2)</span> given above as, 
+											Now using the equation <span >\large (1)</span> defined at the begining of this tutorial we can compare equation <span >\large (2)</span> given above as, 
 
-											<div lang='latex' style='text-align: center'>
+											<div  style='text-align: center'>
+												<img src="https://latex.codecogs.com/png.image?
 												\large 
 												a = \dfrac{1}{\sqrt{\lambda_{1}}} \hspace{5mm} b = \dfrac{1}{\sqrt{\lambda_{2}}}
+												"/>
 											</div>
 										</p>
 
@@ -300,62 +351,76 @@
 									<p style="text-align: justify; font-size: 17px;">
 										Let's take the matrix notation of an quadratic equation and assume the quadratic equation to be in positive definite form 
 										as shown below, 
-										<div lang='latex' style="text-align: center">
+										<div  style="text-align: center">
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											x^{T}Mx = 1\hspace{10mm} (3)
+											"/>
 										</div>									
 									</p>
 
 									<p style="text-align: justify; font-size: 17px;">
-										Where <span lang='latex'>\large M</span> consitutes the coefficients of the general equation of the ellipse which is 
-										<span lang='latex'>\large Ax^{2} + Bxy + Cy^{2} = 1</span> as shown below, 
+										Where <span ><img src="https://latex.codecogs.com/png.image?\large M"/></span> consitutes the coefficients of the general equation of the ellipse which is 
+										<span ><img src="https://latex.codecogs.com/png.image?\large Ax^{2} + Bxy + Cy^{2} = 1"/></span> as shown below, 
 
-										<div lang='latex' style='text-align: center;'>
+										<div  style='text-align: center;'>
+											<img src="https://latex.codecogs.com/png.image?
 											M = \begin{bmatrix}
                                             A & \dfrac{B}{2}\\
                                             \dfrac{B}{2}& C \\
                                             \end{bmatrix}
+											"/>
 										</div>
 									</p>
 									
 									<p style="text-align: justify; font-size: 17px;">
-										Next we perform the eigen decomposition of the matrix <span lang='latex'>\large M</span> assuming <span lang='latex'>\large M</span> is of dimension <span lang='latex'>\large (2 \times 2)</span>
-										to get the following representation of the equation <span lang='latex'>\large (3)</span>.
+										Next we perform the eigen decomposition of the matrix <span ><img src="https://latex.codecogs.com/png.image?\large M"/></span> assuming <span ><img src="https://latex.codecogs.com/png.image?\large M"/></span> is of dimension <span ><img src="https://latex.codecogs.com/png.image?\large (2 \times 2)"/></span>
+										to get the following representation of the equation <span ><img src="https://latex.codecogs.com/png.image?\large (3)"/></span>.
 
-										<div lang='latex' style="text-align: center">
+										<div  style="text-align: center">
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											x^{T}Mx = x^{T} \begin{bmatrix} e_{1} & e_{2} \end{bmatrix} \begin{bmatrix} \lambda_{1} & 0 \\ 0 & \lambda_{2} \end{bmatrix} \begin{bmatrix} e_{1} \\ e_{2} \end{bmatrix} x  = 1
+											"/>
 										</div>
 									</p>
 
 									<p style="text-align: justify; font-size: 17px;">
-										where <span lang='latex'>\large e_{1}</span> and <span lang='latex'>\large e_{2}</span> are the eigen vectors and the corresponding eigen values are <span lang='latex'>\large \lambda_{1}</span> and <span lang='latex'>\large \lambda_{2}</span> 
-										of the matrix <span lang='latex'>\large M</span>. If we solve the above equation we get, 
+										where <span ><img src="https://latex.codecogs.com/png.image?\large e_{1}"/></span> and <span ><img src="https://latex.codecogs.com/png.image?\large e_{2}"/></span> are the eigen vectors and the corresponding eigen values are <span ><img src="https://latex.codecogs.com/png.image?\large \lambda_{1}"/></span> and <span ><img src="https://latex.codecogs.com/png.image?\large \lambda_{2}"/></span> 
+										of the matrix <span ><img src="https://latex.codecogs.com/png.image?\large M"/></span>. If we solve the above equation we get, 
 
-										<div lang='latex' style="text-align: center">
+										<div  style="text-align: center">
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											x^{T}Mx = \lambda_{1} x^{T} e_{1} e_{1}^{T} x + \lambda_{2} x^{T} e_{2} e_{2}^{T} x = 1
+											"/>
 										</div>		
 										<br>
-										<div lang='latex' style="text-align: center">
+										<div  style="text-align: center">
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											x^{T}Mx = \lambda_{1} (e_{1}^{T} x)^T e_{1}^{T} x + \lambda_{2} (e_{2}^{T} x)^{T} e_{2}^{T} x = 1
+											"/>
 										</div>		
 										<br>
-										<div lang='latex' style="text-align: center">
+										<div  style="text-align: center">
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											x^{T}Mx = \lambda_{1} (e_{1}^{T} x)^{2} + \lambda_{2} (e_{2}^{T} x)^{2} = 1
+											"/>
 										</div>
 										<br>
-										<div lang='latex' style="text-align: center">
+										<div  style="text-align: center">
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											\dfrac{(e_{1}^{T} x)^{2}}{(\dfrac{1}{\sqrt{\lambda_{1}}})^{2}} + \dfrac{(e_{2}^{T} x)^{2}}{(\dfrac{1}{\sqrt{\lambda_{2}}})^{2}} = 1
+											"/>
 										</div>										
 									</p>
 
 									<p style="text-align: justify; font-size: 17px;">
-										From the above equation we can see the similarity to equation <span lang='latex'>\large (1)</span> and 
-										<span lang='latex'>\large (2)</span>. We will use what you have learnt in this tutorial and the next tutorial (Taylor expansion) to understand 
+										From the above equation we can see the similarity to equation <span ><img src="https://latex.codecogs.com/png.image?\large (1)"/></span> and 
+										<span ><img src="https://latex.codecogs.com/png.image?\large (2)"/></span>. We will use what you have learnt in this tutorial and the next tutorial (Taylor expansion) to understand 
 										and derieve the harris corner detection equation. 
 									</p>
 
