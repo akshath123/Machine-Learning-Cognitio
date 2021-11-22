@@ -43,12 +43,13 @@
 									</header>
 
                                     <p style="text-align: justify; font-size: 17px;">
-                                        Any vector in a vector space of a finite dimension <span lang='latex'>\large 'n'</span> can be represented uniquely via set of <span lang='latex'>\large 'n'</span> basis 
-										vectors and <span lang='latex'>\large 'n'</span> scalars known as coordinates. An example of this is shown below with respect to a <span lang='latex'>\large 2D</span>cartesian 
-										coordinate system, Let's say we have a vector &nbsp; <span lang='latex'>\large [2, 3]^{T}</span> which can be represented using the basis vectors <span lang='latex'>\large (\bar{x}, \bar{y})</span>
+                                        Any vector in a vector space of a finite dimension <span ><img src="https://latex.codecogs.com/png.image?\large 'n'"/></span> can be represented uniquely via set of <span ><img src="https://latex.codecogs.com/png.image?\large 'n'"/></span> basis 
+										vectors and <span ><img src="https://latex.codecogs.com/png.image?\large 'n'"/></span> scalars known as coordinates. An example of this is shown below with respect to a <span ><img src="https://latex.codecogs.com/png.image?\large 2D"/></span>cartesian 
+										coordinate system, Let's say we have a vector &nbsp; <span ><img src="https://latex.codecogs.com/png.image?\large [2, 3]^{T}"/></span> which can be represented using the basis vectors <span ><img src="https://latex.codecogs.com/png.image?\large (\bar{x}, \bar{y})"/></span>
 										of the cartesian coordinate system as,  
 
-										<div lang='latex' style='text-align: center'>
+										<div  style='text-align: center'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											\bar{x} = 
 											\begin{bmatrix}
@@ -60,10 +61,12 @@
 											\begin{bmatrix}
 											0\\
 											1
-											\end{bmatrix} 											
+											\end{bmatrix} 	
+											"/>										
 										</div>
-
-										<div lang='latex' style='text-align: center'>
+										<br>
+										<div  style='text-align: center'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											\begin{bmatrix}
 											2 \\
@@ -82,33 +85,39 @@
 											\begin{bmatrix}
 											0 \\
 											1
-											\end{bmatrix}											
+											\end{bmatrix}	
+											"/>										
 										</div>
                                     </p>    
-									<br>
+
 									<p style="text-align: justify; font-size: 17px;">
 										A set of vectors qualify has basis vectors only when the set is able to span the entire vector space and the vectors in the set are linearly independent and zero 
 										vector is part of the set. A <strong>change of basis</strong> is a process of converting a coordinate relative to one basis vectors to another set of basis vectors. Mathematically, 
 										this can be represented as, 
 										
-										<div lang='latex' style='text-align: center'>
+										<div  style='text-align: center'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large
 											[\overrightarrow{a}]_{S} = C_{S}  [\overrightarrow{a}]_{M}
+											"/>
 										</div>
 									</p>
 
 									<p style="text-align: justify; font-size: 17px;">
-										where <span lang='latex'>\large S</span> is the standard basis/coordinate system whereas <span lang='latex'>\large M</span> is an another coordinate system. So, to convert a vector 
-										<span lang='latex'>\large \overrightarrow{a}</span> from the <span lang = 'latex'>\large M's</span> coordinate system to <span lang='latex'>\large S's</span> coordinate system. One
-										should perform a change of basis which is represented as <span lang='latex'>\large C_{S}</span> meaning as the basis vectors of <span lang='latex'>\large M's</span> coordinate system 
-										in <span lang='latex'>\large S's</span> coordinate system. The columns of <span lang='latex'>\large C's</span> is represented as, 
+										where <span ><img src="https://latex.codecogs.com/png.image?\large S"/></span> is the standard basis/coordinate system whereas <span ><img src="https://latex.codecogs.com/png.image?\large M"/></span> is an another coordinate system. So, to convert a vector 
+										<span ><img src="https://latex.codecogs.com/png.image?\large \overrightarrow{a}"/></span> from the <span lang = 'latex'><img src="https://latex.codecogs.com/png.image?\large M's"/></span> coordinate system to <span ><img src="https://latex.codecogs.com/png.image?\large S's"/></span> coordinate system. One
+										should perform a change of basis which is represented as <span ><img src="https://latex.codecogs.com/png.image?\large C_{S}"/></span> meaning as the basis vectors of <span ><img src="https://latex.codecogs.com/png.image?\large M's"/></span> coordinate system 
+										in <span ><img src="https://latex.codecogs.com/png.image?\large S"/></span> coordinate system. The columns of <span ><img src="https://latex.codecogs.com/png.image?\large C"/></span> is represented as, 
 
-										<div lang='latex' style='text-align: center;'>
+										<div  style='text-align: center;'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											M = \{ \overrightarrow{v_{1}}, \overrightarrow{v_{2}}, ....., \overrightarrow{v_{k}} \}
+											"/>
 										</div>
 										<br>
-										<div lang='latex' style='text-align: center;'>
+										<div  style='text-align: center;'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											C_{S} = 
 											\begin{bmatrix}
@@ -118,16 +127,17 @@
 												. & . & ..... & . \\
 												. & . & ..... & . \\												
 											\end{bmatrix}
+											"/>
 										</div>										
 									</p>
 
 									<p style="text-align: justify; font-size: 17px;">
-										Here <span lang='latex'>\large k</span> represents the dimension of the vector space <span lang='latex'>\large M</span> and each column vector <span lang='latex'>\large \overrightarrow{v}_k</span> in the set 
-										belongs to the space <span lang='latex'>\large 	\mathbb{R}^{n}</span> where <span lang='latex'>\large n</span> is the dimension of the vector space <span lang='latex'>\large S</span>. Now let's do the 
-										reverse, how to get vector <span lang='latex'>\large \overrightarrow{d}</span> in <span lang='latex'>M's</span> coordinate system given <span lang='latex'>\large C's</span> and <span lang='latex'>\large [\overrightarrow{d}]_{S}</span>? 
-										One can solve this system of linear equation by converting <span lang='latex'>\large C's</span> to reduced row echolan form <span lang='latex'>\large rref(C)</span> if and only if <span lang='latex'>\large \overrightarrow{d}</span> falls in the 
-										span of the basis vectors of <span lang='latex'>\large M</span>. There is one more condition that the column vectors of <span lang='latex'>\large C</span> are linearly independent which in this cases is statisfied because 
-										the column vectors are the basis vectors of <span lang='latex'>M's</span> coordinate system and as we know for a set of vectors to be a basis vectors, the vectors in the set must be linearly independent. In the next section we will look 
+										Here <span ><img src="https://latex.codecogs.com/png.image?\large k"/></span> represents the dimension of the vector space <span ><img src="https://latex.codecogs.com/png.image?\large M"/></span> and each column vector <span ><img src="https://latex.codecogs.com/png.image?\large \overrightarrow{v}_k"/></span> in the set 
+										belongs to the space <span ><img src="https://latex.codecogs.com/png.image?\large 	\mathbb{R}^{n}"/></span> where <span ><img src="https://latex.codecogs.com/png.image?\large n"/></span> is the dimension of the vector space <span ><img src="https://latex.codecogs.com/png.image?\large S"/></span>. Now let's do the 
+										reverse, how to get vector <span ><img src="https://latex.codecogs.com/png.image?\large \overrightarrow{d}"/></span> in <span ><img src="https://latex.codecogs.com/png.image?M's"/></span> coordinate system given <span ><img src="https://latex.codecogs.com/png.image?\large C's"/></span> and <span ><img src="https://latex.codecogs.com/png.image?\large [\overrightarrow{d}]_{S}"/></span>? 
+										One can solve this system of linear equation by converting <span ><img src="https://latex.codecogs.com/png.image?\large C's"/></span> to reduced row echolan form <span ><img src="https://latex.codecogs.com/png.image?\large rref(C)"/></span> if and only if <span ><img src="https://latex.codecogs.com/png.image?\large \overrightarrow{d}"/></span> falls in the 
+										span of the basis vectors of <span ><img src="https://latex.codecogs.com/png.image?\large M"/></span>. There is one more condition that the column vectors of <span ><img src="https://latex.codecogs.com/png.image?\large C"/></span> are linearly independent which in this cases is statisfied because 
+										the column vectors are the basis vectors of <span ><img src="https://latex.codecogs.com/png.image?\large M"/></span> coordinate system and as we know for a set of vectors to be a basis vectors, the vectors in the set must be linearly independent. In the next section we will look 
 										at another way to compute this if a special condition is satisfied. 
 									</p>
                                 </section>
@@ -136,36 +146,40 @@
 									<h2>Invertiable Change of Basis</h2>
 
 									<p style="text-align: justify; font-size: 17px;">
-										Let's continue with the vector <span lang='latex'>\large \overrightarrow{d}</span> and the vector spaces <span lang='latex'>\large S</span> & <span lang='latex'>\large M</span>. As above let <span lang='latex'>\large C</span> be a change of basis 
-										matrix, then to represent the vector <span lang='latex'>\large \overrightarrow{d}</span> in <span lang='latex'>\large S</span> coordinate system from <span lang='latex'>\large B</span> coordinate system one must do the following operation given below, 
+										Let's continue with the vector <span ><img src="https://latex.codecogs.com/png.image?\large \overrightarrow{d}"/></span> and the vector spaces <span ><img src="https://latex.codecogs.com/png.image?\large S"/></span> & <span ><img src="https://latex.codecogs.com/png.image?\large M"/></span>. As above let <span ><img src="https://latex.codecogs.com/png.image?\large C"/></span> be a change of basis 
+										matrix, then to represent the vector <span ><img src="https://latex.codecogs.com/png.image?\large \overrightarrow{d}"/></span> in <span ><img src="https://latex.codecogs.com/png.image?\large S"/></span> coordinate system from <span ><img src="https://latex.codecogs.com/png.image?\large B"/></span> coordinate system one must do the following operation given below, 
 										
-										<div lang='latex' style='text-align: center'>
+										<div  style='text-align: center'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large
 											[\overrightarrow{d}]_{S} = C_{S}  [\overrightarrow{d}]_{M}
+											"/>
 										</div>
 									</p>
 
 									<p style="text-align: justify; font-size: 17px;">
-										Now let's ponder over the question "How to get vector <span lang='latex'>\large \overrightarrow{d}</span> in <span lang='latex'>M's</span> coordinate system given <span lang='latex'>\large C's</span> and <span lang='latex'>\large [\overrightarrow{d}]_{S}</span>?". As mention before 
-										we can treat this as a system of linear equation and solve for <span lang='latex'>\large  [\overrightarrow{d}]_{M}</span>. But, what happens if <span lang='latex'>\large C</span> is invertiable that is it stasfies two condiation given below, 
+										Now let's ponder over the question "How to get vector <span ><img src="https://latex.codecogs.com/png.image?\large \overrightarrow{d}"/></span> in <span ><img src="https://latex.codecogs.com/png.image?M"/></span> coordinate system given <span ><img src="https://latex.codecogs.com/png.image?\large C"/></span> and <span ><img src="https://latex.codecogs.com/png.image?\large [\overrightarrow{d}]_{S}"/></span>?". As mention before 
+										we can treat this as a system of linear equation and solve for <span ><img src="https://latex.codecogs.com/png.image?\large  [\overrightarrow{d}]_{M}"/></span>. But, what happens if <span ><img src="https://latex.codecogs.com/png.image?\large C"/></span> is invertiable that is it stasfies two condiation given below, 
 										<ol style="text-align: justify; font-size: 17px;">
 											<li>
-											<span lang='latex'>\large C</span> is a square matrix.
+											<span ><img src="https://latex.codecogs.com/png.image?\large C"/></span> is a square matrix.
 											</li>
 											<li>
-												The column vectors in <span lang='latex'>\large C</span> are linearly independent.
+												The column vectors in <span ><img src="https://latex.codecogs.com/png.image?\large C"/></span> are linearly independent.
 											</li>
 										</ol>
 									</p>
 
 									<p style="text-align: justify; font-size: 17px;">
-										If <span lang='latex'>\large C</span> is a square matrix then, <span lang='latex'>\large k = n</span> stating that the basis vector set of <span lang='latex'>\large M</span> which are <span lang='latex'>\large \{ \overrightarrow{v_{1}}, \overrightarrow{v_{2}}, ....., \overrightarrow{v_{k}} \} \subset \mathbb{R}^{n}</span> 
-										and has stated earlier the column vectors of <span lang='latex'>\large C</span> are linearly independent because the columns are the basis vectors. Then <span lang='latex'>\large M</span> is also an basis set for <span lang='latex'>\large \mathbb{R}^{n}</span>. Thus proving that if <span lang='latex'>\large C</span> is invertiable, 
-										then span of <span lang='latex'>\large M</span> equals <span lang='latex'>\large \mathbb{R}^{n}</span> or we can rephrase this as if span of <span lang='latex'>\large M</span> is <span lang='latex'>\large \mathbb{R}^{n}</span> then <span lang='latex'>\large C</span> is invertiable. Hence giving as the following equation below, 
+										If <span ><img src="https://latex.codecogs.com/png.image?\large C"/></span> is a square matrix then, <span ><img src="https://latex.codecogs.com/png.image?\large k = n"/></span> stating that the basis vector set of <span ><img src="https://latex.codecogs.com/png.image?\large M"/></span> which are <span ><img src="https://latex.codecogs.com/png.image?\large \{ \overrightarrow{v_{1}}, \overrightarrow{v_{2}}, ....., \overrightarrow{v_{k}} \} \subset \mathbb{R}^{n}"/></span> 
+										and has stated earlier the column vectors of <span ><img src="https://latex.codecogs.com/png.image?\large C"/></span> are linearly independent because the columns are the basis vectors. Then <span ><img src="https://latex.codecogs.com/png.image?\large M"/></span> is also an basis set for <span ><img src="https://latex.codecogs.com/png.image?\large \mathbb{R}^{n}"/></span>. Thus proving that if <span ><img src="https://latex.codecogs.com/png.image?\large C"/></span> is invertiable, 
+										then span of <span ><img src="https://latex.codecogs.com/png.image?\large M"/></span> equals <span ><img src="https://latex.codecogs.com/png.image?\large \mathbb{R}^{n}"/></span> or we can rephrase this as if span of <span ><img src="https://latex.codecogs.com/png.image?\large M"/></span> is <span ><img src="https://latex.codecogs.com/png.image?\large \mathbb{R}^{n}"/></span> then <span ><img src="https://latex.codecogs.com/png.image?\large C"/></span> is invertiable. Hence giving as the following equation below, 
 
-										<div lang='latex' style='text-align: center;'>
+										<div  style='text-align: center;'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large
 											[\overrightarrow{d}]_{M} = C_{S}^{-1}  [\overrightarrow{d}]_{S}
+											"/>
 										</div>
 									</p>
 
@@ -179,68 +193,82 @@
 									<h2>Transformation Matrix with Respect To A Basis</h2>
 
 									<p style="text-align: justify; font-size: 17px;">
-									Let's say some linear transformation <spang lang='latex'>\large T</spang> that is mapping from <span lang='latex'>\large \mathbb{R}^{n}</span> to <span lang='latex'>\large \mathbb{R}^{n}</span> in the the standard coordinate system <span lang='latex'>\large S</span> and if <span lang='latex'>\large T</span> is applied to a vector <span lang='latex'>\large \overrightarrow{x}</span> which is also 
-									in the standard coordinate system then using the transformation matrix <span lang='latex'>\large A</span> we can obtain <span lang='latex'>\large T(\overrightarrow{x})</span> as shown below, 
-										<div lang='latex' style='text-align: center;'>
+									Let's say some linear transformation <span ><img src="https://latex.codecogs.com/png.image?\large T"/></span> that is mapping from <span ><img src="https://latex.codecogs.com/png.image?\large \mathbb{R}^{n}"/></span> to <span ><img src="https://latex.codecogs.com/png.image?\large \mathbb{R}^{n}"/></span> in the the standard coordinate system <span ><img src="https://latex.codecogs.com/png.image?\large S"/></span> and if <span ><img src="https://latex.codecogs.com/png.image?\large T"/></span> is applied to a vector <span ><img src="https://latex.codecogs.com/png.image?\large \overrightarrow{x}"/></span> which is also 
+									in the standard coordinate system then using the transformation matrix <span ><img src="https://latex.codecogs.com/png.image?\large A"/></span> we can obtain <span ><img src="https://latex.codecogs.com/png.image?\large T(\overrightarrow{x})"/></span> as shown below, 
+										<div  style='text-align: center;'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
-											T: \mathbb{R}^{n} \to \mathbb{R}^{n} \\ \\											
+											T: \mathbb{R}^{n} \to \mathbb{R}^{n} \\ \\		
+											"/>									
 										</div>
 										<br>
-										<div lang='latex' style='text-align: center;'>
+										<div  style='text-align: center;'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											T(\overrightarrow{x}) = A\overrightarrow{x}
+											"/>
 										</div>
 									</p>
 
 									<p style="text-align: justify; font-size: 17px;">
-										Now  we want to apply the same transformation on the same vector <span lang='latex'>\large \overrightarrow{x}</span> but all of this will be happening in a different coordinate system i.e. different set of basis vectors which are <span lang='latex'>\large B = \{ \overrightarrow{v_{1}}, \overrightarrow{v_{2}}, ....., \overrightarrow{v_{k}} \}</span> will the span the space
-										<span lang='latex'>\large \mathbb{R}^{n}</span>. The transformation matrix <span lang='latex'>\large A</span> in this space is given by <span lang='latex'>\large D</span>. Thus giving us the equation below, 
+										Now  we want to apply the same transformation on the same vector <span ><img src="https://latex.codecogs.com/png.image?\large \overrightarrow{x}"/></span> but all of this will be happening in a different coordinate system i.e. different set of basis vectors which are <span ><img src="https://latex.codecogs.com/png.image?\large B = \{ \overrightarrow{v_{1}}, \overrightarrow{v_{2}}, ....., \overrightarrow{v_{k}} \}"/></span> will the span the space
+										<span ><img src="https://latex.codecogs.com/png.image?\large \mathbb{R}^{n}"/></span>. The transformation matrix <span ><img src="https://latex.codecogs.com/png.image?\large A"/></span> in this space is given by <span ><img src="https://latex.codecogs.com/png.image?\large D"/></span>. Thus giving us the equation below, 
 
-										<div lang='latex' style='text-align: center;'>
+										<div  style='text-align: center;'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											[T(\overrightarrow{x})]_{B} = D[\overrightarrow{x}]_{B}
+											"/>
 										</div>
 									</p>
 
 									<p style="text-align: justify; font-size: 17px;">
-										<span lang='latex'>\large D</span> is a transformation matrix for <span lang='latex'>\large T</span> with respect to the basis set <span lang='latex'>B</span>. As <span lang='latex'>\large D</span> and <span lang='latex'>\large B</span> are the same transformation but with respect to different set of basis vectors then there should be some relationship between these two, in the upcoming 
+										<span ><img src="https://latex.codecogs.com/png.image?\large D"/></span> is a transformation matrix for <span ><img src="https://latex.codecogs.com/png.image?\large T"/></span> with respect to the basis set <span ><img src="https://latex.codecogs.com/png.image?\large B"/></span>. As <span ><img src="https://latex.codecogs.com/png.image?\large D"/></span> and <span ><img src="https://latex.codecogs.com/png.image?\large B"/></span> are the same transformation but with respect to different set of basis vectors then there should be some relationship between these two, in the upcoming 
 										content we will be deriving this relationship between the two. 
 									</p>
 
 									<span style="font-size: 17px;"><u><strong>Relationship between D and A:</strong></u></span>
 									<br><br>
 									<p style="text-align: justify; font-size: 17px;">
-										The change of basis vector which can be generated from <span lang='latex'>B</span> is represented as <span lang='latex'>C</span> of dimension <span lang='latex'>n \times n</span> where <span lang='latex'>\large C</span> is a square matrix and the columns of <span lang='latex'>\large C</span>  are linearly independent thus making <span lang='latex'>\large C</span> invertible. Hence, the following 
-										equations below are valid for a vector <span lang='latex'>\large \overrightarrow{x}</span>,
+										The change of basis vector which can be generated from <span ><img src="https://latex.codecogs.com/png.image?\large B"/></span> is represented as <span ><img src="https://latex.codecogs.com/png.image?C"/></span> of dimension <span ><img src="https://latex.codecogs.com/png.image?n \times n"/></span> where <span ><img src="https://latex.codecogs.com/png.image?\large C"/></span> is a square matrix and the columns of <span ><img src="https://latex.codecogs.com/png.image?\large C"/></span>  are linearly independent thus making <span ><img src="https://latex.codecogs.com/png.image?\large C"/></span> invertible. Hence, the following 
+										equations below are valid for a vector <span ><img src="https://latex.codecogs.com/png.image?\large \overrightarrow{x}"/></span>,
 
-										<div lang='latex' style='text-align: center;'>
+										<div  style='text-align: center;'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											\overrightarrow{x} = C  [\overrightarrow{x}]_{B}
+											"/>
 										</div>
 										<br>
-										<div lang='latex' style='text-align: center;'>
+										<div  style='text-align: center;'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											[\overrightarrow{x}]_{B} = C^{-1}  \overrightarrow{x}
+											"/>
 										</div>										
 
 									</p>
 
 									<p style="text-align: justify; font-size: 17px;">
-										Using the equations defined in this section we can write <span lang='latex'>\large D</span> in terms of <span lang='latex'>\large A</span> as, 
+										Using the equations defined in this section we can write <span ><img src="https://latex.codecogs.com/png.image?\large D"/></span> in terms of <span ><img src="https://latex.codecogs.com/png.image?\large A"/></span> as, 
 
-										<div lang='latex' style='text-align: center;'>
+										<div  style='text-align: center;'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											D[\overrightarrow{x}]_{B} = [T(\overrightarrow{x})]_{B} = [A\overrightarrow{x}]_{B} = C^{-1}A \overrightarrow{x} = C^{-1}AC[\overrightarrow{x}]_{B}
+											"/>
 										</div>
 										<br>
-										<div lang='latex' style='text-align: center;'>
+										<div  style='text-align: center;'>
+											<img src="https://latex.codecogs.com/png.image?
 											\large 
 											D = C^{-1}AC
+											"/>
 										</div>
 									</p>
 
 									<p style="text-align: justify; font-size: 17px;">
-										With simple matrix arithematic we can rewrite the above equation as <span lang='latex'>\large A = C D C^{-1}</span>. This will be extended to
+										With simple matrix arithematic we can rewrite the above equation as <span ><img src="https://latex.codecogs.com/png.image?\large A = C D C^{-1}"/></span>. This will be extended to
 										eigen decomposition or diagonalization which inturn help in understanding one of the application of Eigen values and eigen vectors in Ellipse.										
 									</p>
 
