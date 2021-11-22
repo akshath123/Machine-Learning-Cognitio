@@ -39,21 +39,13 @@
 									</header>
 
                                     <p style="text-align: justify; font-size: 17px;">
-                                        Most vectors after transformation will get knocked out from their initial span. However, some vectors will remain on the 
-                                        <!-- same span but might be scaled by a scalar <span lang='latex'>'\lambda'</span>. These vectors are known as <strong>eigen vectors</strong> and the scalar which scales these vectors  -->
+                                        Most vectors after transformation will get knocked out from their initial span. However, some vectors will remain on the                                         
                                         same span but might be scaled by a scalar <span><img src="https://latex.codecogs.com/svg.image? \large '\lambda'"/></span>. These vectors are known as <strong>eigen vectors</strong> and the scalar which scales these vectors 
                                         are known as <strong>eigen values</strong>. To understand this let's take a matrix which shears parallel to the x-axis in the vector  
                                         space. The transformation matrix for this is given below,
-										<!-- <div lang='latex' style='text-align: center;'>
-											\large
-                                            A = 
-											\begin{bmatrix}
-											3 & \hspace{0.1cm}2\\
-											0 & \hspace{0.1cm}2
-										    \end{bmatrix}										   
-                                        </div>  -->
+
                                         <div style='text-align: center;'>
-                                            <img src='https://latex.codecogs.com/svg.image?											\large
+                                            <img src='https://latex.codecogs.com/svg.image?	\large
                                             A = 
 											\begin{bmatrix}
 											3 & \hspace{0.1cm}2\\
@@ -64,8 +56,8 @@
                                     
                                     <p style='text-align: justify; font-size: 17px;'>
                                         We apply this transformation to the standard coordinate system's basis vectors which are, 
-                                        <div lang='latex' style='text-align: center;'>
-                                            \large
+                                        <div style='text-align: center;'>
+                                            <img src='https://latex.codecogs.com/svg.image?	\large
                                             \bar{x} = 
                                             \begin{bmatrix}
                                             1 \\
@@ -78,16 +70,17 @@
                                             \begin{bmatrix}
                                             0 \\
                                             1
-                                            \end{bmatrix}                                            
+                                            \end{bmatrix}'/>                                            
                                         </div>
                                     </p>
 
                                     <p style='text-align: justify; font-size: 17px;'>
-                                        The transformation matrix <span lang='latex'>\large A</span> when applied to <span lang='latex'>\large \bar{x}</span> and <span lang='latex'>\large \bar{y}</span> yields <span lang='latex'>\large \bar{x}'</span> and 
-                                        <span lang='latex'>\large \bar{y}'</span>. As shown below, 
+                                        The transformation matrix <span> <img src='https://latex.codecogs.com/svg.image?\large A'></span> when applied to <span><img src='https://latex.codecogs.com/svg.image?\large \bar{x}'/></span> and <span><img src='https://latex.codecogs.com/svg.image?\large \bar{y}\'/></span> yields <span><img src="https://latex.codecogs.com/svg.image?\large \bar{x}'"/></span> and 
+                                        <span><img src="https://latex.codecogs.com/svg.image?\large \bar{y}'"/></span>. As shown below, 
                                     </p>
 
-                                    <div lang='latex' style='text-align: center;'>
+                                    <div style='text-align: center;'>
+                                        <img src="https://latex.codecogs.com/svg.image?
                                         \large 
                                         \bar{x}' = A\bar{x} = 
                                         \begin{bmatrix}
@@ -109,10 +102,11 @@
                                         \begin{bmatrix}
                                         1 \\
                                         0
-                                        \end{bmatrix} 
+                                        \end{bmatrix}"/> 
                                     </div>
                                     <br>
-                                    <div lang='latex' style='text-align: center;'>
+                                    <div style='text-align: center;'>
+                                        <img src="https://latex.codecogs.com/svg.image?
                                         \large 
                                         \bar{y}' = A\bar{y} = 
                                         \begin{bmatrix}
@@ -134,14 +128,15 @@
                                         \begin{bmatrix}
                                         1 \\
                                         1
-                                        \end{bmatrix}                                                                               
+                                        \end{bmatrix}" 
+                                        />                                                                             
                                     </div>
                                     
                                     <br>
 
                                     <p style='text-align: justify; font-size: 17px;'>
-                                        If we plot <span lang='latex'>\large \bar{x}'</span> and <span lang='latex'>\large \bar{y}'</span> on a grid we can clearly see <span lang='latex'>\large \bar{x}'</span> still lies on the same 
-                                        span as <span lang='latex'>\large \bar{x}</span> whereas the vector <span lang='latex'>\large \bar{y}</span> span has changed after transformation. This can be visually seen below.                                        
+                                        If we plot <span><img src="https://latex.codecogs.com/svg.image?\large \bar{x}'"/></span> and <span><img src="https://latex.codecogs.com/svg.image?\large \bar{y}'"/></span> on a grid we can clearly see <span><img src="https://latex.codecogs.com/svg.image?\large \bar{x}'"/></span> still lies on the same 
+                                        span as <span><img src="https://latex.codecogs.com/svg.image?\large \bar{x}"/></span> whereas the vector <span><img src="https://latex.codecogs.com/svg.image?\large \bar{y}"/></span> span has changed after transformation. This can be visually seen below.                                        
                                     </p>
 
                                     <p style="text-align: center;">
@@ -149,18 +144,19 @@
 									</p>
 
                                     <p style='text-align: justify; font-size: 17px;'>
-                                        The vector <span lang='latex'>\large \bar{x}'</span> in image B is nothing but <span lang='latex'>\large 3 \bar{x}</span> where <span lang='latex'>\large 3</span> represents the eigen value and <span lang='latex'>\large \bar{x}</span> 
-                                        is an eigen vector. Basically, any vector in the same direction as <span lang='latex'>\large \bar{x}</span> is an eigen vector which can be mathematically represented by <span lang='latex'>\large \lambda \bar{x}</span>. In general, we 
+                                        The vector <span><img src="https://latex.codecogs.com/svg.image?\large \bar{x}'"/></span> in image B is nothing but <span><img src="https://latex.codecogs.com/svg.image?\large 3 \bar{x}"/></span> where <span><img src="https://latex.codecogs.com/svg.image? \large 3"/></span> represents the eigen value and <span><img src="https://latex.codecogs.com/svg.image?\large \bar{x}"/></span> 
+                                        is an eigen vector. Basically, any vector in the same direction as <span><img src="https://latex.codecogs.com/svg.image?\large \bar{x}"/></span> is an eigen vector which can be mathematically represented by <span><img src="https://latex.codecogs.com/svg.image?\large \lambda \bar{x}"/></span>. In general, we 
                                         can write the eigen value equation or eigenequation as, 
                                     </p>                                    
 
-                                    <div lang='latex' style='text-align: center;'>
-                                        \large 
-                                        A \bar{x} = \lambda \bar{x}
+                                    <div style='text-align: center;'>
+                                        <img src="https://latex.codecogs.com/svg.image?\large 
+                                        A \bar{x} = \lambda \bar{x}"
+                                        />
                                     </div>
                                     <br>
                                     <p style='text-align: justify; font-size: 17px;'>
-                                        Where <span lang='latex'>\large \lambda</span> is known as eigen value or characterisitc value associated with vector <span lang='latex'>\large \bar{x}</span> and <span lang='latex'>\large A</span> is the transformation matrix. Next we, will 
+                                        Where <span><img src="https://latex.codecogs.com/svg.image?\large \lambda"/></span> is known as eigen value or characterisitc value associated with vector <span><img src="https://latex.codecogs.com/svg.image?\large \bar{x}"/></span> and <span><img src="https://latex.codecogs.com/svg.image?\large A"/></span> is the transformation matrix. Next we, will 
                                         look at how to calculate the eigen vectors and eigen values given an transformation matrix. 
                                     </p>                                                                              
                                 </section>    
@@ -170,24 +166,29 @@
 
                                     <p style='text-align: justify; font-size: 17px;'>
                                         We can calculate eigen values and eigen vectors for square matrixes only, for non-square matrix we calculate singlular values. We won't be covering about singular values in this tutorial. So, let's take the eigenequation from which we will first 
-                                        calculate eigen values then the eigen vectors. We derive for a 2D space but the same intution can be extended to <span lang='latex'>\large n</span> dimensional space. 
+                                        calculate eigen values then the eigen vectors. We derive for a 2D space but the same intution can be extended to <span><img src="https://latex.codecogs.com/svg.image?\large n"/></span> dimensional space. 
 
-                                        <div lang='latex' style='text-align: center;'>
+                                        <div style='text-align: center;'>
+                                            <img src="https://latex.codecogs.com/svg.image?
                                             \large 
-                                            A \overrightarrow{v} = \lambda \overrightarrow{v}                                        
+                                            A \overrightarrow{v} = \lambda \overrightarrow{v}  
+                                            "/>                                      
                                         </div>  
                                         <br>
-                                        <div lang='latex' style='text-align: center;'>
+                                        <div style='text-align: center;'>
+                                            <img src="https://latex.codecogs.com/svg.image?
                                             \large 
                                             A \overrightarrow{v} = \lambda 
                                             \begin{bmatrix}
                                             1 & 0 \\
                                             0 & 1
                                             \end{bmatrix}
-                                            \overrightarrow{v}                                        
+                                            \overrightarrow{v}    
+                                            "/>                                    
                                         </div>
                                         <br>
-                                        <div lang='latex' style='text-align: center;'>
+                                        <div style='text-align: center;'>
+                                            <img src="https://latex.codecogs.com/svg.image?
                                             \large 
                                             \begin{bmatrix}
                                             a_{00} & a_{01} \\
@@ -198,10 +199,12 @@
                                              \lambda & 0 \\
                                              0 & \lambda
                                              \end{bmatrix}                                             
-                                             \overrightarrow{v}                                        
+                                             \overrightarrow{v}   
+                                             "/>                                     
                                         </div>     
                                         <br>
-                                        <div lang='latex' style='text-align: center;'>
+                                        <div style='text-align: center;'>
+                                            <img src="https://latex.codecogs.com/svg.image?
                                             \large 
                                             \begin{bmatrix}
                                             a_{00} & a_{01} \\
@@ -214,9 +217,11 @@
                                              \end{bmatrix}                                             
                                              \overrightarrow{v} =
                                              \overrightarrow{0}
+                                             "/>
                                         </div>                                          
                                         <br>
-                                        <div lang='latex' style='text-align: center;'>
+                                        <div style='text-align: center;'>
+                                            <img src="https://latex.codecogs.com/svg.image?
                                             \large 
                                             (
                                             \begin{bmatrix}
@@ -232,9 +237,11 @@
                                             \overrightarrow{v}                                            
                                               =
                                              \overrightarrow{0}
+                                             "/>
                                         </div>   
                                         <br>
-                                        <div lang='latex' style='text-align: center;'>
+                                        <div style='text-align: center;'>
+                                            <img src="https://latex.codecogs.com/svg.image?
                                             \large 
                                             (
                                             \begin{bmatrix}
@@ -245,33 +252,38 @@
                                             \overrightarrow{v}                                            
                                               =
                                              \overrightarrow{0}
+                                             "/>
                                         </div>      
                                         <br>
-                                        <div lang='latex' style='text-align: center;'>
+                                        <div style='text-align: center;'>
+                                            <img src="https://latex.codecogs.com/svg.image?
                                             \large 
                                             (A - \lambda I)
                                             \overrightarrow{v}                                            
                                               =
                                              \overrightarrow{0}
+                                             "/>
                                         </div>
                                         <br>
                                         <p style='text-align: justify; font-size: 17px;'>
-                                            From the above equation we see that either <span lang='latex'>\large \overrightarrow{v}</span> or <span lang='latex'>\large (A - \lambda I)</span> should be the zero vector. We don't want 
-                                            <span lang='latex'>\large \overrightarrow{v}</span> to be zero because then it doesn't give any information so basically we would like <span lang='latex'>\large (A - \lambda I)</span> to equal zero vector. 
+                                            From the above equation we see that either <span><img src="https://latex.codecogs.com/svg.image?\large \overrightarrow{v}"/></span> or <span><img src="https://latex.codecogs.com/svg.image?\large (A - \lambda I)"/></span> should be the zero vector. We don't want 
+                                            <span><img src="https://latex.codecogs.com/svg.image?\large \overrightarrow{v}"/></span> to be zero because then it doesn't give any information so basically we would like <span><img src="https://latex.codecogs.com/svg.image?\large (A - \lambda I)"/></span> to equal zero vector. 
                                             Speaking geometerically we can say that it squishes the space to a point (the zero vector) hence the area (becuse it's 2D it's area for n-dimensional it would have been volume) is zero. One way to think about deteminants 
                                             is that it tells us how much the transformation will scale the intital space. Hence, using determinants we can rewrite the above equation as, 
 
-                                            <div lang='latex' style='text-align: center;'>
+                                            <div style='text-align: center;'>
+                                                <img src="https://latex.codecogs.com/svg.image?
                                                 \large 
                                                 det(A - \lambda I)                                            
                                                   =
                                                  0
+                                                 "/>
                                             </div>
                                         </p>      
 
                                         <p style='text-align: justify; font-size: 17px;'>
-                                            After solving the above equation and obtaining the values of <span lang='latex'>\large \lambda</span> we substitue the <span lang='latex'> \large \lambda</span> values in the equation <span lang='latex'>\large (A - \lambda I)</span> and 
-                                            solve for <span lang='latex'>\large \overrightarrow{v}</span>. Thus obtaining both eigen values and eigen vectors for the matrix <span lang='latex'>\large A</span>.
+                                            After solving the above equation and obtaining the values of <span><img src="https://latex.codecogs.com/svg.image?\large \lambda"/></span> we substitue the <span><img src="https://latex.codecogs.com/svg.image?\large \lambda"/></span> values in the equation <span><img src="https://latex.codecogs.com/svg.image?\large (A - \lambda I)"/></span> and 
+                                            solve for <span><img src="https://latex.codecogs.com/svg.image?\large \overrightarrow{v}"/></span>. Thus obtaining both eigen values and eigen vectors for the matrix <span><img src="https://latex.codecogs.com/svg.image?\large A"/></span>.
                                         </p>                                                                                 
                                     </p>                                                                         
                                 </section>
